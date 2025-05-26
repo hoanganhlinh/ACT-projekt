@@ -148,7 +148,7 @@ run;
 
 /*----------------------------------------------------------*/
 /*----------------------------------------------------------*/
-/*Wyznaczamy pomocnicza zmienna jako ciow  age_c :*/
+/*Wyznaczamy pomocnicza zmienna jakosciowa age_c :*/
 data work.metabric_m;
 set work.metabric_m;
 if Age_at_Diagnosis<49 then age_c=1;
@@ -325,7 +325,7 @@ data work.metabric_selected;
 run;
 
 
-
+/*Weryfikacja za³o¿enia proporcjonalnych hazardów – metoda graficzna*/
 
 proc phreg data=work.metabric_selected;
 	model t*c(0)= lnep_c / ties=efron;
@@ -434,12 +434,7 @@ proc gplot data=zb_lls_hs;
 
 
 
-
-
-
-
-
-/*Model tylko ze zmienn¹ sex*/
+/*Model tylko ze zmienn¹ age*/
 proc phreg data=work.metabric_selected;
 	class age_c;
 	model t*c(0)= age_c / ties=efron;
@@ -463,39 +458,115 @@ run;
 
 
 
+/*Pelny model*/
+proc phreg data=work.metabric_selected;
+	class 
+	HER2_Status
+	Hormone_Therapy
+	Primary_Tumor_Laterality
+	Radio_Therapy
+	var_3_Gene_classifier_subtype
+	age_c
+	ts_c
+	lnep_c;
+	model t*c(0)=
+	HER2_Status
+	Hormone_Therapy
+	Primary_Tumor_Laterality
+	Radio_Therapy
+	var_3_Gene_classifier_subtype
+	age_c
+	ts_c
+	lnep_c
+	/ties=efron;
+	output out = R_Sch_full
+	ressch= full_RS;
+run;
+
+
+goptions reset=all;
+goptions htext=1.5 ;
+option nodate nonumber;
+axis1 order=(-1 0 1)
+label= ( angle=90 'Schoenfeld residuals');
+axis2 order=(0 73 146 219 292 365)
+label= ('t');
+legend1 label=none;
+proc gplot data=R_Sch_full;
+plot full_RS*t / vaxis=axis1  haxis=axis2;
+symbol1 v=point i=sm90s width=1 c=blue;
+run;
+
+
+
+data R_Sch_full_Ft;
+set R_Sch_full;
+lt=log(t);
+t2=t**2;
+run;
+proc corr data=R_Sch_full_Ft;
+var t lt t2 full_RS;
+run;
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+proc phreg data=dane.covid_model;
+ model t*c(0)=Sex Intubed Pneumonia  Diabetes Copd Inmsupr Hypertension Other_disease Obesity 
+Renal_chronic Tobacco Contact_other_covid age_c
+ Sex_t Intubed_t Pneumonia_t Diabetes_t Copd_t Inmsupr_t Hypertension_t Other_disease_t Obesity_t
+ Renal_chronic_t Tobacco_t Contact_other_covid_t age_c_t
+ /ties=efron;
+ Sex_t=Sex*t;
+ Intubed_t=Intubed*t; 
+Pneumonia_t=Pneumonia*t;
+ Diabetes_t=Diabetes*t;
+ Copd_t=Copd*t;
+ Inmsupr_t=Inmsupr*t;
+Hypertension_t=Hypertension*t;
+ Other_disease_t= Other_disease*t;
+ Obesity_t=Obesity*t;
+ Renal_chronic_t= Renal_chronic*t;
+ Tobacco_t=Tobacco*t;
+ Contact_other_covid_t= Contact_other_covid*t;
+ age_c_t= age_c*t;
+ run;
 
 
 
 proc phreg data=work.metabric_selected;
-	class Hormone_Therapy;
-	model t*c(0)= Hormone_Therapy / ties=efron;
-	strata Hormone_Therapy;
-	baseline out=zb_lls_ht loglogs=lls / method=pl;
-	run;
-proc gplot data=zb_lls_ht;
-	plot lls*t=Hormone_Therapy;
-	symbol1 I=join color=blue line=1 value=none;
-	symbol2 I=join color=red line=1 value=none;
-	run;
+	model t*c(0)=
+	HER2_Status
+	Hormone_Therapy
+	Primary_Tumor_Laterality
+	Radio_Therapy
+	var_3_Gene_classifier_subtype
+	age_c
+	ts_c
+	lnep_c
+
+	HER2_Status_t
+	Hormone_Therapy_t
+	Primary_Tumor_Laterality_t
+	Radio_Therapy_t
+	var_3_Gene_classifier_subtype_t
+	age_c_t
+	ts_c_t
+	lnep_c_t
+
+	/ties=efron;
+	HER2_Status_t=HER2_Status*t
+	Hormone_Therapy_t=Hormone_Therapy*t
+	Primary_Tumor_Laterality_t=Primary_Tumor_Laterality*t
+	Radio_Therapy_t=Radio_Therapy*t
+	var_3_Gene_classifier_subtype_t=var_3_Gene_classifier_subtype*t
+	age_c_t=age_c*t
+	ts_c_t=ts_c*t
+	lnep_c_t=lnep_c*t;
+run;
+
+
 
 
 
