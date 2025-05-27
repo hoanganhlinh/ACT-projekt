@@ -3,7 +3,7 @@ quit;
 
 
 /*Import przygotowanych zmiennych*/
-proc import datafile="C:\Users\laura\Documents\GitHub\ACT-projekt\metabric_cleaned.csv"
+proc import datafile="C:\Users\laura\Documents\GitHub\ACT-projekt\data\metabric_cleaned.csv"
 out=work.metabric_cleaned
 dbms=csv
 replace;
@@ -12,7 +12,7 @@ getnames=yes;
 guessingrows=max;
 run;
 
-options encoding='utf-8';
+/*options encoding='utf-8';*/
 
 /*MODEL SEMIPARAMETRYCZNY: W UJECIU KLASYCZNYM*/
 /*Selekcja zmiennych*/
@@ -69,6 +69,7 @@ proc phreg data=work.metabric_cleaned;
 	/ties=efron selection=stepwise;
 run;
 
+%let vars = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;
 
 /*Weryfikacja zalozenia proporcjonalnych hazardow: metoda graficzna*/
 %macro check_ph_simple(varlist=, data=WORK.METABRIC_CLEANED);
@@ -102,15 +103,11 @@ run;
 
 %mend check_ph_simple;
 
-%check_ph_simple(varlist=lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status);
+/*%check_ph_simple(varlist=lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status);*/
+%check_ph_simple(varlist=&vars);
 /*Zalozenie proporcjonalnych hazardow spelnione dla: ts_c i her_status*/
 
-
-
-
 /*Weryfikacja zalozenia proporcjonalnych hazardow: reszty Schoenfelda*/
-%let vars = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;
-
 /* Makro generujace liste reszt Schoenfelda */
 %macro schoenfeld_list(vars);
   %local i var n result;
@@ -189,41 +186,172 @@ run;
 
 
 /*Model ze stratyfikacja: zmienne hormone_therapy i her_status*/
-proc phreg data=work.metabric_cleaned;
-  class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;
-  model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c / ties=efron;
-  strata hormone_therapy her_status;
-run;
+/*proc phreg data=work.metabric_cleaned;*/
+/*  class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;*/
+/*  model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c / ties=efron;*/
+/*  strata hormone_therapy her_status;*/
+/*run;*/
 
 
 /*Model z uwzglêdnieniem interakcji zmiennych z czasem*/
 /* Dodanie zmiennych zale¿nych od czasu */
-data work.metabric_interact;
-  set work.metabric_cleaned;
-  t_log = log(t);
-  t_sq = t**2;
-  ht_t = hormone_therapy * t;
-  hs_t = her_status * t;
-run;
+/*data work.metabric_interact;*/
+/*  set work.metabric_cleaned;*/
+/*  t_log = log(t);*/
+/*  t_sq = t**2;*/
+/*  ht_t = hormone_therapy * t;*/
+/*  hs_t = her_status * t;*/
+/*run;*/
+/**/
+/* Model Coxa z interakcj¹ z czasem */
+/*proc phreg data=work.metabric_interact;*/
+/*  class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;*/
+/*  model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c */
+/*                 hormone_therapy her_status ht_t hs_t*/
+/*                 / ties=efron;*/
+/*run;*/
 
 /* Model Coxa z interakcj¹ z czasem */
-proc phreg data=work.metabric_interact;
-  class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;
-  model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c 
-                 hormone_therapy her_status ht_t hs_t
-                 / ties=efron;
+proc phreg data=work.metabric_cleaned;
+  model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status
+	lnep_c_t gene_classifier_subtype_t age_c_t radio_therapy_t ts_c_t hormone_therapy_t her_status_t
+	/ ties=efron;
+	lnep_c_t=lnep_c*t;
+	gene_classifier_subtype_t=gene_classifier_subtype*t;
+	age_c_t=age_c*t;
+	radio_therapy_t=radio_therapy*t;
+	ts_c_t=ts_c*t;
+	hormone_therapy_t=hormone_therapy*t;
+	her_status_t=her_status*t;
+/*  ht_t = hormone_therapy * t;*/
+/*  hs_t = her_status * t;*/
+run;
+
+/*gene_classifier_subtype i radio_therapy*/
+proc phreg data=work.metabric_cleaned;
+/*	model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status*/
+	model t*c(0) = lnep_c age_c ts_c hormone_therapy her_status
+	/ ties=efron;
+	output out=work.diagnostic_out
+	xbeta = Xb         /* predyktor liniowy (log-hazard) */
+	resmart = Mart     /* reszty martynga³owe */
+	resdev = Dev;      /* reszty odchylenia */
+run;
+
+
+proc sgplot data=work.diagnostic_out;
+yaxis grid;
+refline 0 / axis=y;
+scatter y=Mart x=Xb;
+title "Reszty Martyngalowe";
+run;
+
+
+proc sgplot data=work.diagnostic_out;
+yaxis grid;
+refline 0 / axis=y;
+scatter y=Dev x=Xb;
+title "Reszty Odchylenia";
+run;
+
+
+/*Usuwanie obserwacji odstajacych*/
+data work.diagnostic_out_;
+set work.diagnostic_out;
+if Mart<-2 then delete;
+if-2>Dev or 3<Dev  then delete;
+run;
+
+proc phreg data=work.diagnostic_out_;
+	model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status / ties=efron;
+run;
+
+proc phreg data=work.diagnostic_out_;
+model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status
+lnep_c_t gene_classifier_subtype_t age_c_t radio_therapy_t ts_c_t hormone_therapy_t her_status_t
+/ ties=efron;
+lnep_c_t=lnep_c*t;
+gene_classifier_subtype_t=gene_classifier_subtype*t;
+age_c_t=age_c*t;
+radio_therapy_t=radio_therapy*t;
+ts_c_t=ts_c*t;
+hormone_therapy_t=hormone_therapy*t;
+her_status_t=her_status*t;
+run;
+/*Gorsze wyniki po usunieciu skrajnych obserwacji, zostawiamy oryginalne dane*/
+
+
+
+proc phreg data=work.metabric_cleaned;
+class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;
+model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status
+lnep_c_t gene_classifier_subtype_t age_c_t radio_therapy_t ts_c_t hormone_therapy_t her_status_t
+/ ties=efron;
+lnep_c_t=lnep_c*t;
+gene_classifier_subtype_t=gene_classifier_subtype*t;
+age_c_t=age_c*t;
+radio_therapy_t=radio_therapy*t;
+ts_c_t=ts_c*t;
+hormone_therapy_t=hormone_therapy*t;
+her_status_t=her_status*t;
+run;
+
+/*lnep_c, */
+
+proc phreg data=work.metabric_cleaned;
+	class lnep_c age_c radio_therapy ts_c her_status;
+	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status / ties=efron;
+run;
+
+
+proc phreg data=work.metabric_cleaned;
+class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;
+model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status
+/ ties=efron;
+run;
+
+
+/*%macro lifetest_loop;*/
+/*    %let i = 1;*/
+/*    %do %while (%scan(&vars, &i) ne );*/
+/**/
+/*        %let var = %scan(&vars, &i);*/
+/**/
+/*        title "Kaplan-Meier: STRATA=&var";*/
+/*        proc lifetest data=work.metabric_cleaned method=lt plots=(s h);*/
+/*            time t*c(0);*/
+/*            strata &var;*/
+/*        run;*/
+/**/
+/*        %let i = %eval(&i + 1);*/
+/*    %end;*/
+/**/
+/*%mend lifetest_loop;*/
+/**/
+/*%lifetest_loop;*/
+
+
+
+proc phreg data=work.metabric_cleaned plots=survival;
+	class lnep_c age_c radio_therapy ts_c her_status;
+	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status / ties=efron;
+	baseline covariates=work.metabric_cleaned out=work.metabric_pred_sur survival=_all_ / diradj;
 run;
 
 
 
+ods graphics on;
 
+/*proc phreg data=work.metabric_cleaned plots(overlay=individual)=roc rocoptions(at= 67 135 202 270 337);*/
+/*class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;*/
+/*model t*c(0)= lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status*/
+/*/ties=efron;*/
+/*run;*/
 
-
-
-
-
-
-
+proc phreg data=work.metabric_cleaned plots(overlay=individual)=roc rocoptions(at= 67 135 202 270 337);
+	class lnep_c age_c radio_therapy ts_c her_status;
+	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status / ties=efron;
+run;
 
 
 
