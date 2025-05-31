@@ -230,7 +230,7 @@ run;
 proc phreg data=work.metabric_cleaned;
 class lnep_c age_c radio_therapy ts_c her_status;
 model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;
-bayes seed=123 nbi=4000 nmc=20000 thin=10 coeffprior=normal;
+bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal;
 run;
 
 data Prior;
@@ -246,7 +246,7 @@ run;
 proc phreg data=work.metabric_cleaned;
 class lnep_c age_c radio_therapy ts_c her_status;
 model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;
-bayes seed=123 nbi=10000 nmc=100000 thin=10 DIAGNOSTICS=(AUTOCORR ESS GEWEKE) 
+bayes seed=123 nbi=5000 nmc=50000 thin=5 DIAGNOSTICS=(AUTOCORR ESS GEWEKE) 
 coeffprior=normal (input=prior);
 run;
 
@@ -363,6 +363,7 @@ run;
 proc phreg data=work.metabric_cleaned plots=survival;
 	class lnep_c age_c radio_therapy ts_c her_status;
 	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status / ties=efron;
+	bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal (input=prior);
 	baseline covariates=work.metabric_cleaned out=work.metabric_pred_sur survival=_all_ / diradj;
 run;
 
@@ -379,6 +380,7 @@ ods graphics on;
 proc phreg data=work.metabric_cleaned plots(overlay=individual)=roc rocoptions(at= 67 135 202 270 337);
 	class lnep_c age_c radio_therapy ts_c her_status;
 	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status / ties=efron;
+	bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal (input=prior);
 run;
 
 
