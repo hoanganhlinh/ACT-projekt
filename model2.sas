@@ -3,7 +3,8 @@ quit;
 
 
 /*Import przygotowanych zmiennych*/
-proc import datafile="/home/u64242881/metabric_cleaned.csv"
+proc import datafile="C:\Users\laura\Documents\GitHub\ACT-projekt\data\metabric_cleaned.csv"
+/*proc import datafile="/home/u64242881/metabric_cleaned.csv"*/
 out=work.metabric_cleaned
 dbms=csv
 replace;
@@ -185,32 +186,6 @@ run;
 
 
 
-/*Model ze stratyfikacja: zmienne hormone_therapy i her_status*/
-/*proc phreg data=work.metabric_cleaned;*/
-/*  class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;*/
-/*  model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c / ties=efron;*/
-/*  strata hormone_therapy her_status;*/
-/*run;*/
-
-
-/*Model z uwzglï¿½dnieniem interakcji zmiennych z czasem*/
-/* Dodanie zmiennych zaleï¿½nych od czasu */
-/*data work.metabric_interact;*/
-/*  set work.metabric_cleaned;*/
-/*  t_log = log(t);*/
-/*  t_sq = t**2;*/
-/*  ht_t = hormone_therapy * t;*/
-/*  hs_t = her_status * t;*/
-/*run;*/
-/**/
-/* Model Coxa z interakcjï¿½ z czasem */
-/*proc phreg data=work.metabric_interact;*/
-/*  class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;*/
-/*  model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c */
-/*                 hormone_therapy her_status ht_t hs_t*/
-/*                 / ties=efron;*/
-/*run;*/
-
 /* Model Coxa z interakcjï¿½ z czasem */
 proc phreg data=work.metabric_cleaned;
   model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status
@@ -227,12 +202,24 @@ proc phreg data=work.metabric_cleaned;
 /*  hs_t = her_status * t;*/
 run;
 
+
+proc phreg data=work.metabric_cleaned;
+class lnep_c age_c radio_therapy ts_c her_status;
+model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;
+bayes seed=123 nbi=1000 nmc=10000 coeffprior=normal;
+run;
+
+
+
+/*Oryginalny model - z rozkladami nieinformacyjnymi*/
 proc phreg data=work.metabric_cleaned;
 class lnep_c age_c radio_therapy ts_c her_status;
 model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;
 bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal;
 run;
 
+
+/*Nowy model - wprowadzenie rozkladow informacyjnych*/
 data Prior;
 input _type_ $ lnep_c0 lnep_c1 age_c1 age_c2 age_c3 radio_therapy0 ts_c1 ts_c3 ts_c4 her_status0 
 lnep_c2 lnep_c3 ts_c2 ts_c5;
@@ -255,131 +242,97 @@ run;
 
 
 
-/*gene_classifier_subtype i radio_therapy*/
-proc phreg data=work.metabric_cleaned;
-/*	model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status*/
-	model t*c(0) = lnep_c age_c ts_c hormone_therapy her_status
-	/ ties=efron;
-	output out=work.diagnostic_out
-	xbeta = Xb         /* predyktor liniowy (log-hazard) */
-	resmart = Mart     /* reszty martyngaï¿½owe */
-	resdev = Dev;      /* reszty odchylenia */
-run;
+/*Ocena modelu*/
 
+/*Krzywa przezycia*/
 
-proc sgplot data=work.diagnostic_out;
-yaxis grid;
-refline 0 / axis=y;
-scatter y=Mart x=Xb;
-title "Reszty Martyngalowe";
-run;
-
-
-proc sgplot data=work.diagnostic_out;
-yaxis grid;
-refline 0 / axis=y;
-scatter y=Dev x=Xb;
-title "Reszty Odchylenia";
-run;
-
-
-/*Usuwanie obserwacji odstajacych*/
-data work.diagnostic_out_;
-set work.diagnostic_out;
-if Mart<-2 then delete;
-if-2>Dev or 3<Dev  then delete;
-run;
-
-proc phreg data=work.diagnostic_out_;
-	model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status / ties=efron;
-run;
-
-proc phreg data=work.diagnostic_out_;
-model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status
-lnep_c_t gene_classifier_subtype_t age_c_t radio_therapy_t ts_c_t hormone_therapy_t her_status_t
-/ ties=efron;
-lnep_c_t=lnep_c*t;
-gene_classifier_subtype_t=gene_classifier_subtype*t;
-age_c_t=age_c*t;
-radio_therapy_t=radio_therapy*t;
-ts_c_t=ts_c*t;
-hormone_therapy_t=hormone_therapy*t;
-her_status_t=her_status*t;
-run;
-/*Gorsze wyniki po usunieciu skrajnych obserwacji, zostawiamy oryginalne dane*/
-
-
-
-proc phreg data=work.metabric_cleaned;
-class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;
-model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status
-lnep_c_t gene_classifier_subtype_t age_c_t radio_therapy_t ts_c_t hormone_therapy_t her_status_t
-/ ties=efron;
-lnep_c_t=lnep_c*t;
-gene_classifier_subtype_t=gene_classifier_subtype*t;
-age_c_t=age_c*t;
-radio_therapy_t=radio_therapy*t;
-ts_c_t=ts_c*t;
-hormone_therapy_t=hormone_therapy*t;
-her_status_t=her_status*t;
-run;
-
-/*lnep_c, */
-
-proc phreg data=work.metabric_cleaned;
-	class lnep_c age_c radio_therapy ts_c her_status;
-	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status / ties=efron;
-run;
-
-
-proc phreg data=work.metabric_cleaned;
-class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;
-model t*c(0) = lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status
-/ ties=efron;
-run;
-
-
-/*%macro lifetest_loop;*/
-/*    %let i = 1;*/
-/*    %do %while (%scan(&vars, &i) ne );*/
-/**/
-/*        %let var = %scan(&vars, &i);*/
-/**/
-/*        title "Kaplan-Meier: STRATA=&var";*/
-/*        proc lifetest data=work.metabric_cleaned method=lt plots=(s h);*/
-/*            time t*c(0);*/
-/*            strata &var;*/
-/*        run;*/
-/**/
-/*        %let i = %eval(&i + 1);*/
-/*    %end;*/
-/**/
-/*%mend lifetest_loop;*/
-/**/
-/*%lifetest_loop;*/
-
-
-
-proc phreg data=work.metabric_cleaned plots=survival;
-	class lnep_c age_c radio_therapy ts_c her_status;
-	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status / ties=efron;
-	bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal (input=prior);
-	baseline covariates=work.metabric_cleaned out=work.metabric_pred_sur survival=_all_ / diradj;
-run;
-
-
-
-ods graphics on;
-
-/*proc phreg data=work.metabric_cleaned plots(overlay=individual)=roc rocoptions(at= 67 135 202 270 337);*/
-/*class lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status;*/
-/*model t*c(0)= lnep_c gene_classifier_subtype age_c radio_therapy ts_c hormone_therapy her_status*/
-/*/ties=efron;*/
+/*proc phreg data=work.metabric_cleaned plots=survival;*/
+/*	class lnep_c age_c radio_therapy ts_c her_status;*/
+/*	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;*/
+/*	bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal (input=prior);*/
+/*	baseline covariates=work.metabric_cleaned out=work.metabric_pred_sur survival=_all_ / diradj;*/
 /*run;*/
+
+/*1. Bayesowski model Coxa z eksportem probek*/
+proc phreg data=work.metabric_cleaned;
+class lnep_c age_c radio_therapy ts_c her_status;
+model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;
+bayes seed=123 nbi=5000 nmc=50000 thin=5
+coeffprior=normal (input=prior)
+outpost=post_samples;
+run;
+
+/*2. Podstawowe przygotowanie danych*/
+data x_patient;
+	input lnep_c age_c radio_therapy ts_c her_status;
+	datalines;
+0 0 2 4 5
+;
+run;
+
+/*3. S(t | x) = S0(t)^exp(ß'x)*/
+
+/*S0(t) i czas*/
+proc phreg data=work.metabric_cleaned;
+	class lnep_c age_c radio_therapy ts_c her_status;
+	model t*c(0) = ;
+	baseline out=s0_out survival=s0;
+run;
+
+
+/*S(t|x)*/
+data pred_survival;
+	if _N_ = 1 then set x_patient;
+	if _N_ = 1 then do i = 1 to 10000; /* tyle próbek z posteriora */
+		set post_samples point=i nobs=n_post;
+		do t_idx = 1 to nobs_s0; /* pêtla po czasie */
+			set s0_out point=t_idx nobs=nobs_s0;
+
+			/* liniowy predyktor */
+			lp = lnep_c1 * (lnep_c=1) +
+				lnep_c2 * (lnep_c=2) +
+				age_c1 * (age_c=1) +
+				age_c2 * (age_c=2) +
+				radio_therapy0 * (radio_therapy=0) +
+				ts_c1 * (ts_c=1) +
+				her_status0 * (her_status=0)
+				;
+
+			/* funkcja przezycia: S(t|x) = S0(t)^exp(lp) */
+			S_pred = s0**exp(lp);
+
+			output;
+		end;
+	end;
+	stop;
+run;
+
+/*4. Usrednienie i przedzialy wiarygodnosci*/
+proc means data=pred_survival noprint;
+	class t;
+	var S_pred;
+	output out=surv_summary
+		mean=mean_survival
+		p5=lower95
+		p95=upper95;
+run;
+
+/*5. Wykres*/
+proc sgplot data=surv_summary;
+	band x=t lower=lower95 upper=upper95 / fillattrs=(color=lightblue) transparency=0.3;
+	series x=t y=mean_survival / lineattrs=(color=blue);
+	xaxis label='Czas';
+	yaxis label='Prawdopodobieñstwo prze¿ycia';
+	title 'Bayesowska funkcja prze¿ycia z przedzia³em wiarygodnoœci';
+run;
+
+
+
+/*Krzywa ROC*/
 
 proc phreg data=work.metabric_cleaned plots(overlay=individual)=roc rocoptions(at= 67 135 202 270 337);
 	class lnep_c age_c radio_therapy ts_c her_status;
-	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status / ties=efron;
+	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;
 	bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal (input=prior);
 run;
 
