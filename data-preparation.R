@@ -2,6 +2,7 @@ library(readr)
 library(dplyr)    
 library(stringr)  
 library(tidyr)
+library(ggplot2)
 
 # 2. Wczytanie danych
 df_metabric <- read_csv("./data/Breast Cancer METABRIC.csv")
@@ -93,6 +94,7 @@ print(braki_info_filtered)
 
 df_metabric <- na.omit(df_metabric)
 
+df_before <- df_metabric
 # 6. Kategoryzacja zmiennych ciągłych
 df_metabric <- df_metabric %>%
   mutate(
@@ -195,3 +197,50 @@ for (col in varlist) {
   print(tables_dict[[col]])
 }
 
+### Histogramy 
+
+primary_vars <- setdiff(
+  colnames(df_metabric),
+  c("c", "age_c", "ts_c", "npi_c", "lnep_c")
+)
+
+for (var in primary_vars) {
+  if (is.numeric(df_metabric[[var]])) {
+    rng <- range(df_metabric[[var]], na.rm = TRUE)
+    bw <- (rng[2] - rng[1]) / 30
+    print(
+      ggplot(df_metabric, aes_string(x = var)) +
+        geom_histogram(binwidth = bw) +
+        ggtitle(var)
+    )
+  } else {
+    print(
+      ggplot(df_metabric, aes_string(x = var)) +
+        geom_bar() +
+        ggtitle(var)
+    )
+  }
+}
+
+pairs <- list(
+  age_at_diagnosis = "age_c",
+  tumor_size = "ts_c",
+  nottingham_prognostic_index = "npi_c",
+  lymph_nodes_examined_positive = "lnep_c"
+)
+
+for (cont in names(pairs)) {
+  cat_var <- pairs[[cont]]
+  rng_before <- range(df_before[[cont]], na.rm = TRUE)
+  bw_before <- (rng_before[2] - rng_before[1]) / 30
+  print(
+    ggplot(df_before, aes_string(x = cont)) +
+      geom_histogram(binwidth = bw_before) +
+      ggtitle(paste0(cont, " przed kategoryzacją"))
+  )
+  print(
+    ggplot(df_metabric, aes_string(x = cat_var)) +
+      geom_bar() +
+      ggtitle(paste0(cat_var, " po kategoryzacji"))
+  )
+}
