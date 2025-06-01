@@ -1,0 +1,4474 @@
+﻿<!DOCTYPE html>
+<html lang="pl" xml:lang="pl" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>Wynik SAS-owy</title>
+<style>
+/*<![CDATA[*/
+.body.c > table, .body.c > pre, .body.c div > table,
+.body.c div > pre, .body.c > table, .body.c > pre,
+.body.j > table, .body.j > pre, .body.j div > table,
+.body.j div > pre, .body.j > table, .body.j > pre,
+.body.c p.note, .body.c p.warning, .body.c p.error, .body.c p.fatal,
+.body.j p.note, .body.j p.warning, .body.j p.error, .body.j p.fatal,
+.body.c > table.layoutcontainer, .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.layoutregion.l table, .layoutregion.l pre, .layoutregion.l p.note,
+.layoutregion.l p.warning, .layoutregion.l p.error, .layoutregion.l p.fatal { margin-left: 0 }
+.layoutregion.c table, .layoutregion.c pre, .layoutregion.c p.note,
+.layoutregion.c p.warning, .layoutregion.c p.error, .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r p.warning, .layoutregion.r p.error, .layoutregion.r p.fatal { margin-right: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
+html{ font-size: 100% }
+.body { margin: 1em; font-size: 13px; line-height: 1.231 }
+sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px }
+dd { margin: 0 0 0 40px }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+img { border: 0; vertical-align: middle }
+svg:not(:root) { overflow: hidden }
+figure { margin: 0 }
+table { border-collapse: collapse; border-spacing: 0 }
+.layoutcontainer { border-collapse: separate; border-spacing: 0 }
+p { margin-top: 0; text-align: left }
+h1.heading1 { text-align: left }
+h2.heading2 { text-align: left }
+h3.heading3 { text-align: left }
+h4.heading4 { text-align: left }
+h5.heading5 { text-align: left }
+h6.heading6 { text-align: left }
+span { text-align: left }
+table { margin-bottom: 1em }
+td, th { text-align: left; padding: 3px 6px; vertical-align: top }
+td[class$="fixed"], th[class$="fixed"] { white-space: pre }
+section, article { padding-top: 1px; padding-bottom: 8px }
+hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.stacked-value { text-align: left; display: block }
+.stacked-cell > .stacked-value, td.data > td.data, th.data > td.data, th.data > th.data, td.data > th.data, th.header > th.header { border: 0 }
+.stacked-cell > div.data { border-width: 0 }
+.systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.systitleandfootercontainer > p { margin: 0 }
+.systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.batch { display: table }
+.toc { display: none }
+.proc_note_group, .proc_title_group { margin-bottom: 1em }
+p.proctitle { margin: 0 }
+p.note, p.warning, p.error, p.fatal { display: table }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner,
+.notecontent, .warncontent, .errorcontent, .fatalcontent { display: table-cell; padding: 0.5em }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner { padding-right: 0 }
+.body > div > ol li { text-align: left }
+.beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.c { text-align: center }
+.r { text-align: right }
+.l { text-align: left }
+.j { text-align: justify }
+.d { text-align: right }
+.b { vertical-align: bottom }
+.m { vertical-align: middle }
+.t { vertical-align: top }
+a:active { color: #800080 }
+.aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.batch > tbody, .batch > thead, .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.batch { border: hidden; }
+.batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.bylinecontainer > col, .bylinecontainer > colgroup > col, .bylinecontainer > colgroup, .bylinecontainer > tr, .bylinecontainer > * > tr, .bylinecontainer > thead, .bylinecontainer > tbody, .bylinecontainer > tfoot { border: none; }
+.bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.cell, .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.contentfolder, .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.contentproclabel, .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.data, .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.graph > tbody, .graph > thead, .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.graph { border: hidden; }
+.graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading1, .heading2, .heading3, .heading4, .heading5, .heading6 { font-family: Arial, Helvetica, sans-serif }
+.index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.indexaction, .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.layoutcontainer, .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+a:link { color: #0000ff }
+.list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.list3, .list4, .list5, .list6, .list7, .list8, .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.listitem3, .listitem4, .listitem5, .listitem6, .listitem7, .listitem8, .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.output > tbody, .output > thead, .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.output { border: hidden; }
+.output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.pagesproclabel, .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.parskip > col, .parskip > colgroup > col, .parskip > colgroup, .parskip > tr, .parskip > * > tr, .parskip > thead, .parskip > tbody, .parskip > tfoot { border: none; }
+.parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systemfooter, .systemfooter10, .systemfooter2, .systemfooter3, .systemfooter4, .systemfooter5, .systemfooter6, .systemfooter7, .systemfooter8, .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.systemtitle, .systemtitle10, .systemtitle2, .systemtitle3, .systemtitle4, .systemtitle5, .systemtitle6, .systemtitle7, .systemtitle8, .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systitleandfootercontainer > col, .systitleandfootercontainer > colgroup > col, .systitleandfootercontainer > colgroup, .systitleandfootercontainer > tr, .systitleandfootercontainer > * > tr, .systitleandfootercontainer > thead, .systitleandfootercontainer > tbody, .systitleandfootercontainer > tfoot { border: none; }
+.systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.table > col, .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.table > tr, .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.table { border: hidden; }
+.table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.titleandnotecontainer > col, .titleandnotecontainer > colgroup > col, .titleandnotecontainer > colgroup, .titleandnotecontainer > tr, .titleandnotecontainer > * > tr, .titleandnotecontainer > thead, .titleandnotecontainer > tbody, .titleandnotecontainer > tfoot { border: none; }
+.titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+a:visited { color: #800080 }
+.warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="c body">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Correlation of her_status_RS with time functions</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">Procedura PHREG</p>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Informacje o modelu">
+<caption aria-label="Informacje o modelu"></caption>
+<colgroup><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Informacje o modelach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Zbiór</th>
+<td class="data">WORK.METABRIC_CLEANED</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Zmienna zależna</th>
+<td class="data">t</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Zmienna cenzurująca</th>
+<td class="data">c</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Wartości cenzurujące</th>
+<td class="data">0</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Rangi wiązane</th>
+<td class="data">EFRON</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Metoda ROC</th>
+<td class="data">IPCW</td>
+<td class="data">Inverse Probability Censoring Weighting</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX1" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Liczba obserwacji">
+<caption aria-label="Liczba obserwacji"></caption>
+<colgroup><col/><col/></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">
+<div class="stacked-cell">
+<div>Liczba obserwacji wczytanych</div>
+<div>Liczba obserwacji użytych</div>
+</div>
+</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">854</div>
+<div class="r">854</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX2" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Informacje o poziomach klasyfikacji">
+<caption aria-label="Informacje o poziomach klasyfikacji"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="7" scope="colgroup">Informacje o poziomach klasyfikacji</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Klasa</th>
+<th class="b header" scope="col">Wartość</th>
+<th class="c b header" colspan="5" scope="colgroup">Zmienne projektowe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">4</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">4</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">radio_therapy</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">4</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">5</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">6</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">her_status</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX3" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Podsumowanie zdarzeń i obserwacji obciętych">
+<caption aria-label="Podsumowanie zdarzeń i obserwacji obciętych"></caption>
+<colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Podsumowanie liczby zdarzeń i wartości ocenzurowanych</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Suma</th>
+<th class="r b header" scope="col">Wystąpienie</th>
+<th class="r b header" scope="col">Ocenzurowane</th>
+<th class="r b header" scope="col">Procent<br/>ocenzurowanych</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">854</td>
+<td class="r data">370</td>
+<td class="r data">484</td>
+<td class="r data">56.67</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX4" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Status zbieżności">
+<caption aria-label="Status zbieżności"></caption>
+<colgroup><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" scope="col">Stan zbieżności</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="c data">Kryterium zbieżności (GCONV=1E-8) spełnione.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX5" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Statystyki dopasowania modelu">
+<caption aria-label="Statystyki dopasowania modelu"></caption>
+<colgroup><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Statystyki dopasowania</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Kryterium</th>
+<th class="r b header" scope="col">Bez<br/>współzmiennych</th>
+<th class="r b header" scope="col">Ze<br/>współzmiennymi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">-2 LOG L</th>
+<td class="r data">4646.293</td>
+<td class="r data">4472.207</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">AIC</th>
+<td class="r data">4646.293</td>
+<td class="r data">4500.207</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">SBC</th>
+<td class="r data">4646.293</td>
+<td class="r data">4554.996</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX6" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Test globalnej hipotezy zerowej">
+<caption aria-label="Test globalnej hipotezy zerowej"></caption>
+<colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Testowanie globalnej hipotezy zerowej: BETA=0</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Testowanie</th>
+<th class="r b header" scope="col">Chi-kwadrat</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Pr.&#160;&gt;&#160;chi-kw.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Iloraz wiaryg.</th>
+<td class="r data">174.0861</td>
+<td class="r data">14</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Ocena</th>
+<td class="r data">212.5734</td>
+<td class="r data">14</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Wald</th>
+<td class="r data">189.7146</td>
+<td class="r data">14</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX7" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Testy typu 3">
+<caption aria-label="Testy typu 3"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Testy typu 3</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Efekt</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Chi-kwadrat Walda</th>
+<th class="r b header" scope="col">Pr.&#160;&gt;&#160;chi-kw.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<td class="r data">4</td>
+<td class="r data">49.6547</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<td class="r data">3</td>
+<td class="r data">33.6045</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">radio_therapy</th>
+<td class="r data">1</td>
+<td class="r data">13.4490</td>
+<td class="r data">0.0002</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<td class="r data">5</td>
+<td class="r data">19.4491</td>
+<td class="r data">0.0016</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">her_status</th>
+<td class="r data">1</td>
+<td class="r data">27.9401</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX8" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Oceny największej wiarygodności parametrów modelu">
+<caption aria-label="Oceny największej wiarygodności parametrów modelu"></caption>
+<colgroup><col/><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="9" scope="colgroup">Analiza ocen maksymalnej wiarygodności</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Parametr</th>
+<th class="b header" scope="col"> &#160;</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Ocena<br/>parametru</th>
+<th class="r b header" scope="col">Błąd<br/>standardowy</th>
+<th class="r b header" scope="col">Chi-kwadrat</th>
+<th class="r b header" scope="col">Pr.&#160;&gt;&#160;chi-kw.</th>
+<th class="r b header" scope="col">Współczynnik<br/>hazardu</th>
+<th class="b header" scope="col">Etykieta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-1.02887</td>
+<td class="r data">0.30452</td>
+<td class="r data">11.4150</td>
+<td class="r data">0.0007</td>
+<td class="r data">0.357</td>
+<td class="data">lnep_c 0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.74687</td>
+<td class="r data">0.30354</td>
+<td class="r data">6.0541</td>
+<td class="r data">0.0139</td>
+<td class="r data">0.474</td>
+<td class="data">lnep_c 1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.28948</td>
+<td class="r data">0.30719</td>
+<td class="r data">0.8880</td>
+<td class="r data">0.3460</td>
+<td class="r data">0.749</td>
+<td class="data">lnep_c 2</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">1</td>
+<td class="r data">0.17051</td>
+<td class="r data">0.31475</td>
+<td class="r data">0.2935</td>
+<td class="r data">0.5880</td>
+<td class="r data">1.186</td>
+<td class="data">lnep_c 3</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.74914</td>
+<td class="r data">0.15307</td>
+<td class="r data">23.9536</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">0.473</td>
+<td class="data">age_c 1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.69930</td>
+<td class="r data">0.14507</td>
+<td class="r data">23.2379</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">0.497</td>
+<td class="data">age_c 2</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.57094</td>
+<td class="r data">0.14751</td>
+<td class="r data">14.9811</td>
+<td class="r data">0.0001</td>
+<td class="r data">0.565</td>
+<td class="data">age_c 3</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">radio_therapy</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.41876</td>
+<td class="r data">0.11419</td>
+<td class="r data">13.4490</td>
+<td class="r data">0.0002</td>
+<td class="r data">0.658</td>
+<td class="data">radio_therapy 0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-2.44436</td>
+<td class="r data">1.05326</td>
+<td class="r data">5.3859</td>
+<td class="r data">0.0203</td>
+<td class="r data">0.087</td>
+<td class="data">ts_c 1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-1.50761</td>
+<td class="r data">1.04650</td>
+<td class="r data">2.0754</td>
+<td class="r data">0.1497</td>
+<td class="r data">0.221</td>
+<td class="data">ts_c 2</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-1.20650</td>
+<td class="r data">0.32254</td>
+<td class="r data">13.9927</td>
+<td class="r data">0.0002</td>
+<td class="r data">0.299</td>
+<td class="data">ts_c 3</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">4</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.84748</td>
+<td class="r data">0.30340</td>
+<td class="r data">7.8027</td>
+<td class="r data">0.0052</td>
+<td class="r data">0.428</td>
+<td class="data">ts_c 4</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">5</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.64819</td>
+<td class="r data">0.34536</td>
+<td class="r data">3.5225</td>
+<td class="r data">0.0605</td>
+<td class="r data">0.523</td>
+<td class="data">ts_c 5</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">her_status</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.71740</td>
+<td class="r data">0.13572</td>
+<td class="r data">27.9401</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">0.488</td>
+<td class="data">her_status 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX9" style="padding-bottom: 8px; padding-top: 1px">
+<div class="c">
+<script type="text/ecmascript">
+var SVG_IDX9_SVGRoot = null;
+var SVG_IDX9_TrueCoords = null;
+var SVG_IDX9_singleTip = null;
+var SVG_IDX9_singleBox = null;
+var SVG_IDX9_singleText = null;
+var SVG_IDX9_tiptspan = null;
+var SVG_IDX9_attrScale = 1;
+var SVG_IDX9_rightEdge = null;
+var SVG_IDX9_SVGHeight = null;
+var SVG_IDX9_SVGWidth = null;
+function SVG_IDX9_Init(anchor) {
+   SVG_IDX9_SVGRoot = document.getElementById(anchor);
+   SVG_IDX9_TrueCoords = SVG_IDX9_SVGRoot.createSVGPoint();
+   SVG_IDX9_singleTip = document.getElementById(anchor + '_singleTip1');
+   SVG_IDX9_singleBox = document.getElementById(anchor + '_singleBox1');
+   SVG_IDX9_singleText = document.getElementById(anchor + '_singleText1');
+   SVG_IDX9_tiptspan = document.getElementById(anchor + '_tiptspan1');
+   SVG_IDX9_tiptspan.firstChild.nodeValue = null;
+   SVG_IDX9_SVGRoot.addEventListener('mousemove', SVG_IDX9_ShowTooltip, false);
+   SVG_IDX9_SVGRoot.addEventListener('mouseout', SVG_IDX9_HideTooltip, false);
+   SVG_IDX9_SVGHeight = SVG_IDX9_SVGRoot.getAttributeNS(null, "height");
+   SVG_IDX9_SVGWidth = SVG_IDX9_SVGRoot.getAttributeNS(null, "width");
+   if (!isNaN(parseFloat(SVG_IDX9_SVGHeight)) && !isNaN(parseFloat(SVG_IDX9_SVGWidth)))
+      SVG_IDX9_GetHW();
+}
+function SVG_IDX9_GetHW()
+{
+    if (SVG_IDX9_SVGWidth != null && SVG_IDX9_SVGWidth != "") {
+       if (SVG_IDX9_SVGWidth.match(/%/)) {
+          var factor = parseFloat(SVG_IDX9_SVGWidth.replace(/%/,""))/100;
+          SVG_IDX9_SVGWidth = window.innerWidth * factor;
+       }
+       else if (SVG_IDX9_SVGWidth.match(/in/))
+          SVG_IDX9_SVGWidth = parseFloat(SVG_IDX9_SVGWidth.replace(/in/,""))*96;
+       else if (SVG_IDX9_SVGWidth.match(/cm/))
+          SVG_IDX9_SVGWidth = parseFloat(SVG_IDX9_SVGWidth.replace(/in/,""))*96/2.54;
+       else
+           SVG_IDX9_SVGWidth = parseFloat(SVG_IDX9_SVGWidth);
+    }
+    if (SVG_IDX9_SVGHeight != null && SVG_IDX9_SVGHeight != "") {
+       if (SVG_IDX9_SVGHeight.match(/%/)) {
+          var factor = parseFloat(SVG_IDX9_SVGHeight.replace(/%/,""))/100;
+          SVG_IDX9_SVGHeight = window.innerHeight * factor;
+       }
+       else if (SVG_IDX9_SVGHeight.match(/in/))
+          SVG_IDX9_SVGHeight = parseFloat(SVG_IDX9_SVGHeight.replace(/in/,""))*96;
+       else if (SVG_IDX9_SVGHeight.match(/cm/))
+          SVG_IDX9_SVGHeight = parseFloat(SVG_IDX9_SVGHeight.replace(/in/,""))*96/2.54;
+       else
+           SVG_IDX9_SVGHeight = parseFloat(SVG_IDX9_SVGHeight);
+    }
+}
+function SVG_IDX9_GetScaleFactors(evt)
+{
+   var zoomFactor = 1;
+   windowWidth  = (top.innerWidth==undefined)  ? window.innerWidth  : top.innerWidth;
+   windowHeight = (top.innerHeight==undefined) ? window.innerHeight : top.innerHeight;
+   SVG_IDX9_rightEdge = (SVG_IDX9_SVGWidth) ? SVG_IDX9_SVGWidth - window.pageXOffset : windowWidth;
+   if (parseFloat(SVG_IDX9_SVGWidth) > 0 || parseFloat(SVG_IDX9_SVGHeight) > 0)
+      var tipScale = 1.875;
+   else {
+      var tipXScale  = (screen.width/windowWidth) / SVG_IDX9_SVGRoot.currentScale;
+      var tipYScale  = (screen.height/windowHeight) / SVG_IDX9_SVGRoot.currentScale;
+      var tipScale   = (tipXScale + tipYScale)/2.0;
+   }
+   SVG_IDX9_attrScale = tipScale;
+   if (navigator.appName == 'Adobe SVG Viewer') {
+      if (screen.deviceXDPI != null && screen.logicalXDPI != null)
+         zoomFactor = screen.deviceXDPI/screen.logicalXDPI;
+      SVG_IDX9_attrScale = zoomFactor*tipScale;
+   }
+   else if (navigator.userAgent != null && navigator.userAgent != '') {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf("msie") != -1 || ua.indexOf("trident") != -1) {
+         zoomFactor = screen.deviceXDPI/screen.logicalXDPI;
+         SVG_IDX9_attrScale = tipScale/zoomFactor;
+         SVG_IDX9_rightEdge /= zoomFactor;
+      }
+      else if (ua.indexOf("ipad") != -1) {
+         zoomFactor = SVG_IDX9_SVGRoot.clientWidth / window.innerWidth;
+         SVG_IDX9_attrScale = 1.5 / zoomFactor;
+         SVG_IDX9_rightEdge /= zoomFactor;
+      }
+      else if (ua.indexOf("opera") != -1)
+         SVG_IDX9_attrScale = tipScale;
+      else if (ua.indexOf("firefox") != -1)
+         SVG_IDX9_attrScale = tipScale;
+      else {
+         if (SVG_IDX9_SVGWidth > 0 || SVG_IDX9_SVGHeight > 0)
+            zoomFactor = 1;
+         else
+            zoomFactor = parseInt(document.defaultView.getComputedStyle(SVG_IDX9_SVGRoot, null).width,10)/
+                                  SVG_IDX9_SVGRoot.clientWidth;
+         SVG_IDX9_attrScale = tipScale/zoomFactor;
+         SVG_IDX9_rightEdge *= zoomFactor;
+      }
+   }
+}
+function SVG_IDX9_GetTrueCoords(evt)
+{
+   var trans = SVG_IDX9_SVGRoot.currentTranslate;
+   var scale = SVG_IDX9_SVGRoot.currentScale;
+   SVG_IDX9_GetScaleFactors();
+   var p1    = SVG_IDX9_SVGRoot.createSVGPoint();
+   var p2;
+      var m = SVG_IDX9_SVGRoot.getScreenCTM();
+      if (navigator.userAgent.toLowerCase().indexOf("ipad") != -1) {
+         p1.x = evt.clientX + window.pageXOffset;
+         p1.y = evt.clientY + window.pageYOffset;
+      }
+      else {
+      p1.x = evt.clientX;
+      p1.y = evt.clientY;
+      }
+      p2 = p1.matrixTransform(m.inverse());
+   SVG_IDX9_TrueCoords.x = Math.round(p2.x*100) / 100;
+   SVG_IDX9_TrueCoords.y = Math.round(p2.y*100) / 100;
+}
+function SVG_IDX9_HideTooltip( evt )
+{
+   SVG_IDX9_tiptspan.firstChild.nodeValue = null;
+   SVG_IDX9_singleTip.setAttributeNS(null, 'visibility', 'hidden');
+}
+function SVG_IDX9_ShowTooltip( evt )
+{
+   SVG_IDX9_GetTrueCoords( evt );
+   var targetElement = evt.target;
+   var tspanCount = targetElement.getElementsByTagName('desc').length;
+   if (tspanCount == 1) {
+      var targetTspan = targetElement.getElementsByTagName('desc').item(0);
+      if ( targetTspan) {
+         if (targetTspan.firstChild != null)
+            SVG_IDX9_tiptspan.firstChild.nodeValue = targetTspan.firstChild.nodeValue; }
+   }
+   if ( null != SVG_IDX9_tiptspan.firstChild.nodeValue &&  '' != SVG_IDX9_tiptspan.firstChild.nodeValue.trim() )
+   {
+      var outline = SVG_IDX9_singleText.getBBox();
+      SVG_IDX9_singleBox.setAttributeNS(null, 'transform', 'scale(' + SVG_IDX9_attrScale + ',' + SVG_IDX9_attrScale + ')' );
+      SVG_IDX9_singleText.setAttributeNS(null, 'transform', 'scale(' + SVG_IDX9_attrScale + ',' + SVG_IDX9_attrScale + ')' );
+      SVG_IDX9_singleTip.setAttributeNS(null, 'visibility', 'visible');
+      if (evt.clientX + ((outline.width + 8)/0.8) * SVG_IDX9_attrScale > SVG_IDX9_rightEdge) {
+         var xPos = SVG_IDX9_TrueCoords.x - parseInt((outline.width + 8)*SVG_IDX9_attrScale);
+         if (xPos < 0)
+            xPos = 0;
+      }
+      else
+         var xPos = SVG_IDX9_TrueCoords.x;
+      if (SVG_IDX9_TrueCoords.y < 16) {
+         var yPos = SVG_IDX9_TrueCoords.y + ((outline.height + 16)/0.8)*SVG_IDX9_attrScale;
+         if (yPos > windowHeight)
+            yPos = SVG_IDX9_TrueCoords.y - parseInt((outline.height + 8)*SVG_IDX9_attrScale);
+      }
+      else
+         var yPos = SVG_IDX9_TrueCoords.y - parseInt((outline.height + 8)*SVG_IDX9_attrScale);
+      if (Number(outline.width == 0))
+         SVG_IDX9_singleBox.setAttributeNS(null, 'width', outline.width);
+      else
+         SVG_IDX9_singleBox.setAttributeNS(null, 'width', outline.width + 8);
+      SVG_IDX9_singleBox.setAttributeNS(null, 'height', outline.height + 8);
+      SVG_IDX9_singleTip.setAttributeNS(null, 'transform', 'translate(' + xPos + ',' + yPos + ')');
+   }
+}
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" baseProfile="full" version="1.1" id="SVG_IDX9" onload='SVG_IDX9_Init("SVG_IDX9")' viewBox="-1 -1 641 481" height="480" width="640">
+<title>Correlation of her_status_RS with time functions;</title>
+<desc id="desc_SVG_IDX9">AUC(t) Plot</desc>
+<defs>
+<clipPath id="SVG_IDX9_clipPage1">
+<rect x="-1" y="-1" width="641" height="481"></rect>
+</clipPath>
+</defs>
+<g id="SVG_IDX9_Page1" clip-path="url(#SVG_IDX9_clipPage1)">
+<g transform=" scale(1, 1)">
+<rect x="0" y="0" width="639" height="479" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="639" height="479" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="639" height="479" style="stroke: #D1D1D1; stroke-width: 1; fill: none; "></rect>
+<g transform="matrix(1, 0, 0, 1, 11, 11)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath0">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath0)">
+<g transform="matrix(1, 0, 0, 1, 0, 39)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath1">
+<rect x="-1" y="-1" width="619" height="371" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath1)">
+<rect x="56.40872" y="2.40958" width="555.10177" height="319.30283" style="fill: #FFFFFF; "></rect>
+<path d="M55.90953 319.21786L611.0113 319.21786" style="stroke: #E6E6E6; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 256.75424L611.0113 256.75424" style="stroke: #E6E6E6; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 194.29063L611.0113 194.29063" style="stroke: #E6E6E6; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 131.82701L611.0113 131.82701" style="stroke: #E6E6E6; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 69.36339L611.0113 69.36339" style="stroke: #E6E6E6; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 6.89978L611.0113 6.89978" style="stroke: #E6E6E6; stroke-width: 1; fill: none; "></path>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath2">
+<rect x="55" y="1" width="558" height="322" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath2)">
+<path d="M55.90953 163.05882L612.00969 163.05882" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M59.08739 113.62982L67.00457 59.84489L68.95342 54.00425L70.35415 90.37564L73.15562 98.6158L73.27742 85.06996L
+73.64283 91.67003L75.46987 94.85647L76.4443 86.16222L78.69765 93.88199L78.75856 108.5968L79.12396 99.98291L80.09838 
+94.94094L81.31642 96.48067L82.53444 92.6884L84.11788 87.46068L84.7878 99.04489L85.21411 97.03437L85.27501 92.97404L
+85.94493 98.80012L86.98025 96.38943L87.22386 93.54464L87.46746 92.16154L87.58927 92.41161L87.89377 100.63562L88.68549 
+99.52101L89.23361 104.26593L89.41631 104.86678L91.18245 110.86798L93.2531 111.51046L93.49671 108.40251L93.67941 
+105.94892L93.80121 105.01202L94.34933 104.99562L94.95834 109.58562L95.26285 108.9676L95.81096 106.14436L96.23727 
+104.07469L96.96809 101.59087L97.27259 103.94572L97.3944 108.61698L98.55152 111.39427L99.34325 110.02123L99.95226 
+110.80467L100.31767 108.92516L100.98758 107.54545L102.26651 106.78206L103.30184 108.52753L103.36274 107.34011L104.21536 
+106.81381L104.33716 108.62309L104.39807 107.93772L105.00708 109.0401L105.37249 108.6271L105.7379 106.85036L106.40782 
+106.25906L106.89502 108.99298L107.80855 109.46392L108.23486 108.63083L109.08748 108.41264L109.69649 108.03029L111.09722 
+108.42302L111.15813 106.71439L111.40174 107.87105L111.58444 106.49395L111.88894 105.00625L112.01075 103.68685L112.43706 
+103.60818L113.10697 102.88544L113.9596 105.84209L114.2641 106.08344L115.29943 105.67196L115.42123 105.59656L115.54303 
+104.54524L116.33475 106.83645L116.39566 105.29906L117.24827 106.59365L117.43098 107.71677L118.5272 110.30829L118.89261 
+111.3634L119.07532 111.66381L120.84146 112.36856L120.96326 111.50167L121.63318 110.38799L122.18129 109.03964L122.24219 
+107.6056L122.3031 107.76261L122.85121 106.62296L122.9121 105.87797L123.27751 105.75542L123.58203 105.10596L123.70383 
+104.13198L124.00833 103.85343L125.16546 103.33264L125.34817 103.3411L125.40907 105.39529L125.46997 104.70115L125.83538 
+102.64281L126.07898 101.73512L127.84513 101.02659L127.96693 102.98826L128.14964 101.8598L128.27143 101.90386L128.39324 
+102.50151L128.57594 102.56049L128.63685 101.77186L129.79397 102.88358L130.46389 101.75302L130.52479 101.02757L130.7075 
+102.34647L131.1338 101.30757L131.62101 100.40035L131.68191 99.98978L131.98643 99.16872L133.14355 99.95321L133.26536 
+99.00076L134.48338 98.05966L134.66609 97.30655L134.7879 97.91663L136.31044 97.50162L136.43223 96.86479L136.55403 
+96.03635L136.85855 95.73626L137.28485 96.32974L137.40666 96.06594L137.52845 95.09917L137.65026 94.84321L137.71116 
+94.07202L137.83296 94.73431L137.95477 94.86128L138.19838 94.00822L139.5382 93.74289L140.39082 94.14675L141.42616 
+93.68288L141.73066 93.30914L142.03517 92.43568L142.46148 91.75725L142.58328 92.23629L143.07049 92.77105L143.2532 
+92.57237L143.6186 93.23711L144.83663 94.49624L145.01934 93.95706L145.56745 93.707L145.93286 92.87049L146.42007 
+92.0231L146.84639 92.52642L146.90728 92.03213L147.3945 92.02027L147.5772 91.31456L147.699 91.47489L148.85612 91.21075L
+148.97793 90.73481L149.28244 90.2909L149.64785 90.38845L150.25686 89.81003L150.31776 89.96617L150.68318 90.07083L
+151.47489 90.05706L152.44932 91.46679L152.81472 91.06679L153.30194 91.46625L153.48464 90.71544L153.85005 90.96926L
+154.45906 91.46891L154.76357 91.07112L155.25077 91.82988L156.89512 92.38507L157.74774 91.81548L159.75749 92.95577L
+160.12289 92.15689L160.5492 91.63266L160.91462 91.69368L161.82814 92.34302L162.13264 92.43309L163.59428 92.66446L
+164.2642 92.70418L166.03034 93.46056L167.61378 92.72412L167.97918 92.69552L168.4055 92.11719L170.11073 92.62038L
+170.53704 91.88776L171.99868 91.57489L172.42498 91.1226L173.58212 92.37313L173.82572 92.76797L174.92195 92.41729L
+175.47006 91.757L175.83548 91.96749L177.41891 91.75468L177.5407 91.32389L178.69784 90.75896L179.18505 90.31179L
+180.64669 90.4586L180.82939 91.40783L182.77824 91.71724L183.50906 92.13243L183.63085 91.5034L185.51881 90.86042L
+186.43232 91.23021L187.52854 90.81099L187.65036 91.18312L187.89396 91.73597L188.74658 92.90942L190.02551 92.54053L
+190.08641 92.29681L193.13148 92.40507L193.5578 92.6901L194.95852 93.16139L195.44574 92.46824L196.35926 92.25779L
+196.54197 93.34491L196.60287 93.43276L198.0036 94.25064L200.01335 94.69416L200.43966 94.93981L203.42382 94.21136L
+203.91104 94.87138L204.70275 95.46208L204.82456 94.94717L206.408 94.14716L207.01701 93.55486L207.07792 93.27444L
+207.13882 93.483L207.50422 93.04116L208.35685 92.53239L208.60046 92.76756L209.87939 93.13039L211.52372 93.41679L
+212.74175 92.84178L213.89888 93.17996L214.02069 92.74237L214.75151 91.92318L215.23872 91.79113L215.54322 92.33019L
+215.78683 93.26929L216.15223 92.90592L216.70034 94.13722L217.85748 94.08604L218.04019 93.76436L218.28378 93.41555L
+219.19731 93.39285L221.38977 92.96644L221.69427 93.88761L222.18148 93.15572L223.15589 92.37289L223.58221 92.4572L
+223.76492 92.23702L223.82582 91.71862L223.88671 91.20134L224.43483 90.54361L224.80024 90.13683L226.32278 89.94236L
+226.50549 90.67696L228.33253 90.86699L230.03776 90.11221L230.70768 90.72901L234.05726 90.71325L235.82341 90.51271L
+235.9452 89.72201L236.67602 89.00869L239.23388 89.10199L239.35569 88.46506L239.47749 87.94041L240.51281 87.48771L
+244.59321 87.86206L245.26313 87.05974L245.81124 87.19827L245.99395 87.48195L247.94279 87.11727L250.31794 87.38686L
+251.84048 87.20708L253.60662 87.15594L256.34719 86.21009L259.14865 86.28932L261.28021 85.65404L261.402 86.76274L
+261.58471 86.84729L261.88922 85.39066L262.74185 84.78524L263.47265 83.95671L268.832 84.8804L270.29363 84.69669L
+271.63345 85.12165L273.7041 84.72763L274.55673 85.22373L274.73944 85.42549L276.32287 85.33833L277.1755 85.17314L
+277.90631 84.74366L278.39352 84.05921L279.18524 84.58561L281.19497 84.48677L281.80401 83.39446L284.17916 83.25911L
+285.70169 83.01391L285.82351 82.52468L286.4934 81.92944L287.77233 81.39069L288.68588 82.23477L289.96481 82.55606L
+293.43618 81.33992L296.05493 81.49412L300.13534 80.49642L300.43984 80.04285L301.10977 79.06233L302.32778 79.39389L
+304.58114 79.84663L316.09152 79.66485L317.85766 81.02214L319.38021 81.36844L320.41552 80.98201L323.21697 81.58004L
+328.88082 81.50859L330.70788 81.38308L331.9259 80.53445L334.05746 81.19602L340.02578 79.71501L349.40463 80.59516L
+349.83093 81.16284L356.40829 81.8438L359.57516 82.51197L359.63607 82.79587L360.67138 82.61877L367.61416 81.71418L
+370.65924 81.14341L370.72012 80.70228L381.13427 80.89898L385.45828 79.53848L390.02587 79.27196L396.35965 77.62897L
+396.90774 78.44841L418.04055 76.50346L418.58868 75.81589L420.84204 76.17976L421.26834 74.25586L427.66299 74.16513L
+427.8457 75.48328L430.76895 75.87009L431.98699 77.81544L432.41329 78.77564L440.69589 77.66757L444.34997 79.25521L
+446.05523 79.63093L448.43038 78.35496L453.60699 76.81787L455.12954 75.58438L459.33175 77.55378L460.24527 78.72539L
+467.85794 77.56051L475.16613 77.11702L476.87136 75.60308L484.11862 76.28723L520.90313 72.2679L528.2113 76.74609L
+575.16632 72.97523L580.89105 77.76699" style="stroke: #445694; stroke-width: 1; fill: none; "></path>
+<path d="M580.89105 30.27049L575.16632 31.9819L528.2113 61.46059L520.90313 57.50817L484.11862 62.79554L476.87136 61.48471L
+475.16613 63.20874L467.85794 64.02377L460.24527 65.92523L459.33175 65.22579L455.12954 63.41373L453.60699 64.31156L
+448.43038 65.92469L446.05523 67.24524L444.34997 66.87543L440.69589 65.03209L432.41329 65.78182L431.98699 65.02397L
+430.76895 62.84015L427.8457 62.89989L427.66299 61.79381L421.26834 62.12935L420.84204 64.01983L418.58868 63.92634L
+418.04055 64.31892L396.90774 66.55172L396.35965 65.60507L390.02587 67.95284L385.45828 68.04404L381.13427 69.10055L
+370.72012 69.15971L370.65924 69.44168L367.61416 69.98387L360.67138 71.32836L359.63607 71.54431L359.57516 71.35761L
+356.40829 70.45841L349.83093 69.84881L349.40463 69.15159L340.02578 68.39052L334.05746 70.44101L331.9259 69.59415L
+330.70788 70.39827L328.88082 70.50127L323.21697 70.68386L320.41552 70.28276L319.38021 70.67687L317.85766 70.13764L
+316.09152 69.0189L304.58114 68.76162L302.32778 68.08285L301.10977 67.72851L300.43984 68.75662L300.13534 69.33144L
+296.05493 70.59296L293.43618 70.37766L289.96481 71.62033L288.68588 71.41912L287.77233 70.93062L286.4934 70.98139L
+285.82351 71.56395L285.70169 72.38493L284.17916 72.77L281.80401 72.92199L281.19497 74.0018L279.18524 74.15402L
+278.39352 73.69792L277.90631 74.3137L277.1755 74.84014L276.32287 74.85395L274.73944 74.94907L274.55673 74.63744L
+273.7041 73.92507L271.63345 74.21167L270.29363 73.79155L268.832 73.92197L263.47265 73.17943L262.74185 73.89978L
+261.88922 74.37502L261.58471 75.65305L261.402 75.5873L261.28021 74.95639L259.14865 75.54519L256.34719 75.5115L
+253.60662 76.39836L251.84048 76.47603L250.31794 76.61833L247.94279 76.58381L245.99395 76.89004L245.81124 76.6146L
+245.26313 76.47834L244.59321 77.41949L240.51281 77.20857L239.47749 77.68875L239.35569 78.19652L239.23388 79.01918L
+236.67602 78.75L235.9452 79.4146L235.82341 80.16496L234.05726 80.46191L230.70768 80.44871L230.03776 79.83229L228.33253 
+80.51736L226.50549 80.32344L226.32278 79.17094L224.80024 79.3507L224.43483 79.7984L223.88671 80.20198L223.82582 
+80.75467L223.76492 81.17929L223.58221 81.35328L223.15589 81.28964L222.18148 82.26618L221.69427 82.9625L221.38977 
+82.01216L219.19731 82.3971L218.28378 82.41054L218.04019 82.64813L217.85748 82.81162L216.70034 82.8079L216.15223 
+81.39539L215.78683 81.72632L215.54322 80.7446L215.23872 80.21498L214.75151 80.27087L214.02069 80.86629L213.89888 
+81.15069L212.74175 80.84193L211.52372 81.34637L209.87939 81.17974L208.60046 80.72689L208.35685 80.58723L207.50422 
+80.9394L207.13882 81.4799L207.07792 81.20434L207.01701 81.4835L206.408 82.15251L204.82456 82.84308L204.70275 83.4743L
+203.91104 82.89256L203.42382 82.20362L200.43966 82.80393L200.01335 82.6583L198.0036 82.15869L196.60287 81.28217L
+196.54197 81.34003L196.35926 80.81619L195.44574 81.05667L194.95852 81.44358L193.5578 81.06497L193.13148 80.63121L
+190.08641 80.56544L190.02551 80.92417L188.74658 81.41352L187.89396 80.10766L187.65036 79.7109L187.52854 79.30647L
+186.43232 79.5801L185.51881 79.01529L183.63085 79.6088L183.50906 80.33526L182.77824 79.82974L180.82939 79.62232L
+180.64669 78.94606L179.18505 78.77317L178.69784 79.13214L177.5407 79.9189L177.41891 80.01048L175.83548 80.2582L
+175.47006 80.00379L174.92195 80.6675L173.82572 81.15638L173.58212 80.57009L172.42498 79.52064L171.99868 79.65527L
+170.53704 79.93817L170.11073 80.75297L168.4055 80.16441L167.97918 80.59378L167.61378 80.52663L166.03034 81.08371L
+164.2642 80.16033L163.59428 80.09117L162.13264 79.93957L161.82814 79.78707L160.91462 78.80769L160.5492 78.57475L
+160.12289 79.04782L159.75749 79.88672L157.74774 78.46086L156.89512 78.94225L155.25077 78.29489L154.76357 77.28324L
+154.45906 77.66128L153.85005 76.83201L153.48464 76.49243L153.30194 77.12406L152.81472 76.48576L152.44932 76.98359L
+151.47489 75.62529L150.68318 75.5346L150.31776 75.29897L150.25686 75.16914L149.64785 75.57447L149.28244 75.39268L
+148.97793 75.71176L148.85612 75.96828L147.699 76.14285L147.5772 75.9462L147.3945 76.5075L146.90728 76.41519L146.84639 
+77.09516L146.42007 76.63054L145.93286 77.29956L145.56745 78.1098L145.01934 78.10847L144.83663 78.38085L143.6186 
+77.15768L143.2532 76.14659L143.07049 76.50786L142.58328 76.03076L142.46148 75.31907L142.03517 75.84164L141.73066 
+76.4685L141.42616 76.87353L140.39082 76.94457L139.5382 76.48233L138.19838 76.77684L137.95477 77.67802L137.83296 
+77.45975L137.71116 76.5191L137.65026 77.21004L137.52845 77.39525L137.40666 78.36289L137.28485 78.57112L136.85855 
+77.85626L136.55403 78.09336L136.43223 79.16051L136.31044 79.85481L134.7879 80.36235L134.66609 79.76241L134.48338 
+80.4514L133.26536 81.03817L133.14355 82.02358L131.98643 81.02849L131.68191 81.80268L131.62101 82.02141L131.1338 
+82.50011L130.7075 83.39622L130.52479 82.3489L130.46389 82.96765L129.79397 84.05557L128.63685 83.12821L128.57594 
+83.86749L128.39324 83.65933L128.27143 82.87993L128.14964 82.68078L127.96693 83.88837L127.84513 81.64421L126.07898 
+82.45964L125.83538 82.68822L125.46997 84.61746L125.40907 84.98138L125.34817 83.75198L125.16546 83.6548L124.00833 
+83.93434L123.70383 84.195L123.58203 84.9355L123.27751 85.41287L122.9121 85.23469L122.85121 85.74946L122.3031 86.7061L
+122.24219 86.37004L122.18129 87.47656L121.63318 88.89333L120.96326 89.37544L120.84146 90.44109L119.07532 89.37217L
+118.89261 89.01691L118.5272 87.85563L117.43098 85.54799L117.24827 84.18822L116.39566 82.77874L116.33475 83.8386L
+115.54303 81.80928L115.42123 82.92556L115.29943 82.34454L114.2641 82.81836L113.9596 82.21013L113.10697 79.87551L
+112.43706 80.14034L112.01075 79.54907L111.88894 80.23877L111.58444 81.64807L111.40174 82.26458L111.15813 80.79756L
+111.09722 82.82521L109.69649 82.48936L109.08748 82.73944L108.23486 82.61988L107.80855 82.58953L106.89502 82.21212L
+106.40782 78.23832L105.7379 78.2583L105.37249 79.98328L105.00708 79.97516L104.39807 79.22497L104.33716 80.19506L
+104.21536 77.02002L103.36274 76.86029L103.30184 76.9262L102.26651 75.54658L100.98758 76.06926L100.31767 76.39312L
+99.95226 77.98633L99.34325 77.20628L98.55152 78.03636L97.3944 75.89368L97.27259 73.13399L96.96809 69.99993L96.23727 
+72.50863L95.81096 74.78585L95.26285 76.19596L94.95834 76.02574L94.34933 70.39499L93.80121 69.05293L93.67941 69.48277L
+93.49671 71.38983L93.2531 74.18595L91.18245 72.72348L89.41631 67.44937L89.23361 65.80822L88.68549 59.87721L87.89377 
+60.50171L87.58927 51.83624L87.46746 50.50624L87.22386 50.06468L86.98025 51.57986L85.94493 52.09985L85.27501 46.0602L
+85.21411 51.39184L84.7878 49.94262L84.11788 45.75992L82.53444 50.2683L81.31642 53.44509L80.09838 50.38778L79.12396 
+55.76793L78.75856 64.56248L78.69765 58.4829L76.4443 51.28831L75.46987 57.20369L73.64283 47.62298L73.27742 38.35776L
+73.15562 48.1921L70.35415 33.54573L68.95342 6.89978L67.00457 6.89978L59.08739 61.38692L59.08739 165.87271L67.00457 
+124.74123L68.95342 103.86688L70.35415 147.20556L73.15562 149.03951L73.27742 131.78218L73.64283 135.7171L75.46987 
+132.50924L76.4443 121.03612L78.69765 129.28108L78.75856 152.63113L79.12396 144.19789L80.09838 139.49411L81.31642 
+139.51626L82.53444 135.1085L84.11788 129.16145L84.7878 148.14717L85.21411 142.6769L85.27501 139.88789L85.94493 
+145.50038L86.98025 141.19899L87.22386 137.02459L87.46746 133.81684L87.58927 132.98698L87.89377 140.76953L88.68549 
+139.16479L89.23361 142.72364L89.41631 142.28419L91.18245 149.01248L93.2531 148.83499L93.49671 145.4152L93.67941 
+142.41506L93.80121 140.97111L94.34933 139.59625L94.95834 143.1455L95.26285 141.73924L95.81096 137.50286L96.23727 
+135.64076L96.96809 133.1818L97.27259 134.75744L97.3944 141.34028L98.55152 144.75218L99.34325 142.83618L99.95226 
+143.62301L100.31767 141.45721L100.98758 139.02165L102.26651 138.01754L103.30184 140.12886L103.36274 137.81993L104.21536 
+136.60758L104.33716 137.05113L104.39807 136.65046L105.00708 138.10505L105.37249 137.27093L105.7379 135.44242L106.40782 
+134.27979L106.89502 135.77383L107.80855 136.33831L108.23486 134.64179L109.08748 134.08584L109.69649 133.57122L111.09722 
+134.02084L111.15813 132.63121L111.40174 133.47752L111.58444 131.33981L111.88894 129.77372L112.01075 127.82465L112.43706 
+127.07602L113.10697 125.89536L113.9596 129.47405L114.2641 129.34852L115.29943 128.99939L115.42123 128.26756L115.54303 
+127.2812L116.33475 129.8343L116.39566 127.81938L117.24827 128.99908L117.43098 129.88554L118.5272 132.76095L118.89261 
+133.70989L119.07532 133.95544L120.84146 134.29605L120.96326 133.62791L121.63318 131.88264L122.18129 130.60272L122.24219 
+128.84117L122.3031 128.81913L122.85121 127.49645L122.9121 126.52125L123.27751 126.09797L123.58203 125.27642L123.70383 
+124.06895L124.00833 123.77252L125.16546 123.01047L125.34817 122.93022L125.40907 125.8092L125.46997 124.78484L125.83538 
+122.59741L126.07898 121.01062L127.84513 120.40898L127.96693 122.08815L128.14964 121.03882L128.27143 120.92778L128.39324 
+121.34369L128.57594 121.2535L128.63685 120.41552L129.79397 121.71158L130.46389 120.53838L130.52479 119.70624L130.7075 
+121.29672L131.1338 120.11505L131.62101 118.77928L131.68191 118.17688L131.98643 117.30895L133.14355 117.88284L133.26536 
+116.96335L134.48338 115.66792L134.66609 114.85069L134.7879 115.4709L136.31044 115.14844L136.43223 114.56906L136.55403 
+113.97933L136.85855 113.61627L137.28485 114.08837L137.40666 113.76899L137.52845 112.80309L137.65026 112.47638L137.71116 
+111.62493L137.83296 112.00888L137.95477 112.04453L138.19838 111.23959L139.5382 111.00344L140.39082 111.34893L141.42616 
+110.49222L141.73066 110.14977L142.03517 109.02973L142.46148 108.19543L142.58328 108.44183L143.07049 109.03425L143.2532 
+108.99814L143.6186 109.31654L144.83663 110.61163L145.01934 109.80564L145.56745 109.30419L145.93286 108.44142L146.42007 
+107.41568L146.84639 107.95768L146.90728 107.64907L147.3945 107.53304L147.5772 106.68292L147.699 106.80693L148.85612 
+106.45323L148.97793 105.75785L149.28244 105.18913L149.64785 105.20244L150.25686 104.45093L150.31776 104.63337L150.68318 
+104.60707L151.47489 104.48882L152.44932 105.94998L152.81472 105.64782L153.30194 105.80844L153.48464 104.93845L153.85005 
+105.10651L154.45906 105.27655L154.76357 104.859L155.25077 105.36486L156.89512 105.8279L157.74774 105.17008L159.75749 
+106.02483L160.12289 105.26598L160.5492 104.69056L160.91462 104.57966L161.82814 104.89897L162.13264 104.92659L163.59428 
+105.23775L164.2642 105.24803L166.03034 105.83741L167.61378 104.92162L167.97918 104.79727L168.4055 104.06997L170.11073 
+104.48778L170.53704 103.83735L171.99868 103.49453L172.42498 102.72455L173.58212 104.17616L173.82572 104.37955L174.92195 
+104.16707L175.47006 103.51021L175.83548 103.67677L177.41891 103.49888L177.5407 102.72887L178.69784 102.38577L179.18505 
+101.8504L180.64669 101.97115L180.82939 103.19335L182.77824 103.60474L183.50906 103.92961L183.63085 103.39799L185.51881 
+102.70554L186.43232 102.88032L187.52854 102.31552L187.65036 102.65533L187.89396 103.36428L188.74658 104.40532L190.02551 
+104.15689L190.08641 104.02817L193.13148 104.17893L193.5578 104.31523L194.95852 104.87919L195.44574 103.87982L196.35926 
+103.69939L196.54197 105.3498L196.60287 105.58335L198.0036 106.34257L200.01335 106.73001L200.43966 107.07571L203.42382 
+106.21911L203.91104 106.8502L204.70275 107.44986L204.82456 107.05126L206.408 106.1418L207.01701 105.62622L207.07792 
+105.34453L207.13882 105.48611L207.50422 105.14291L208.35685 104.47754L208.60046 104.80823L209.87939 105.08103L211.52372 
+105.48722L212.74175 104.84163L213.89888 105.20922L214.02069 104.61844L214.75151 103.57548L215.23872 103.36728L215.54322 
+103.91577L215.78683 104.81226L216.15223 104.41646L216.70034 105.46653L217.85748 105.36046L218.04019 104.8806L218.28378 
+104.42057L219.19731 104.38861L221.38977 103.92073L221.69427 104.81271L222.18148 104.04525L223.15589 103.45615L223.58221 
+103.56112L223.76492 103.29476L223.82582 102.68257L223.88671 102.20071L224.43483 101.28881L224.80024 100.92295L226.32278 
+100.71378L226.50549 101.03047L228.33253 101.21662L230.03776 100.39213L230.70768 101.00933L234.05726 100.9646L235.82341 
+100.86045L235.9452 100.02942L236.67602 99.26738L239.23388 99.18479L239.35569 98.7336L239.47749 98.19207L240.51281 
+97.76686L244.59321 98.30462L245.26313 97.64113L245.81124 97.78196L245.99395 98.07385L247.94279 97.65074L250.31794 
+98.15537L251.84048 97.93814L253.60662 97.91352L256.34719 96.90868L259.14865 97.03344L261.28021 96.35169L261.402 
+97.93817L261.58471 98.04154L261.88922 96.40631L262.74185 95.67069L263.47265 94.73398L268.832 95.83882L270.29363 
+95.60183L271.63345 96.03163L273.7041 95.53019L274.55673 95.81002L274.73944 95.90191L276.32287 95.8227L277.1755 
+95.50616L277.90631 95.17361L278.39352 94.42049L279.18524 95.01721L281.19497 94.97173L281.80401 93.86694L284.17916 
+93.74823L285.70169 93.64289L285.82351 93.4854L286.4934 92.87749L287.77233 91.85076L288.68588 93.05042L289.96481 
+93.49177L293.43618 92.30218L296.05493 92.39527L300.13534 91.66142L300.43984 91.32908L301.10977 90.39615L302.32778 
+90.70493L304.58114 90.93164L316.09152 90.3108L317.85766 91.90664L319.38021 92.06L320.41552 91.68125L323.21697 
+92.47623L328.88082 92.5159L330.70788 92.3679L331.9259 91.47475L334.05746 91.95103L340.02578 91.03951L349.40463 
+92.03873L349.83093 92.47687L356.40829 93.22919L359.57516 93.66633L359.63607 94.04744L360.67138 93.90919L367.61416 
+93.44451L370.65924 92.84513L370.72012 92.24485L381.13427 92.69741L385.45828 91.03292L390.02587 90.59108L396.35965 
+89.65287L396.90774 90.3451L418.04055 88.688L418.58868 87.70544L420.84204 88.33969L421.26834 86.38238L427.66299 
+86.53645L427.8457 88.06667L430.76895 88.90004L431.98699 90.60691L432.41329 91.76946L440.69589 90.30305L444.34997 
+91.63499L446.05523 92.01662L448.43038 90.78524L453.60699 89.32419L455.12954 87.75502L459.33175 89.88177L460.24527 
+91.52555L467.85794 91.09726L475.16613 91.02531L476.87136 89.72147L484.11862 89.77892L520.90313 87.02762L528.2113 
+92.0316L575.16632 113.96857L580.89105 125.26348Z" style="fill: #6F7EB3; fill-rule: evenodd; fill-opacity: 0.49803; "></path>
+</g>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath3">
+<rect x="-1" y="-1" width="619" height="371" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath3)">
+<path d="M55.90953 322.21132L612.00969 322.21132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M612.00969 322.21132L612.00969 1.91067" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 1.91067L612.00969 1.91067" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 322.21132L55.90953 1.91067" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 322.21132L55.90953 1.91067" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 319.21786L50.30637 319.21786" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 323.21786)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000030;</text>
+</g>
+<path d="M55.90953 256.75424L50.30637 256.75424" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 260.75424)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000032;</text>
+</g>
+<path d="M55.90953 194.29063L50.30637 194.29063" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 198.29063)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000034;</text>
+</g>
+<path d="M55.90953 131.82701L50.30637 131.82701" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 135.82701)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000036;</text>
+</g>
+<path d="M55.90953 69.36339L50.30637 69.36339" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 73.36339)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000038;</text>
+</g>
+<path d="M55.90953 6.89978L50.30637 6.89978" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 10.89978)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x00002E;&#x000030;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 12.79649, 175.561)">
+<text textLength="27" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 13px; white-space: pre; ">&#x000041;&#x000055;&#x000043;</text>
+</g>
+<path d="M55.90953 322.21132L612.00969 322.21132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M58.90468 322.21132L58.90468 327.81132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 55.40468, 342.31132)">
+<text textLength="7" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;</text>
+</g>
+<path d="M150.25686 322.21132L150.25686 327.81132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 143.25686, 342.31132)">
+<text textLength="14" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000035;&#x000030;</text>
+</g>
+<path d="M241.60904 322.21132L241.60904 327.81132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 231.10904, 342.31132)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000030;&#x000030;</text>
+</g>
+<path d="M332.96122 322.21132L332.96122 327.81132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 322.46122, 342.31132)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000035;&#x000030;</text>
+</g>
+<path d="M424.3134 322.21132L424.3134 327.81132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 413.8134, 342.31132)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000032;&#x000030;&#x000030;</text>
+</g>
+<path d="M515.66558 322.21132L515.66558 327.81132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 505.16558, 342.31132)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000032;&#x000035;&#x000030;</text>
+</g>
+<path d="M607.01777 322.21132L607.01777 327.81132" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 596.51777, 342.31132)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000033;&#x000030;&#x000030;</text>
+</g>
+<g transform="matrix(1, 0, 0, 1, 334.44991, 364.31132)">
+<text textLength="4" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 13px; white-space: pre; ">&#x000074;</text>
+</g>
+</g>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 287, 409)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath4">
+<rect x="-1" y="-1" width="96" height="29" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath4)">
+<rect x="0" y="10" width="94" height="17" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="10" width="94" height="17" style="stroke: #D1D1D1; stroke-width: 1; fill: none; "></rect>
+<g transform="matrix(1, 0, 0, 1, 55, 12)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath5">
+<rect x="-1" y="-1" width="40" height="15" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath5)">
+<text textLength="33" lengthAdjust="spacingAndGlyphs" x="3" y="11" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x00004D;&#x00006F;&#x000064;&#x000065;&#x00006C;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 1, 11)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath6">
+<rect x="-1" y="-1" width="55" height="17" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath6)">
+<path d="M3 8L50 8" style="stroke: #445694; stroke-width: 1; fill: none; stroke-linecap: square; "></path>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath7">
+<rect x="-1" y="-1" width="619" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath7)">
+<g transform="matrix(1, 0, 0, 1, 192, 0)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath8">
+<rect x="-1" y="-1" width="286" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath8)">
+<text textLength="278" lengthAdjust="spacingAndGlyphs" x="3.5" y="13.5791" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font6', 'Arial', sans-serif; font-size: 15px; font-weight: bold; white-space: pre; ">&#x000054;&#x000069;&#x00006D;&#x000065;&#x00002D;&#x000044;&#x000065;&#x000070;&#x000065;&#x00006E;&#x000064;&#x000065;&#x00006E;&#x000074;&#x000020;&#x000041;&#x000072;&#x000065;&#x000061;&#x000020;&#x000055;&#x00006E;&#x000064;&#x000065;&#x000072;&#x000020;&#x000074;&#x000068;&#x000065;&#x000020;&#x000043;&#x000075;&#x000072;&#x000076;&#x000065;</text>
+</g>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 0, 18)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath9">
+<rect x="-1" y="-1" width="619" height="22" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath9)">
+<g transform="matrix(1, 0, 0, 1, 267, 0)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath10">
+<rect x="-1" y="-1" width="136" height="17" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath10)">
+<text textLength="128" lengthAdjust="spacingAndGlyphs" x="3.5" y="10.86328" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000039;&#x000035;&#x000025;&#x000020;&#x000043;&#x00006F;&#x00006E;&#x000066;&#x000069;&#x000064;&#x000065;&#x00006E;&#x000063;&#x000065;&#x000020;&#x00004C;&#x000069;&#x00006D;&#x000069;&#x000074;&#x000073;</text>
+</g>
+</g>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 0, 437)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath11">
+<rect x="-1" y="-1" width="619" height="22" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath11)">
+<g transform="matrix(1, 0, 0, 1, 0, 5)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath12">
+<rect x="-1" y="-1" width="188" height="17" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath12)">
+<text textLength="180" lengthAdjust="spacingAndGlyphs" x="3" y="10.86328" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000042;&#x000061;&#x000073;&#x000065;&#x000064;&#x000020;&#x00006F;&#x00006E;&#x000020;&#x000035;&#x000030;&#x000020;&#x000050;&#x000065;&#x000072;&#x000074;&#x000075;&#x000072;&#x000062;&#x000065;&#x000064;&#x000020;&#x000053;&#x000061;&#x00006D;&#x000070;&#x00006C;&#x000065;&#x000073;</text>
+</g>
+</g>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 0, 39)">
+</g>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath13">
+<rect x="55" y="1" width="558" height="322" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath13)">
+</g>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath14">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath14)">
+</g>
+</g>
+</g>
+</g>
+<rect x="0" y="0" width="640" height="480" fill="#FFFFFF" fill-opacity="0" aria-hidden="true">
+<desc>AUC(t) Plot</desc>
+</rect>
+</g>
+<g id="SVG_IDX9_singleTip1" visibility="hidden" pointer-events="none">
+   <rect id="SVG_IDX9_singleBox1" x="0" y="0" width="88" height="20" rx="2" ry="2" fill="white" stroke="black" stroke-width="0.8" opacity="0.8"></rect>
+   <text id="SVG_IDX9_singleText1" x="5" y="8" font-family="'Albany AMT', sans-serif" font-size="6"><tspan id="SVG_IDX9_tiptspan1" x="4" class="tiptext"><![CDATA[ ]]></tspan></text>
+</g>
+<defs>
+<style type="text/css"><![CDATA[
+    tspan.tiptext { white-space: pre }
+]]></style>
+</defs>
+<defs>
+<style type="text/css"><![CDATA[
+  @font-face {
+      font-family: "SVG_IDX9_Arial Font3";
+      src: url("#SVG_IDX9_Font3") format("svg")
+      }
+]]></style>
+<font id="SVG_IDX9_Font3" horiz-adv-x="6144" >
+   <font-face      font-family="SVG_IDX9_Arial Font3"
+    units-per-em="2048" ascent="1854" descent="-434" >
+      <font-face-src>
+         <font-face-name name="SVG_IDX9_Arial Font3"></font-face-name>
+      </font-face-src>
+   </font-face>
+<missing-glyph><path d="M0 0v4992h3456v-4992h-3456" fill="none"></path>
+</missing-glyph>
+<glyph unicode="&#40;" horiz-adv-x="680" 
+d="M469 -426Q326 -238 227 12 T128 534Q128 772 202 990 Q288 1242 469 1493 L597 
+1493Q476 1285 437 1196 Q376 1058 341 908 Q298 722 298 533 Q298 52 597 -426 Z" ></glyph>
+<glyph unicode="&#47;" horiz-adv-x="552" 
+d="M0 0L426 1493L602 1493L175 0L0 0Z" ></glyph>
+<glyph unicode="&#104;" horiz-adv-x="1147" 
+d="M128 0L128 1493L298 1493L298 991Q432 1152 635 1152 Q760 1152 852 1102 T984 
+966T1024 714L1024 0L853 0L853 709Q853 852 789 916 T607 981Q519 981 
+441 937 T331 819T298 612L298 0L128 0Z" ></glyph>
+<glyph unicode="&#65;" horiz-adv-x="1360" 
+d="M-8 0L590 1493L732 1493L1331 0L1152 0L978 469L344 469L170 0L-8 
+0ZM408 640L914 640L776 1012Q708 1198 661 1322 Q608 1180 556 1041 Z" ></glyph>
+<glyph unicode="&#103;" horiz-adv-x="1147" 
+d="M128 -85L298 -128Q310 -190 361 -218 Q429 -256 548 -256 Q676 -256 745 -210 T
+840 -82Q854 -32 853 128 Q732 0 553 0 Q330 0 207 167 T85 569Q85 730 
+140 867 T299 1077T544 1152Q731 1152 853 981 L853 1109L1024 1109L1024 164Q1024 
+-90 973 -196 T814 -365T546 -426Q356 -426 240 -341 T128 -85ZM256 583Q256 368 
+341 269 T554 170Q681 170 767 269 T853 577Q853 777 764 879 T551 981Q428 
+981 342 881 T256 583Z" ></glyph>
+<glyph unicode="&#48;" horiz-adv-x="1147" 
+d="M85 746Q85 1005 140 1174 T303 1418T576 1493Q697 1493 799 1446 T950 1309T1032 
+1091T1066 746Q1066 488 1012 320 T849 75T576 0Q358 0 234 130 Q85 334 
+85 746ZM256 746Q256 378 348 274 T576 170Q711 170 803 275 T896 746Q896 
+1094 809 1208 T574 1322Q438 1322 346 1222 Q256 1093 256 746Z" ></glyph>
+<glyph unicode="&#46;" horiz-adv-x="552" 
+d="M170 0L170 170L341 170L341 0L170 0Z" ></glyph>
+<glyph unicode="&#50;" horiz-adv-x="1147" 
+d="M1024 170L1024 0L42 0Q40 64 66 124 Q106 222 196 313 T435 517Q667 
+722 760 838 T853 1066Q853 1174 772 1248 T560 1322Q422 1322 340 1243 T256 1024L
+85 1066Q104 1274 229 1384 T564 1493Q776 1493 900 1373 T1024 1075Q1024 984 987 
+897 T865 714T594 452Q430 316 380 268 T299 170Z" ></glyph>
+<glyph unicode="&#52;" horiz-adv-x="1147" 
+d="M725 0L725 341L42 341L42 512L768 1493L896 1493L896 512L1066 512L1066 
+341L896 341L896 0L725 0ZM725 512L725 1163L244 512L725 512Z" ></glyph>
+<glyph unicode="&#54;" horiz-adv-x="1147" 
+d="M1024 1109L853 1109Q827 1207 778 1251 Q698 1322 581 1322 Q487 1322 394 1278 Q
+322 1222 269 1113 T213 786Q283 885 385 933 T598 981Q793 981 929 848 T1066 
+504Q1066 364 1003 245 T830 63T581 0Q343 0 193 165 T42 709Q42 1133 206 
+1326 Q348 1493 590 1493 Q770 1493 886 1391 T1024 1109ZM213 507Q213 418 260 337 T
+380 213T567 170Q723 170 809 258 T896 498Q896 643 811 727 T558 810Q414 
+810 314 727 T213 507Z" ></glyph>
+<glyph unicode="&#56;" horiz-adv-x="1147" 
+d="M340 816Q232 857 180 933 T128 1115Q128 1275 249 1384 T573 1493Q776 1493 900 
+1381 T1024 1110Q1024 1008 972 932 T817 816Q939 772 1002 674 T1066 442Q1066 254 
+931 127 T576 0Q355 0 220 128 T85 446Q85 589 151 685 T340 816ZM298 1114Q
+298 1018 365 957 T578 896Q720 896 787 956 T853 1105Q853 1197 784 1260 T576 
+1322Q435 1322 367 1261 T298 1114ZM256 450Q256 378 284 311 T400 207T577 170Q
+737 170 816 248 T896 445Q896 566 814 646 T571 725Q414 725 335 647 T256 
+450Z" ></glyph>
+<glyph unicode="&#49;" horiz-adv-x="1147" 
+d="M768 0L597 0L597 1163Q528 1100 415 1037 T213 943L213 1120Q372 1192 490 
+1294 T658 1493L768 1493L768 0Z" ></glyph>
+<glyph unicode="&#85;" horiz-adv-x="1487" 
+d="M1152 1493L1322 1493L1322 620Q1322 393 1272 259 T1092 41T750 -42Q544 -42 413 
+30 T226 241T170 620L170 1493L341 1493L341 615Q341 417 379 323 T508 179T
+732 128Q959 128 1055 228 T1152 615Z" ></glyph>
+<glyph unicode="&#67;" horiz-adv-x="1487" 
+d="M1237 518L1408 466Q1346 218 1184 87 T788 -42Q546 -42 395 57 T164 348T85 
+758Q85 996 173 1174 T424 1444T782 1536Q1004 1536 1155 1419 T1365 1092L1194 1045Q
+1140 1212 1036 1289 T776 1365Q596 1365 475 1280 T305 1053T256 759Q256 564 315 
+418 T499 200T770 128Q948 128 1071 226 T1237 518Z" ></glyph>
+<glyph unicode="&#53;" horiz-adv-x="1147" 
+d="M85 426L256 426Q278 299 350 235 T560 170Q733 170 814 267 T896 524Q896 
+677 823 765 T573 853Q462 853 401 806 T298 682L128 725L298 1493L981 1493L
+981 1322L434 1322L338 925Q469 1024 613 1024 Q804 1024 935 887 T1066 536Q1066 
+332 949 182 Q807 0 560 0 Q358 0 230 117 T85 426Z" ></glyph>
+<glyph unicode="&#51;" horiz-adv-x="1147" 
+d="M85 426L256 469Q290 310 360 240 T568 170Q727 170 811 256 T896 468Q896 
+588 808 667 T584 745Q528 745 446 725 L468 896Q487 894 498 894 Q618 894 
+714 948 T810 1115Q810 1205 737 1264 T547 1322Q432 1322 355 1258 T256 1066L85 
+1109Q119 1292 239 1392 T539 1493Q663 1493 767 1443 T926 1306T981 1122Q981 1030 
+930 954 T779 833Q909 802 987 706 T1066 466Q1066 271 923 135 T562 0Q364 
+0 234 118 T85 426Z" ></glyph>
+<glyph unicode="&#116;" horiz-adv-x="552" 
+d="M512 175L554 16Q479 0 419 0 Q322 0 268 31 T192 112T170 326L170 938L
+42 938L42 1109L170 1109L170 1372L341 1480L341 1109L512 1109L512 938L341 
+938L341 318Q341 240 350 218 T379 183T437 170Q466 170 512 175Z" ></glyph>
+<glyph unicode="&#77;" horiz-adv-x="1657" 
+d="M170 0L170 1493L462 1493L770 455Q812 310 832 238 Q853 318 899 473 L1201 
+1493L1493 1493L1493 0L1322 0L1322 1322L942 0L722 0L341 1322L341 0L170 
+0Z" ></glyph>
+<glyph unicode="&#111;" horiz-adv-x="1147" 
+d="M85 576Q85 882 247 1029 Q382 1152 576 1152 Q792 1152 929 1003 T1066 591Q1066 
+378 1005 256 T829 67T576 0Q356 0 220 148 T85 576ZM256 576Q256 373 347 
+272 T576 170Q714 170 805 272 T896 582Q896 778 804 880 T576 981Q438 981 
+347 880 T256 576Z" ></glyph>
+<glyph unicode="&#100;" horiz-adv-x="1147" 
+d="M853 0L853 182Q750 0 550 0 Q421 0 313 72 T145 275T85 574Q85 740 
+140 874 T305 1080T550 1152Q649 1152 727 1105 T853 984L853 1493L1024 1493L1024 
+0L853 0ZM256 575Q256 372 345 271 T558 170Q681 170 767 267 T853 560Q
+853 778 765 879 T549 981Q424 981 340 883 T256 575Z" ></glyph>
+<glyph unicode="&#101;" horiz-adv-x="1147" 
+d="M894 384L1061 341Q1017 179 898 89 T592 0Q359 0 222 149 T85 566Q85 
+844 223 998 T582 1152Q796 1152 931 997 T1066 563Q1066 546 1066 512 L256 512Q
+266 346 361 258 T596 170Q702 170 776 221 T894 384ZM256 682L896 682Q883 
+814 822 879 Q730 981 582 981 Q448 981 357 900 T256 682Z" ></glyph>
+<glyph unicode="&#108;" horiz-adv-x="425" 
+d="M128 0L128 1493L298 1493L298 0L128 0Z" ></glyph>
+<glyph unicode="&#57;" horiz-adv-x="1147" 
+d="M128 384L298 384Q321 272 384 221 T547 170Q632 170 706 205 T811 298T869 
+456T896 668Q896 680 896 704 Q840 618 743 565 T534 512Q346 512 215 645 T
+85 995Q85 1219 219 1356 T554 1493Q700 1493 820 1416 T1003 1197T1066 786Q1066 
+506 1005 339 T824 86T540 0Q368 0 259 100 T128 384ZM896 999Q896 1148 
+815 1235 T585 1322Q431 1322 343 1228 T256 984Q256 850 338 766 T580 682Q718 
+682 807 766 T896 999Z" ></glyph>
+<glyph unicode="&#37;" horiz-adv-x="1827" 
+d="M128 1098Q128 1263 203 1378 T421 1493Q552 1493 639 1390 T725 1087Q725 892 638 
+787 T423 682Q296 682 212 786 T128 1098ZM426 1365Q353 1365 304 1304 T256 1080Q
+256 932 305 871 T426 810Q500 810 548 871 T597 1094Q597 1244 548 1304 T426 
+1365ZM427 0L1249 1493L1390 1493L568 0L427 0ZM1109 416Q1109 581 1184 696 T
+1403 810Q1534 810 1620 707 T1706 404Q1706 210 1619 105 T1404 0Q1278 0 1193 
+104 T1109 416ZM1408 682Q1334 682 1285 621 T1237 397Q1237 250 1286 189 T1406 128Q
+1482 128 1530 189 T1578 412Q1578 561 1529 622 T1408 682Z" ></glyph>
+<glyph unicode="&#32;" horiz-adv-x="552" 
+></glyph>
+<glyph unicode="&#110;" horiz-adv-x="1147" 
+d="M128 0L128 1109L298 1109L298 958Q420 1152 648 1152 Q748 1152 831 1115 T955 
+1019T1013 878Q1024 825 1024 692 L1024 0L853 0L853 681Q853 798 830 855 T
+748 947T609 981Q482 981 390 904 T298 612L298 0L128 0Z" ></glyph>
+<glyph unicode="&#102;" horiz-adv-x="552" 
+d="M170 0L170 938L0 938L0 1109L170 1109L170 1210Q170 1306 188 1352 Q213 
+1415 276 1454 T456 1493Q532 1493 624 1474 L597 1314Q541 1322 491 1322 Q409 1322 
+375 1294 T341 1188L341 1109L554 1109L554 938L341 938L341 0L170 0Z" ></glyph>
+<glyph unicode="&#105;" horiz-adv-x="425" 
+d="M128 1322L128 1493L298 1493L298 1322L128 1322ZM128 0L128 1109L298 1109L298 
+0L128 0Z" ></glyph>
+<glyph unicode="&#99;" horiz-adv-x="1020" 
+d="M853 426L1024 384Q994 204 873 102 T575 0Q354 0 219 148 T85 572Q85 
+750 141 884 T313 1085T562 1152Q733 1152 842 1063 T981 810L810 768Q785 874 
+721 927 T566 981Q428 981 342 884 T256 576Q256 364 343 267 T570 170Q682 
+170 758 233 T853 426Z" ></glyph>
+<glyph unicode="&#76;" horiz-adv-x="1147" 
+d="M170 0L170 1493L341 1493L341 170L1066 170L1066 0L170 0Z" ></glyph>
+<glyph unicode="&#109;" horiz-adv-x="1700" 
+d="M128 0L128 1109L298 1109L298 963Q348 1048 429 1100 T616 1152Q732 1152 807 
+1098 T912 950Q1040 1152 1245 1152 Q1406 1152 1492 1059 T1578 773L1578 0L1408 
+0L1408 706Q1408 820 1389 870 T1323 950T1210 981Q1093 981 1016 902 T938 651L938 
+0L768 0L768 728Q768 854 722 918 T572 981Q493 981 426 939 T329 815T298 
+581L298 0L128 0Z" ></glyph>
+<glyph unicode="&#115;" horiz-adv-x="1020" 
+d="M85 341L256 384Q270 280 338 225 T527 170Q649 170 708 219 T768 332Q768 
+391 710 424 Q670 448 534 483 Q352 536 278 574 T166 680T128 830Q128 904 
+158 968 T242 1074Q282 1106 350 1129 T498 1152Q616 1152 705 1116 T837 1018T896 
+853L725 810Q714 891 661 936 T511 981Q396 981 347 942 T298 850Q298 817 
+318 790 Q339 763 382 745 Q407 735 529 701 Q706 648 780 613 T896 514T938 
+352Q938 258 888 174 T741 45T524 0Q324 0 219 86 T85 341Z" ></glyph>
+<glyph unicode="&#66;" horiz-adv-x="1360" 
+d="M170 0L170 1493L736 1493Q910 1493 1014 1446 T1178 1301T1237 1096Q1237 997 1191 
+909 T1051 768Q1161 729 1220 637 T1280 418Q1280 317 1236 230 T1128 95T967 24T
+730 0ZM341 853L694 853Q838 853 900 871 Q983 894 1025 948 T1066 1084Q1066 
+1161 1027 1220 T916 1301T668 1322L341 1322L341 853ZM341 170L735 170Q836 170 
+877 178 Q950 190 998 218 T1078 301T1109 426Q1109 510 1075 571 T958 657T719 
+682L341 682L341 170Z" ></glyph>
+<glyph unicode="&#97;" horiz-adv-x="1147" 
+d="M853 128Q759 58 664 29 T459 0Q279 0 182 89 T85 316Q85 396 122 463 T
+218 571T352 632Q408 647 518 660 Q745 688 852 725 Q853 761 853 771 Q853 
+878 800 922 Q728 981 586 981 Q454 981 391 934 T298 768L128 810Q152 928 
+207 1001 T367 1113T610 1152Q747 1152 832 1118 T958 1032T1014 903Q1024 854 1024 
+734 L1024 495Q1024 245 1032 161 T1066 0L896 0Q862 54 853 128ZM853 554Q
+746 518 532 492 Q411 477 361 458 T283 404T256 326Q256 259 315 215 T489 
+170Q602 170 691 214 T820 330Q852 386 852 494 Z" ></glyph>
+<glyph unicode="&#80;" horiz-adv-x="1360" 
+d="M170 0L170 1493L718 1493Q863 1493 940 1478 Q1047 1460 1119 1408 T1236 1262T
+1280 1056Q1280 864 1159 730 T722 597L341 597L341 0L170 0ZM341 768L742 
+768Q942 768 1025 842 T1109 1050Q1109 1148 1060 1217 T930 1308Q878 1322 738 1322 L
+341 1322L341 768Z" ></glyph>
+<glyph unicode="&#114;" horiz-adv-x="680" 
+d="M128 0L128 1109L256 1109L256 982Q326 1086 385 1119 T516 1152Q619 1152 725 
+1082 L658 911Q586 981 515 981 Q452 981 401 942 T330 835Q298 730 298 606 L
+298 0L128 0Z" ></glyph>
+<glyph unicode="&#117;" horiz-adv-x="1147" 
+d="M853 0L853 196Q724 0 504 0 Q406 0 322 36 T197 129T139 265Q128 320 
+128 437 L128 1109L298 1109L298 515Q298 373 310 324 Q329 252 390 211 T541 
+170Q630 170 709 212 T820 326T853 536L853 1109L1024 1109L1024 0L853 
+0Z" ></glyph>
+<glyph unicode="&#98;" horiz-adv-x="1147" 
+d="M298 0L128 0L128 1493L298 1493L298 987Q416 1152 600 1152 Q702 1152 792 
+1111 T942 995T1033 816T1066 592Q1066 309 928 154 T599 0Q407 0 298 181 ZM
+298 584Q298 394 352 309 Q442 170 593 170 Q716 170 806 272 T896 576Q896 
+784 810 882 T601 981Q478 981 388 879 T298 584Z" ></glyph>
+<glyph unicode="&#83;" horiz-adv-x="1360" 
+d="M85 469L256 469Q269 358 317 287 T467 172T696 128Q809 128 895 161 T1024 
+252T1066 384Q1066 460 1026 516 T889 610Q827 634 616 685 T327 781Q226 838 
+177 924 T128 1114Q128 1230 191 1330 T375 1483T644 1536Q806 1536 931 1485 T1122 
+1334T1194 1109L1024 1109Q1008 1236 917 1300 T650 1365Q466 1365 382 1297 T298 1132Q
+298 1049 358 995 Q416 941 664 885 T996 787Q1119 725 1178 631 T1237 414Q1237 
+292 1171 184 T981 17T702 -42Q506 -42 373 17 T164 197T89 317Z" ></glyph>
+<glyph unicode="&#112;" horiz-adv-x="1147" 
+d="M128 -426L128 1109L298 1109L298 960Q357 1056 431 1104 T610 1152Q748 1152 854 
+1079 T1012 874T1066 584Q1066 415 1005 279 T830 72T587 0Q494 0 420 44 T
+298 154L298 -426L128 -426ZM298 566Q298 364 385 267 T594 170Q718 170 807 
+271 T896 581Q896 782 809 881 T602 981Q482 981 390 875 T298 566Z" ></glyph>
+</font>
+<style type="text/css"><![CDATA[
+  @font-face {
+      font-family: "SVG_IDX9_Arial Font6";
+      font-weight: bold;
+      src: url("#SVG_IDX9_Font6") format("svg")
+      }
+]]></style>
+<font id="SVG_IDX9_Font6" horiz-adv-x="6144" >
+   <font-face      font-family="SVG_IDX9_Arial Font6"
+    font-weight="bold"    units-per-em="2048" ascent="1854" descent="-434" >
+      <font-face-src>
+         <font-face-name name="SVG_IDX9_Arial Font6"></font-face-name>
+      </font-face-src>
+   </font-face>
+<missing-glyph><path d="M0 0v4992h3456v-4992h-3456" fill="none"></path>
+</missing-glyph>
+<glyph unicode="&#40;" horiz-adv-x="680" 
+d="M597 -426L384 -426Q238 -196 161 52 T85 534Q85 823 178 1080 Q259 1304 384 
+1493 L597 1493Q475 1190 429 978 T384 528Q384 364 411 192 T486 -134Q518 -236 
+597 -426Z" ></glyph>
+<glyph unicode="&#47;" horiz-adv-x="552" 
+d="M-4 0L337 1493L554 1493L213 0L-4 0Z" ></glyph>
+<glyph unicode="&#104;" horiz-adv-x="1232" 
+d="M426 1493L426 993Q562 1152 750 1152 Q846 1152 924 1113 T1041 1016T1095 884T
+1109 660L1109 0L810 0L810 604Q810 784 795 833 T741 910T646 938Q579 
+938 527 902 T451 791T426 573L426 0L128 0L128 1493L426 1493Z" ></glyph>
+<glyph unicode="&#65;" horiz-adv-x="1402" 
+d="M1408 0L1094 0L987 341L423 341L316 0L0 0L510 1493L894 1493L1408 
+0ZM906 597L704 1237L503 597L906 597Z" ></glyph>
+<glyph unicode="&#103;" horiz-adv-x="1232" 
+d="M128 -85L426 -128Q434 -172 462 -189 Q501 -213 584 -213 Q690 -213 744 -184 Q
+780 -164 798 -122 Q810 -91 810 -8 L810 128Q714 0 522 0 Q308 0 183 192 Q
+85 344 85 569 Q85 852 213 1002 T532 1152Q729 1152 853 980 L853 1109L1109 
+1109L1109 128Q1109 -64 1079 -160 T993 -310T846 -395T614 -426Q349 -426 238 -339 T
+126 -117Q126 -104 128 -85ZM384 580Q384 390 443 301 T589 213Q682 213 746 
+304 T810 572Q810 758 749 848 T594 938Q502 938 443 850 T384 580Z" ></glyph>
+<glyph unicode="&#84;" horiz-adv-x="1275" 
+d="M512 0L512 1237L85 1237L85 1493L1237 1493L1237 1237L810 1237L810 0L512 
+0Z" ></glyph>
+<glyph unicode="&#105;" horiz-adv-x="552" 
+d="M128 1237L128 1493L426 1493L426 1237L128 1237ZM128 0L128 1109L426 1109L426 
+0L128 0Z" ></glyph>
+<glyph unicode="&#109;" horiz-adv-x="1827" 
+d="M128 1109L384 1109L384 964Q526 1152 723 1152 Q828 1152 905 1110 T1031 984Q1102 
+1068 1183 1110 T1356 1152Q1474 1152 1556 1101 T1677 953Q1706 881 1706 720 L1706 
+0L1408 0L1408 654Q1408 824 1380 874 Q1343 938 1266 938 Q1210 938 1160 900 T
+1088 786T1066 549L1066 0L768 0L768 627Q768 794 753 842 T709 915T629 
+938Q567 938 518 901 T448 792T426 556L426 0L128 0L128 1109Z" ></glyph>
+<glyph unicode="&#101;" horiz-adv-x="1147" 
+d="M768 341L1066 298Q1012 152 895 76 T602 0Q324 0 190 188 Q85 338 85 
+568 Q85 842 221 997 T567 1152Q801 1152 936 994 T1066 512L384 512Q386 370 
+447 292 T600 213Q662 213 704 243 T768 341ZM768 682Q765 808 711 873 T579 
+938Q496 938 442 870 Q388 800 388 682 Z" ></glyph>
+<glyph unicode="&#45;" horiz-adv-x="680" 
+d="M85 384L85 640L640 640L640 384L85 384Z" ></glyph>
+<glyph unicode="&#68;" horiz-adv-x="1487" 
+d="M170 1493L715 1493Q899 1493 996 1464 Q1126 1426 1218 1327 T1359 1085T1408 732Q
+1408 548 1362 414 Q1307 251 1204 150 Q1127 74 995 31 Q896 0 731 0 L170 
+0L170 1493ZM469 1237L469 256L694 256Q821 256 877 270 Q951 288 999 332 T
+1078 475T1109 746Q1109 918 1078 1010 T993 1153T853 1223Q790 1237 605 1237 Z" ></glyph>
+<glyph unicode="&#112;" horiz-adv-x="1232" 
+d="M128 1109L384 1109L384 953Q434 1033 521 1092 T712 1152Q896 1152 1024 1001 T
+1152 582Q1152 306 1027 153 T724 0Q640 0 571 35 T426 155L426 -426L128 
+-426L128 1109ZM426 595Q426 400 490 306 T647 213Q736 213 794 299 T853 580Q
+853 762 792 850 T642 938Q549 938 487 852 T426 595Z" ></glyph>
+<glyph unicode="&#110;" horiz-adv-x="1232" 
+d="M1109 0L810 0L810 584Q810 769 793 823 T738 908T646 938Q577 938 522 
+895 T447 781T426 518L426 0L128 0L128 1109L384 1109L384 953Q526 1152 
+743 1152 Q838 1152 917 1116 T1037 1025T1093 900T1109 700Z" ></glyph>
+<glyph unicode="&#100;" horiz-adv-x="1232" 
+d="M1109 0L853 0L853 156Q789 65 701 32 T524 0Q343 0 214 153 T85 580Q
+85 860 207 1006 T515 1152Q686 1152 810 1004 L810 1493L1109 1493L1109 0ZM384 
+597Q384 414 426 332 Q488 213 599 213 Q687 213 749 302 T810 568Q810 765 
+750 852 T597 938Q506 938 445 853 T384 597Z" ></glyph>
+<glyph unicode="&#116;" horiz-adv-x="680" 
+d="M640 1109L640 896L426 896L426 431Q426 290 432 267 T457 228T505 213Q544 
+213 618 240 L640 38Q539 0 411 0 Q333 0 270 26 T178 95T137 208Q128 
+260 128 414 L128 896L0 896L0 1109L128 1109L128 1322L426 1493L426 1109L
+640 1109Z" ></glyph>
+<glyph unicode="&#32;" horiz-adv-x="552" 
+></glyph>
+<glyph unicode="&#114;" horiz-adv-x="807" 
+d="M426 0L128 0L128 1109L384 1109L384 958Q457 1065 516 1108 T650 1152Q755 
+1152 853 1089 L789 840Q708 853 640 853 Q572 853 526 820 T453 699T426 335Z" ></glyph>
+<glyph unicode="&#97;" horiz-adv-x="1147" 
+d="M384 810L128 853Q168 1005 267 1078 T560 1152Q737 1152 824 1104 T946 984T981 
+718L981 370Q981 222 999 151 T1066 0L768 0Q757 34 742 101 Q736 132 732 
+142 Q664 70 586 35 T420 0Q264 0 174 95 T85 336Q85 432 124 508 T233 
+624T435 694Q614 734 682 768 L682 794Q682 872 651 905 T530 938Q471 938 
+438 910 T384 810ZM682 554Q640 536 548 511 T427 461Q384 421 384 360 Q384 
+300 418 257 T506 213Q566 213 621 264 Q661 302 674 358 Q682 395 682 498 Z" ></glyph>
+<glyph unicode="&#85;" horiz-adv-x="1487" 
+d="M170 1493L469 1493L469 672Q469 476 480 419 Q498 326 566 269 T754 213Q876 
+213 937 266 T1011 397T1024 654L1024 1493L1322 1493L1322 700Q1322 428 1299 315 T
+1211 126T1041 3T764 -42Q556 -42 450 7 T281 137T199 304Q170 434 170 
+688 Z" ></glyph>
+<glyph unicode="&#67;" horiz-adv-x="1487" 
+d="M1109 554L1408 469Q1339 231 1180 115 T777 0Q474 0 280 202 T85 754Q85 
+1125 281 1330 T798 1536Q1077 1536 1252 1362 Q1356 1259 1408 1066 L1109 1024Q1081 
+1142 992 1211 T777 1280Q602 1280 493 1161 T384 777Q384 495 490 375 T765 256Q
+890 256 980 328 T1109 554Z" ></glyph>
+<glyph unicode="&#117;" horiz-adv-x="1232" 
+d="M853 0L853 159Q793 74 696 37 T491 0Q381 0 293 48 T167 183T128 422L
+128 1109L426 1109L426 608Q426 378 441 326 T495 243T594 213Q662 213 716 
+253 T790 354T810 649L810 1109L1109 1109L1109 0L853 0Z" ></glyph>
+<glyph unicode="&#118;" horiz-adv-x="1147" 
+d="M452 0L21 1109L320 1109L518 543L576 311Q598 426 604 449 Q618 496 634 
+543 L832 1109L1130 1109L706 0L452 0Z" ></glyph>
+</font>
+</defs>
+</svg>
+</div>
+<script type="application/xml" class="ODSGraphics" id="odsgraphics_GJ72G0IW">
+<?xml version="1.0" encoding="utf-8" ?>
+<SASReport version="1.2" xmlns:style="http://www.sas.com/sasreportmodel/styles">
+  <Data version="9.4m6a">
+    <DataModel name="StatGraphDataModel">
+      <IQData type="2DEmbedded" name="StatGraphData">
+        <EmbeddedData>
+          <Variables>
+            <Variable name="Estimate" label="Area Under the Curve" type="Numeric" valuesCount="358" encoding="Text"/>
+            <Variable name="Time" label="t" type="Numeric" valuesCount="358" encoding="Text"/>
+            <Variable name="Source" label="Source Name" type="String" valuesCount="358" length="5"/>
+            <Variable name="Lower" label="Lower Limit AUC" type="Numeric" valuesCount="358" encoding="Text"/>
+            <Variable name="Upper" label="Upper Limit AUC" type="Numeric" valuesCount="358" encoding="Text"/>
+          </Variables>
+          <ValuesList valuesCount="358">
+            <V>0.65826494724501</V>
+            <V>0.1</V>
+            <V>Model</V>
+            <V>0.49099031414504</V>
+            <V>0.82553958034499</V>
+            <V>0.8304769620239</V>
+            <V>4.433333333</V>
+            <V>Model</V>
+            <V>0.62268771180547</V>
+            <V>1</V>
+            <V>0.8491778920738</V>
+            <V>5.5</V>
+            <V>Model</V>
+            <V>0.68952450646219</V>
+            <V>1</V>
+            <V>0.73272163665719</V>
+            <V>6.266666667</V>
+            <V>Model</V>
+            <V>0.55075998103685</V>
+            <V>0.91468329227753</V>
+            <V>0.70633776124136</V>
+            <V>7.8</V>
+            <V>Model</V>
+            <V>0.54488790731835</V>
+            <V>0.86778761516438</V>
+            <V>0.7497096936618</V>
+            <V>7.866666667</V>
+            <V>Model</V>
+            <V>0.60014356884327</V>
+            <V>0.89927581848033</V>
+            <V>0.72857717022539</V>
+            <V>8.066666667</V>
+            <V>Model</V>
+            <V>0.58754448046744</V>
+            <V>0.86960985998335</V>
+            <V>0.71837464697792</V>
+            <V>9.066666667</V>
+            <V>Model</V>
+            <V>0.597815585702</V>
+            <V>0.83893370825383</V>
+            <V>0.74621245915419</V>
+            <V>9.6</V>
+            <V>Model</V>
+            <V>0.63455095947419</V>
+            <V>0.85787395883419</V>
+            <V>0.72149478931082</V>
+            <V>10.83333333</V>
+            <V>Model</V>
+            <V>0.60815172018608</V>
+            <V>0.83483785843555</V>
+            <V>0.6743799613781</V>
+            <V>10.86666667</V>
+            <V>Model</V>
+            <V>0.53338804906906</V>
+            <V>0.81537187368714</V>
+            <V>0.70196048582143</V>
+            <V>11.06666667</V>
+            <V>Model</V>
+            <V>0.56039015650663</V>
+            <V>0.84353081513623</V>
+            <V>0.71810417282615</V>
+            <V>11.6</V>
+            <V>Model</V>
+            <V>0.57545101257364</V>
+            <V>0.86075733307867</V>
+            <V>0.71317416148589</V>
+            <V>12.26666667</V>
+            <V>Model</V>
+            <V>0.5753800693972</V>
+            <V>0.85096825357457</V>
+            <V>0.7253164975611</V>
+            <V>12.93333333</V>
+            <V>Model</V>
+            <V>0.58949309696008</V>
+            <V>0.86113989816212</V>
+            <V>0.74205493902871</V>
+            <V>13.8</V>
+            <V>Model</V>
+            <V>0.60853477599213</V>
+            <V>0.87557510206529</V>
+            <V>0.70496386593344</V>
+            <V>14.16666667</V>
+            <V>Model</V>
+            <V>0.54774506765522</V>
+            <V>0.86218266421167</V>
+            <V>0.71140130029163</V>
+            <V>14.4</V>
+            <V>Model</V>
+            <V>0.56526013424961</V>
+            <V>0.85754246633364</V>
+            <V>0.72440191946265</V>
+            <V>14.43333333</V>
+            <V>Model</V>
+            <V>0.57419016609799</V>
+            <V>0.87461367282732</V>
+            <V>0.70574761714539</V>
+            <V>14.8</V>
+            <V>Model</V>
+            <V>0.55621972159309</V>
+            <V>0.85527551269768</V>
+            <V>0.71346631993639</V>
+            <V>15.36666667</V>
+            <V>Model</V>
+            <V>0.56999220025157</V>
+            <V>0.8569404396212</V>
+            <V>0.72257495528343</V>
+            <V>15.5</V>
+            <V>Model</V>
+            <V>0.58335804398082</V>
+            <V>0.86179186658605</V>
+            <V>0.72700342999453</V>
+            <V>15.63333333</V>
+            <V>Model</V>
+            <V>0.59362881186601</V>
+            <V>0.86037804812306</V>
+            <V>0.72620275558996</V>
+            <V>15.7</V>
+            <V>Model</V>
+            <V>0.59628594037468</V>
+            <V>0.85611957080524</V>
+            <V>0.6998705869387</V>
+            <V>15.86666667</V>
+            <V>Model</V>
+            <V>0.57136727559424</V>
+            <V>0.82837389828316</V>
+            <V>0.70343943232613</V>
+            <V>16.3</V>
+            <V>Model</V>
+            <V>0.57650541545398</V>
+            <V>0.83037344919828</V>
+            <V>0.68824682324346</V>
+            <V>16.6</V>
+            <V>Model</V>
+            <V>0.56511046816151</V>
+            <V>0.8113831783254</V>
+            <V>0.68632299535217</V>
+            <V>16.7</V>
+            <V>Model</V>
+            <V>0.56651753424507</V>
+            <V>0.80612845645928</V>
+            <V>0.66710797384552</V>
+            <V>17.66666667</V>
+            <V>Model</V>
+            <V>0.54497449249889</V>
+            <V>0.78924145519215</V>
+            <V>0.66505081537996</V>
+            <V>18.8</V>
+            <V>Model</V>
+            <V>0.54554278948011</V>
+            <V>0.78455884127982</V>
+            <V>0.67500203696571</V>
+            <V>18.93333333</V>
+            <V>Model</V>
+            <V>0.55649246494763</V>
+            <V>0.79351160898379</V>
+            <V>0.68285814137566</V>
+            <V>19.03333333</V>
+            <V>Model</V>
+            <V>0.56609850536518</V>
+            <V>0.79961777738613</V>
+            <V>0.68585794152986</V>
+            <V>19.1</V>
+            <V>Model</V>
+            <V>0.57072181885015</V>
+            <V>0.80099406420957</V>
+            <V>0.68591047347802</V>
+            <V>19.4</V>
+            <V>Model</V>
+            <V>0.57512398006159</V>
+            <V>0.79669696689445</V>
+            <V>0.67121390108869</V>
+            <V>19.73333333</V>
+            <V>Model</V>
+            <V>0.56375972719925</V>
+            <V>0.77866807497813</V>
+            <V>0.67319272836811</V>
+            <V>19.9</V>
+            <V>Model</V>
+            <V>0.5682623987483</V>
+            <V>0.77812305798792</V>
+            <V>0.68223234456681</V>
+            <V>20.2</V>
+            <V>Model</V>
+            <V>0.58182666969545</V>
+            <V>0.78263801943817</V>
+            <V>0.68885914654995</V>
+            <V>20.43333333</V>
+            <V>Model</V>
+            <V>0.58778891244036</V>
+            <V>0.78992938065954</V>
+            <V>0.69681201978194</V>
+            <V>20.83333333</V>
+            <V>Model</V>
+            <V>0.59566215893628</V>
+            <V>0.7979618806276</V>
+            <V>0.68927209881356</V>
+            <V>21</V>
+            <V>Model</V>
+            <V>0.59061714601722</V>
+            <V>0.7879270516099</V>
+            <V>0.67431535076045</V>
+            <V>21.06666667</V>
+            <V>Model</V>
+            <V>0.56953979484204</V>
+            <V>0.77909090667885</V>
+            <V>0.665422840044</V>
+            <V>21.7</V>
+            <V>Model</V>
+            <V>0.55861536371262</V>
+            <V>0.77223031637538</V>
+            <V>0.66981915073951</V>
+            <V>22.13333333</V>
+            <V>Model</V>
+            <V>0.56475014397672</V>
+            <V>0.7748881575023</V>
+            <V>0.66731068026292</V>
+            <V>22.46666667</V>
+            <V>Model</V>
+            <V>0.56223081990323</V>
+            <V>0.7723905406226</V>
+            <V>0.67332860494743</V>
+            <V>22.66666667</V>
+            <V>Model</V>
+            <V>0.56916543006076</V>
+            <V>0.77749177983409</V>
+            <V>0.67774624268799</V>
+            <V>23.03333333</V>
+            <V>Model</V>
+            <V>0.5769637337226</V>
+            <V>0.77852875165338</V>
+            <V>0.68019051911314</V>
+            <V>23.73333333</V>
+            <V>Model</V>
+            <V>0.58017877154041</V>
+            <V>0.78020226668586</V>
+            <V>0.67460177447543</V>
+            <V>24.3</V>
+            <V>Model</V>
+            <V>0.5734186069483</V>
+            <V>0.77578494200256</V>
+            <V>0.67840373480543</V>
+            <V>24.33333333</V>
+            <V>Model</V>
+            <V>0.58081151930849</V>
+            <V>0.77599595030238</V>
+            <V>0.68008887954673</V>
+            <V>24.8</V>
+            <V>Model</V>
+            <V>0.5846932318294</V>
+            <V>0.77548452726406</V>
+            <V>0.67429576650324</V>
+            <V>24.86666667</V>
+            <V>Model</V>
+            <V>0.58327306750566</V>
+            <V>0.76531846550082</V>
+            <V>0.67649025485864</V>
+            <V>24.9</V>
+            <V>Model</V>
+            <V>0.58455594740578</V>
+            <V>0.7684245623115</V>
+            <V>0.672960578547</V>
+            <V>25.23333333</V>
+            <V>Model</V>
+            <V>0.57989858451077</V>
+            <V>0.76602257258324</V>
+            <V>0.67428294620459</V>
+            <V>25.43333333</V>
+            <V>Model</V>
+            <V>0.5825693180119</V>
+            <V>0.76599657439728</V>
+            <V>0.6799718277142</V>
+            <V>25.63333333</V>
+            <V>Model</V>
+            <V>0.5884239325432</V>
+            <V>0.7715197228852</V>
+            <V>0.6818650992851</V>
+            <V>26</V>
+            <V>Model</V>
+            <V>0.59214651395339</V>
+            <V>0.77158368461681</V>
+            <V>0.67311146489938</V>
+            <V>26.26666667</V>
+            <V>Model</V>
+            <V>0.58736280638016</V>
+            <V>0.7588601234186</V>
+            <V>0.67160356252684</V>
+            <V>26.76666667</V>
+            <V>Model</V>
+            <V>0.58555540231991</V>
+            <V>0.75765172273378</V>
+            <V>0.6742710083254</V>
+            <V>27</V>
+            <V>Model</V>
+            <V>0.5909874642863</V>
+            <V>0.75755455236451</V>
+            <V>0.67496962330784</V>
+            <V>27.46666667</V>
+            <V>Model</V>
+            <V>0.59276750917427</V>
+            <V>0.75717173744142</V>
+            <V>0.67619386302757</V>
+            <V>27.8</V>
+            <V>Model</V>
+            <V>0.59441528151316</V>
+            <V>0.75797244454198</V>
+            <V>0.67493638589895</V>
+            <V>28.56666667</V>
+            <V>Model</V>
+            <V>0.59297566495902</V>
+            <V>0.75689710683888</V>
+            <V>0.68040720283994</V>
+            <V>28.6</V>
+            <V>Model</V>
+            <V>0.59742506236646</V>
+            <V>0.76338934331342</V>
+            <V>0.6767037268017</V>
+            <V>28.73333333</V>
+            <V>Model</V>
+            <V>0.59471529588587</V>
+            <V>0.75869215771753</V>
+            <V>0.68111303407819</V>
+            <V>28.83333333</V>
+            <V>Model</V>
+            <V>0.60155994547665</V>
+            <V>0.76066612267973</V>
+            <V>0.68587642674689</V>
+            <V>29</V>
+            <V>Model</V>
+            <V>0.60657432453474</V>
+            <V>0.76517852895903</V>
+            <V>0.69010094679917</V>
+            <V>29.06666667</V>
+            <V>Model</V>
+            <V>0.61281502229202</V>
+            <V>0.76738687130632</V>
+            <V>0.69035285361102</V>
+            <V>29.3</V>
+            <V>Model</V>
+            <V>0.61521202726518</V>
+            <V>0.76549367995685</V>
+            <V>0.69266698167224</V>
+            <V>29.66666667</V>
+            <V>Model</V>
+            <V>0.61899233967939</V>
+            <V>0.7663416236651</V>
+            <V>0.68320017481672</V>
+            <V>30.13333333</V>
+            <V>Model</V>
+            <V>0.60753385566592</V>
+            <V>0.75886649396751</V>
+            <V>0.68242739716919</V>
+            <V>30.3</V>
+            <V>Model</V>
+            <V>0.60793577634255</V>
+            <V>0.75691901799583</V>
+            <V>0.68374489477871</V>
+            <V>30.86666667</V>
+            <V>Model</V>
+            <V>0.60905365126585</V>
+            <V>0.75843613829157</V>
+            <V>0.68398632768517</V>
+            <V>30.93333333</V>
+            <V>Model</V>
+            <V>0.61139686963851</V>
+            <V>0.75657578573183</V>
+            <V>0.68735251707439</V>
+            <V>31</V>
+            <V>Model</V>
+            <V>0.61455507953628</V>
+            <V>0.7601499546125</V>
+            <V>0.68001636640275</V>
+            <V>31.43333333</V>
+            <V>Model</V>
+            <V>0.60638038264796</V>
+            <V>0.75365235015755</V>
+            <V>0.68493889238034</V>
+            <V>31.46666667</V>
+            <V>Model</V>
+            <V>0.61283189647461</V>
+            <V>0.75704588828607</V>
+            <V>0.68079377713034</V>
+            <V>31.93333333</V>
+            <V>Model</V>
+            <V>0.60905464039456</V>
+            <V>0.75253291386613</V>
+            <V>0.67719771999197</V>
+            <V>32.03333333</V>
+            <V>Model</V>
+            <V>0.60621633128022</V>
+            <V>0.74817910870372</V>
+            <V>0.66890001102379</V>
+            <V>32.63333333</V>
+            <V>Model</V>
+            <V>0.59700965095823</V>
+            <V>0.74079037108934</V>
+            <V>0.66552169052506</V>
+            <V>32.83333333</V>
+            <V>Model</V>
+            <V>0.59397127161753</V>
+            <V>0.7370721094326</V>
+            <V>0.66455983842919</V>
+            <V>32.93333333</V>
+            <V>Model</V>
+            <V>0.59318506409705</V>
+            <V>0.73593461276133</V>
+            <V>0.66230328947206</V>
+            <V>33.9</V>
+            <V>Model</V>
+            <V>0.59209447722605</V>
+            <V>0.73251210171807</V>
+            <V>0.66507897361878</V>
+            <V>33.96666667</V>
+            <V>Model</V>
+            <V>0.59423378203656</V>
+            <V>0.73592416520099</V>
+            <V>0.6686448433336</V>
+            <V>34.33333333</V>
+            <V>Model</V>
+            <V>0.59982189211829</V>
+            <V>0.73746779454892</V>
+            <V>0.67296205735861</V>
+            <V>34.63333333</V>
+            <V>Model</V>
+            <V>0.60392002709315</V>
+            <V>0.74200408762407</V>
+            <V>0.67755365075646</V>
+            <V>34.66666667</V>
+            <V>Model</V>
+            <V>0.60956028762268</V>
+            <V>0.74554701389023</V>
+            <V>0.67705093526638</V>
+            <V>34.7</V>
+            <V>Model</V>
+            <V>0.60963082986849</V>
+            <V>0.74447104066428</V>
+            <V>0.68069995554847</V>
+            <V>35</V>
+            <V>Model</V>
+            <V>0.61386587116255</V>
+            <V>0.74753403993438</V>
+            <V>0.68308529237267</V>
+            <V>35.03333333</V>
+            <V>Model</V>
+            <V>0.61698831903093</V>
+            <V>0.74918226571441</V>
+            <V>0.68347769066072</V>
+            <V>35.23333333</V>
+            <V>Model</V>
+            <V>0.61834361078146</V>
+            <V>0.74861177053998</V>
+            <V>0.68555716482064</V>
+            <V>35.4</V>
+            <V>Model</V>
+            <V>0.62097409524526</V>
+            <V>0.75014023439603</V>
+            <V>0.68867573161675</V>
+            <V>35.46666667</V>
+            <V>Model</V>
+            <V>0.6248402495306</V>
+            <V>0.75251121370289</V>
+            <V>0.68956760651147</V>
+            <V>35.63333333</V>
+            <V>Model</V>
+            <V>0.62578938431339</V>
+            <V>0.75334582870955</V>
+            <V>0.69123510116032</V>
+            <V>36.26666667</V>
+            <V>Model</V>
+            <V>0.62822935372049</V>
+            <V>0.75424084860014</V>
+            <V>0.6912080086772</V>
+            <V>36.36666667</V>
+            <V>Model</V>
+            <V>0.62848629962907</V>
+            <V>0.75392971772532</V>
+            <V>0.68463077272389</V>
+            <V>36.4</V>
+            <V>Model</V>
+            <V>0.61926820268467</V>
+            <V>0.74999334276311</V>
+            <V>0.68685331788361</V>
+            <V>36.43333333</V>
+            <V>Model</V>
+            <V>0.62254806831531</V>
+            <V>0.75115856745191</V>
+            <V>0.69344382999345</V>
+            <V>36.63333333</V>
+            <V>Model</V>
+            <V>0.62955192784494</V>
+            <V>0.75733573214195</V>
+            <V>0.69635010899953</V>
+            <V>36.76666667</V>
+            <V>Model</V>
+            <V>0.63463261473373</V>
+            <V>0.75806760326533</V>
+            <V>0.69861875274766</V>
+            <V>37.73333333</V>
+            <V>Model</V>
+            <V>0.63655898833214</V>
+            <V>0.76067851716319</V>
+            <V>0.69233775738283</V>
+            <V>37.8</V>
+            <V>Model</V>
+            <V>0.63118250818475</V>
+            <V>0.75349300658092</V>
+            <V>0.69595092702054</V>
+            <V>37.9</V>
+            <V>Model</V>
+            <V>0.63454231469117</V>
+            <V>0.75735953934991</V>
+            <V>0.69580985821689</V>
+            <V>37.96666667</V>
+            <V>Model</V>
+            <V>0.63489784031872</V>
+            <V>0.75672187611506</V>
+            <V>0.69389627319835</V>
+            <V>38.03333333</V>
+            <V>Model</V>
+            <V>0.63356616929987</V>
+            <V>0.75422637709684</V>
+            <V>0.69370741193141</V>
+            <V>38.13333333</V>
+            <V>Model</V>
+            <V>0.63385494834897</V>
+            <V>0.75355987551385</V>
+            <V>0.69623249166199</V>
+            <V>38.16666667</V>
+            <V>Model</V>
+            <V>0.63653805577391</V>
+            <V>0.75592692755008</V>
+            <V>0.6926729222048</V>
+            <V>38.8</V>
+            <V>Model</V>
+            <V>0.63238822151165</V>
+            <V>0.75295762289794</V>
+            <V>0.69629284015817</V>
+            <V>39.16666667</V>
+            <V>Model</V>
+            <V>0.63614465419887</V>
+            <V>0.75644102611748</V>
+            <V>0.69861561768024</V>
+            <V>39.2</V>
+            <V>Model</V>
+            <V>0.63880905678782</V>
+            <V>0.75842217857265</V>
+            <V>0.69439267979035</V>
+            <V>39.3</V>
+            <V>Model</V>
+            <V>0.63371657082373</V>
+            <V>0.75506878875698</V>
+            <V>0.69771907832188</V>
+            <V>39.53333333</V>
+            <V>Model</V>
+            <V>0.63750012113921</V>
+            <V>0.75793803550454</V>
+            <V>0.70062388708722</V>
+            <V>39.8</V>
+            <V>Model</V>
+            <V>0.6417770328148</V>
+            <V>0.75947074135964</V>
+            <V>0.70193847340886</V>
+            <V>39.83333333</V>
+            <V>Model</V>
+            <V>0.64370586026067</V>
+            <V>0.76017108655706</V>
+            <V>0.70456739201745</V>
+            <V>40</V>
+            <V>Model</V>
+            <V>0.64648484833303</V>
+            <V>0.76264993570188</V>
+            <V>0.70205555852758</V>
+            <V>40.63333333</V>
+            <V>Model</V>
+            <V>0.64464733370006</V>
+            <V>0.75946378335511</V>
+            <V>0.70510518915912</V>
+            <V>40.7</V>
+            <V>Model</V>
+            <V>0.6475914197076</V>
+            <V>0.76261895861064</V>
+            <V>0.70811846572122</V>
+            <V>41.36666667</V>
+            <V>Model</V>
+            <V>0.65173922047268</V>
+            <V>0.76449771096976</V>
+            <V>0.71052980597497</V>
+            <V>41.46666667</V>
+            <V>Model</V>
+            <V>0.65435584583973</V>
+            <V>0.76670376611021</V>
+            <V>0.70857643888216</V>
+            <V>41.53333333</V>
+            <V>Model</V>
+            <V>0.65237005851607</V>
+            <V>0.76478281924824</V>
+            <V>0.70990522234636</V>
+            <V>42.36666667</V>
+            <V>Model</V>
+            <V>0.65340251837154</V>
+            <V>0.76640792632117</V>
+            <V>0.71194428090271</V>
+            <V>42.43333333</V>
+            <V>Model</V>
+            <V>0.65525759107928</V>
+            <V>0.76863097072615</V>
+            <V>0.71459683518729</V>
+            <V>42.5</V>
+            <V>Model</V>
+            <V>0.65714582904371</V>
+            <V>0.77204784133087</V>
+            <V>0.71555766004284</V>
+            <V>42.66666667</V>
+            <V>Model</V>
+            <V>0.65830833085237</V>
+            <V>0.77280698923332</V>
+            <V>0.71365741376287</V>
+            <V>42.9</V>
+            <V>Model</V>
+            <V>0.65679669999773</V>
+            <V>0.77051812752801</V>
+            <V>0.71450209521234</V>
+            <V>42.96666667</V>
+            <V>Model</V>
+            <V>0.65781935086885</V>
+            <V>0.77118483955583</V>
+            <V>0.71759754856453</V>
+            <V>43.03333333</V>
+            <V>Model</V>
+            <V>0.66091200386262</V>
+            <V>0.77428309326644</V>
+            <V>0.71841710443581</V>
+            <V>43.1</V>
+            <V>Model</V>
+            <V>0.66195809034093</V>
+            <V>0.77487611853069</V>
+            <V>0.7208863478765</V>
+            <V>43.13333333</V>
+            <V>Model</V>
+            <V>0.66468428860438</V>
+            <V>0.77708840714862</V>
+            <V>0.71876577296374</V>
+            <V>43.2</V>
+            <V>Model</V>
+            <V>0.66345497265038</V>
+            <V>0.7740765732771</V>
+            <V>0.71835925620813</V>
+            <V>43.26666667</V>
+            <V>Model</V>
+            <V>0.66334080594029</V>
+            <V>0.77337770647596</V>
+            <V>0.72109063192119</V>
+            <V>43.4</V>
+            <V>Model</V>
+            <V>0.66591812848902</V>
+            <V>0.77626313535337</V>
+            <V>0.72194017613427</V>
+            <V>44.13333333</V>
+            <V>Model</V>
+            <V>0.66667422232145</V>
+            <V>0.77720612994709</V>
+            <V>0.72064706176517</V>
+            <V>44.6</V>
+            <V>Model</V>
+            <V>0.66556801020512</V>
+            <V>0.77572611332522</V>
+            <V>0.72213232296641</V>
+            <V>45.16666667</V>
+            <V>Model</V>
+            <V>0.66831109076944</V>
+            <V>0.77595355516338</V>
+            <V>0.72332899013113</V>
+            <V>45.33333333</V>
+            <V>Model</V>
+            <V>0.66940756402683</V>
+            <V>0.77725041623543</V>
+            <V>0.7261256734751</V>
+            <V>45.5</V>
+            <V>Model</V>
+            <V>0.67299379725562</V>
+            <V>0.77925754969458</V>
+            <V>0.72829791736094</V>
+            <V>45.73333333</V>
+            <V>Model</V>
+            <V>0.67566510825356</V>
+            <V>0.78093072646831</V>
+            <V>0.7267640899924</V>
+            <V>45.8</V>
+            <V>Model</V>
+            <V>0.67487616591468</V>
+            <V>0.77865201407012</V>
+            <V>0.72505185289842</V>
+            <V>46.06666667</V>
+            <V>Model</V>
+            <V>0.67297930697127</V>
+            <V>0.77712439882558</V>
+            <V>0.72568802429719</V>
+            <V>46.16666667</V>
+            <V>Model</V>
+            <V>0.67309492577936</V>
+            <V>0.77828112281502</V>
+            <V>0.72355961418476</V>
+            <V>46.36666667</V>
+            <V>Model</V>
+            <V>0.67207547454323</V>
+            <V>0.77504375382629</V>
+            <V>0.71952803547131</V>
+            <V>47.03333333</V>
+            <V>Model</V>
+            <V>0.6679287575296</V>
+            <V>0.77112731341301</V>
+            <V>0.72125443704047</V>
+            <V>47.13333333</V>
+            <V>Model</V>
+            <V>0.67050941326995</V>
+            <V>0.77199946081098</V>
+            <V>0.7220551082272</V>
+            <V>47.43333333</V>
+            <V>Model</V>
+            <V>0.67211501662186</V>
+            <V>0.77199519983254</V>
+            <V>0.72473347450935</V>
+            <V>47.63333333</V>
+            <V>Model</V>
+            <V>0.67487745967809</V>
+            <V>0.77458948934062</V>
+            <V>0.72744668362603</V>
+            <V>47.9</V>
+            <V>Model</V>
+            <V>0.67816177824119</V>
+            <V>0.77673158901086</V>
+            <V>0.72583513862672</V>
+            <V>48.13333333</V>
+            <V>Model</V>
+            <V>0.67642634900773</V>
+            <V>0.77524392824571</V>
+            <V>0.72741779302632</V>
+            <V>48.16666667</V>
+            <V>Model</V>
+            <V>0.67741446754105</V>
+            <V>0.77742111851159</V>
+            <V>0.72745576824234</V>
+            <V>48.43333333</V>
+            <V>Model</V>
+            <V>0.67778598575095</V>
+            <V>0.77712555073373</V>
+            <V>0.72971535823063</V>
+            <V>48.53333333</V>
+            <V>Model</V>
+            <V>0.68050796284098</V>
+            <V>0.77892275362028</V>
+            <V>0.72920200703406</V>
+            <V>48.6</V>
+            <V>Model</V>
+            <V>0.68011089750934</V>
+            <V>0.77829311655877</V>
+            <V>0.73004773674913</V>
+            <V>49.23333333</V>
+            <V>Model</V>
+            <V>0.68124341063423</V>
+            <V>0.77885206286403</V>
+            <V>0.73157163671275</V>
+            <V>49.3</V>
+            <V>Model</V>
+            <V>0.68346989821687</V>
+            <V>0.77967337520864</V>
+            <V>0.7329929608533</V>
+            <V>49.46666667</V>
+            <V>Model</V>
+            <V>0.68529087287177</V>
+            <V>0.78069504883483</V>
+            <V>0.73268061063345</V>
+            <V>49.66666667</V>
+            <V>Model</V>
+            <V>0.6852482363765</V>
+            <V>0.7801129848904</V>
+            <V>0.73453264240418</V>
+            <V>50</V>
+            <V>Model</V>
+            <V>0.68765448855499</V>
+            <V>0.78141079625337</V>
+            <V>0.73403271436669</V>
+            <V>50.03333333</V>
+            <V>Model</V>
+            <V>0.68707033816948</V>
+            <V>0.78099509056389</V>
+            <V>0.73369758605228</V>
+            <V>50.23333333</V>
+            <V>Model</V>
+            <V>0.68715454605855</V>
+            <V>0.78024062604601</V>
+            <V>0.73374171368249</V>
+            <V>50.66666667</V>
+            <V>Model</V>
+            <V>0.6875331652099</V>
+            <V>0.77995026215509</V>
+            <V>0.72922793543988</V>
+            <V>51.2</V>
+            <V>Model</V>
+            <V>0.68285470787843</V>
+            <V>0.77560116300133</V>
+            <V>0.73050866990435</V>
+            <V>51.4</V>
+            <V>Model</V>
+            <V>0.68382219226538</V>
+            <V>0.77719514754331</V>
+            <V>0.7292296662598</V>
+            <V>51.66666667</V>
+            <V>Model</V>
+            <V>0.68330793113091</V>
+            <V>0.7751514013887</V>
+            <V>0.7316336541604</V>
+            <V>51.76666667</V>
+            <V>Model</V>
+            <V>0.68609350985291</V>
+            <V>0.7771737984679</V>
+            <V>0.73082095783889</V>
+            <V>51.96666667</V>
+            <V>Model</V>
+            <V>0.68555540362398</V>
+            <V>0.7760865120538</V>
+            <V>0.72922113152083</V>
+            <V>52.3</V>
+            <V>Model</V>
+            <V>0.68501096084366</V>
+            <V>0.773431302198</V>
+            <V>0.73049480567604</V>
+            <V>52.46666667</V>
+            <V>Model</V>
+            <V>0.68634788247398</V>
+            <V>0.7746417288781</V>
+            <V>0.72806537057413</V>
+            <V>52.73333333</V>
+            <V>Model</V>
+            <V>0.68472819432797</V>
+            <V>0.77140254682029</V>
+            <V>0.72628770635413</V>
+            <V>53.63333333</V>
+            <V>Model</V>
+            <V>0.68324560832738</V>
+            <V>0.76932980438088</V>
+            <V>0.72811148468149</V>
+            <V>54.1</V>
+            <V>Model</V>
+            <V>0.68535184102821</V>
+            <V>0.77087112833476</V>
+            <V>0.7244604028969</V>
+            <V>55.2</V>
+            <V>Model</V>
+            <V>0.68261507922905</V>
+            <V>0.76630572656476</V>
+            <V>0.72701830524591</V>
+            <V>55.4</V>
+            <V>Model</V>
+            <V>0.68504481958599</V>
+            <V>0.76899179090582</V>
+            <V>0.72869685853457</V>
+            <V>55.63333333</V>
+            <V>Model</V>
+            <V>0.6868872208271</V>
+            <V>0.77050649624204</V>
+            <V>0.72850148213642</V>
+            <V>55.83333333</V>
+            <V>Model</V>
+            <V>0.68724230433775</V>
+            <V>0.76976065993509</V>
+            <V>0.72642236237312</V>
+            <V>56.33333333</V>
+            <V>Model</V>
+            <V>0.68621994231247</V>
+            <V>0.76662478243376</V>
+            <V>0.72613399663983</V>
+            <V>56.5</V>
+            <V>Model</V>
+            <V>0.68613146967124</V>
+            <V>0.76613652360842</V>
+            <V>0.72539315089233</V>
+            <V>57.3</V>
+            <V>Model</V>
+            <V>0.68513518844693</V>
+            <V>0.76565111333773</V>
+            <V>0.72526598207405</V>
+            <V>57.66666667</V>
+            <V>Model</V>
+            <V>0.68510226884505</V>
+            <V>0.76542969530306</V>
+            <V>0.72284415060045</V>
+            <V>58.63333333</V>
+            <V>Model</V>
+            <V>0.68321517147784</V>
+            <V>0.76247312972305</V>
+            <V>0.72520211622719</V>
+            <V>59.5</V>
+            <V>Model</V>
+            <V>0.6861474035035</V>
+            <V>0.76425682895089</V>
+            <V>0.72529369480018</V>
+            <V>59.7</V>
+            <V>Model</V>
+            <V>0.6865455696154</V>
+            <V>0.76404181998496</V>
+            <V>0.72714543383891</V>
+            <V>59.93333333</V>
+            <V>Model</V>
+            <V>0.68887425879228</V>
+            <V>0.76541660888555</V>
+            <V>0.72553430303752</V>
+            <V>60.86666667</V>
+            <V>Model</V>
+            <V>0.68753648668291</V>
+            <V>0.76353211939213</V>
+            <V>0.72788003909273</V>
+            <V>61.1</V>
+            <V>Model</V>
+            <V>0.68961908128388</V>
+            <V>0.76614099690158</V>
+            <V>0.72888179302175</V>
+            <V>61.9</V>
+            <V>Model</V>
+            <V>0.69071676437663</V>
+            <V>0.76704682166686</V>
+            <V>0.73032999378452</V>
+            <V>62.13333333</V>
+            <V>Model</V>
+            <V>0.6931821136043</V>
+            <V>0.76747787396475</V>
+            <V>0.72632597222004</V>
+            <V>62.76666667</V>
+            <V>Model</V>
+            <V>0.68853427376445</V>
+            <V>0.76411767067563</V>
+            <V>0.72506173952271</V>
+            <V>62.9</V>
+            <V>Model</V>
+            <V>0.68788302533626</V>
+            <V>0.76224045370917</V>
+            <V>0.72618456864111</V>
+            <V>63.5</V>
+            <V>Model</V>
+            <V>0.68856334892114</V>
+            <V>0.76380578836108</V>
+            <V>0.72829872071405</V>
+            <V>63.8</V>
+            <V>Model</V>
+            <V>0.69066654660834</V>
+            <V>0.76593089481975</V>
+            <V>0.72762478039155</V>
+            <V>64</V>
+            <V>Model</V>
+            <V>0.69013325599877</V>
+            <V>0.76511630478433</V>
+            <V>0.72830614505289</V>
+            <V>64.86666667</V>
+            <V>Model</V>
+            <V>0.6907028152201</V>
+            <V>0.76590947488567</V>
+            <V>0.7296854998049</V>
+            <V>64.93333333</V>
+            <V>Model</V>
+            <V>0.69316828104699</V>
+            <V>0.76620271856281</V>
+            <V>0.73149431297922</V>
+            <V>65.56666667</V>
+            <V>Model</V>
+            <V>0.69426683214664</V>
+            <V>0.76872179381179</V>
+            <V>0.73292609809614</V>
+            <V>65.83333333</V>
+            <V>Model</V>
+            <V>0.69598102598059</V>
+            <V>0.76987117021169</V>
+            <V>0.73245601850685</V>
+            <V>66.63333333</V>
+            <V>Model</V>
+            <V>0.69559441413193</V>
+            <V>0.76931762288176</V>
+            <V>0.72941670472866</V>
+            <V>66.73333333</V>
+            <V>Model</V>
+            <V>0.69168108892866</V>
+            <V>0.76715232052866</V>
+            <V>0.72842602381284</V>
+            <V>67.8</V>
+            <V>Model</V>
+            <V>0.69036387578651</V>
+            <V>0.76648817183917</V>
+            <V>0.72709662344261</V>
+            <V>68.2</V>
+            <V>Model</V>
+            <V>0.68932366175628</V>
+            <V>0.76486958512894</V>
+            <V>0.72911072116921</V>
+            <V>68.26666667</V>
+            <V>Model</V>
+            <V>0.69102584655312</V>
+            <V>0.7671955957853</V>
+            <V>0.73116945645977</V>
+            <V>69.3</V>
+            <V>Model</V>
+            <V>0.69324297827122</V>
+            <V>0.76909593464832</V>
+            <V>0.72998543185228</V>
+            <V>69.8</V>
+            <V>Model</V>
+            <V>0.69268337131376</V>
+            <V>0.76728749239081</V>
+            <V>0.7313277080656</V>
+            <V>70.4</V>
+            <V>Model</V>
+            <V>0.69449179583891</V>
+            <V>0.76816362029229</V>
+            <V>0.73013622168573</V>
+            <V>70.46666667</V>
+            <V>Model</V>
+            <V>0.69340375078145</V>
+            <V>0.76686869259001</V>
+            <V>0.72836605146044</V>
+            <V>70.6</V>
+            <V>Model</V>
+            <V>0.69113379434676</V>
+            <V>0.76559830857412</V>
+            <V>0.72460882342468</V>
+            <V>71.06666667</V>
+            <V>Model</V>
+            <V>0.68780052315398</V>
+            <V>0.76141712369539</V>
+            <V>0.72578996559225</V>
+            <V>71.76666667</V>
+            <V>Model</V>
+            <V>0.68859595167665</V>
+            <V>0.76298397950784</V>
+            <V>0.72657033653678</V>
+            <V>71.8</V>
+            <V>Model</V>
+            <V>0.68900810390454</V>
+            <V>0.76413256916902</V>
+            <V>0.7262236870495</V>
+            <V>73.46666667</V>
+            <V>Model</V>
+            <V>0.68852538385055</V>
+            <V>0.76392199024844</V>
+            <V>0.72531107284427</V>
+            <V>73.7</V>
+            <V>Model</V>
+            <V>0.68808898624728</V>
+            <V>0.76253315944125</V>
+            <V>0.7238020703358</V>
+            <V>74.46666667</V>
+            <V>Model</V>
+            <V>0.68628325276525</V>
+            <V>0.76132088790636</V>
+            <V>0.72602141921423</V>
+            <V>74.73333333</V>
+            <V>Model</V>
+            <V>0.68948311377314</V>
+            <V>0.76255972465531</V>
+            <V>0.72669525964589</V>
+            <V>75.23333333</V>
+            <V>Model</V>
+            <V>0.69006081728163</V>
+            <V>0.76332970201014</V>
+            <V>0.72321444451677</V>
+            <V>75.33333333</V>
+            <V>Model</V>
+            <V>0.68477644837536</V>
+            <V>0.76165244065819</V>
+            <V>0.72293317050545</V>
+            <V>75.36666667</V>
+            <V>Model</V>
+            <V>0.68402864481951</V>
+            <V>0.76183769619139</V>
+            <V>0.72031444359539</V>
+            <V>76.13333333</V>
+            <V>Model</V>
+            <V>0.68159770233605</V>
+            <V>0.75903118485474</V>
+            <V>0.71889433858379</V>
+            <V>77.23333333</V>
+            <V>Model</V>
+            <V>0.68035716413287</V>
+            <V>0.75743151303471</V>
+            <V>0.7181077788708</V>
+            <V>77.46666667</V>
+            <V>Model</V>
+            <V>0.67925030831244</V>
+            <V>0.75696524942916</V>
+            <V>0.72044018193322</V>
+            <V>79.1</V>
+            <V>Model</V>
+            <V>0.6819930086331</V>
+            <V>0.75888735523333</V>
+            <V>0.71832689525721</V>
+            <V>79.36666667</V>
+            <V>Model</V>
+            <V>0.67997235763957</V>
+            <V>0.75668143287485</V>
+            <V>0.71643557335983</V>
+            <V>79.8</V>
+            <V>Model</V>
+            <V>0.67805234071151</V>
+            <V>0.75481880600814</V>
+            <V>0.71808423575089</V>
+            <V>79.86666667</V>
+            <V>Model</V>
+            <V>0.67932859593401</V>
+            <V>0.75683987556778</V>
+            <V>0.72064576838267</V>
+            <V>80.73333333</V>
+            <V>Model</V>
+            <V>0.68224056881691</V>
+            <V>0.75905096794844</V>
+            <V>0.72254222601185</V>
+            <V>81.06666667</V>
+            <V>Model</V>
+            <V>0.68389137587237</V>
+            <V>0.76119307615133</V>
+            <V>0.72344009354043</V>
+            <V>81.1</V>
+            <V>Model</V>
+            <V>0.68479330007092</V>
+            <V>0.76208688700993</V>
+            <V>0.72277228740303</V>
+            <V>81.13333333</V>
+            <V>Model</V>
+            <V>0.68433997543047</V>
+            <V>0.7612045993756</V>
+            <V>0.7241870265602</V>
+            <V>81.33333333</V>
+            <V>Model</V>
+            <V>0.68543885322711</V>
+            <V>0.76293519989329</V>
+            <V>0.72581603431789</V>
+            <V>81.8</V>
+            <V>Model</V>
+            <V>0.68756926802778</V>
+            <V>0.76406280060799</V>
+            <V>0.72506304371526</V>
+            <V>81.93333333</V>
+            <V>Model</V>
+            <V>0.68651044752128</V>
+            <V>0.76361563990924</V>
+            <V>0.72390131948078</V>
+            <V>82.63333333</V>
+            <V>Model</V>
+            <V>0.68563697288831</V>
+            <V>0.76216566607326</V>
+            <V>0.72298429144246</V>
+            <V>83.53333333</V>
+            <V>Model</V>
+            <V>0.68433644495498</V>
+            <V>0.76163213792994</V>
+            <V>0.72482540038052</V>
+            <V>84.2</V>
+            <V>Model</V>
+            <V>0.68640351171135</V>
+            <V>0.7632472890497</V>
+            <V>0.72374261102686</V>
+            <V>84.83333333</V>
+            <V>Model</V>
+            <V>0.68522653293042</V>
+            <V>0.7622586891233</V>
+            <V>0.72514371823911</V>
+            <V>84.9</V>
+            <V>Model</V>
+            <V>0.6871181446847</V>
+            <V>0.76316929179353</V>
+            <V>0.72776665928183</V>
+            <V>85.3</V>
+            <V>Model</V>
+            <V>0.6904575634075</V>
+            <V>0.76507575515616</V>
+            <V>0.72818944217875</V>
+            <V>85.56666667</V>
+            <V>Model</V>
+            <V>0.69112417170446</V>
+            <V>0.76525471265304</V>
+            <V>0.72646344890195</V>
+            <V>85.73333333</V>
+            <V>Model</V>
+            <V>0.68936796782323</V>
+            <V>0.76355892998066</V>
+            <V>0.72345656398266</V>
+            <V>85.86666667</V>
+            <V>Model</V>
+            <V>0.68649754885153</V>
+            <V>0.76041557911379</V>
+            <V>0.72462001814321</V>
+            <V>86.06666667</V>
+            <V>Model</V>
+            <V>0.68776484102439</V>
+            <V>0.76147519526202</V>
+            <V>0.72067757822393</V>
+            <V>86.36666667</V>
+            <V>Model</V>
+            <V>0.68440265464504</V>
+            <V>0.75695250180283</V>
+            <V>0.72084145205336</V>
+            <V>87</V>
+            <V>Model</V>
+            <V>0.68474228989323</V>
+            <V>0.75694061421349</V>
+            <V>0.72187141092923</V>
+            <V>87.1</V>
+            <V>Model</V>
+            <V>0.6862787425368</V>
+            <V>0.75746407932166</V>
+            <V>0.72298824751779</V>
+            <V>87.23333333</V>
+            <V>Model</V>
+            <V>0.68775169107439</V>
+            <V>0.75822480396119</V>
+            <V>0.72306093617815</V>
+            <V>87.73333333</V>
+            <V>Model</V>
+            <V>0.68785401766124</V>
+            <V>0.75826785469507</V>
+            <V>0.72442625117045</V>
+            <V>88.93333333</V>
+            <V>Model</V>
+            <V>0.68935212431353</V>
+            <V>0.75950037802736</V>
+            <V>0.7214768025091</V>
+            <V>89.1</V>
+            <V>Model</V>
+            <V>0.68649610743506</V>
+            <V>0.75645749758314</V>
+            <V>0.72382022138103</V>
+            <V>89.36666667</V>
+            <V>Model</V>
+            <V>0.68895339936494</V>
+            <V>0.75868704339711</V>
+            <V>0.72632672280026</V>
+            <V>89.9</V>
+            <V>Model</V>
+            <V>0.69083964945754</V>
+            <V>0.76181379614298</V>
+            <V>0.72605676594063</V>
+            <V>90.13333333</V>
+            <V>Model</V>
+            <V>0.69050351882335</V>
+            <V>0.7616100130579</V>
+            <V>0.72676175968775</V>
+            <V>90.23333333</V>
+            <V>Model</V>
+            <V>0.69135639095596</V>
+            <V>0.76216712841954</V>
+            <V>0.72842160813996</V>
+            <V>90.26666667</V>
+            <V>Model</V>
+            <V>0.69331653316851</V>
+            <V>0.76352668311141</V>
+            <V>0.73007784916878</V>
+            <V>90.3</V>
+            <V>Model</V>
+            <V>0.69485938532937</V>
+            <V>0.76529631300819</V>
+            <V>0.7321838417764</V>
+            <V>90.6</V>
+            <V>Model</V>
+            <V>0.6977791444474</V>
+            <V>0.7665885391054</V>
+            <V>0.73348628778148</V>
+            <V>90.8</V>
+            <V>Model</V>
+            <V>0.69895057487421</V>
+            <V>0.76802200068874</V>
+            <V>0.73410895320544</V>
+            <V>91.63333333</V>
+            <V>Model</V>
+            <V>0.69962032395857</V>
+            <V>0.76859758245232</V>
+            <V>0.73175687266833</V>
+            <V>91.73333333</V>
+            <V>Model</V>
+            <V>0.69860632764016</V>
+            <V>0.76490741769651</V>
+            <V>0.73114841511698</V>
+            <V>92.73333333</V>
+            <V>Model</V>
+            <V>0.69801030189401</V>
+            <V>0.76428652833994</V>
+            <V>0.73356511280185</V>
+            <V>93.66666667</V>
+            <V>Model</V>
+            <V>0.70065021291081</V>
+            <V>0.76648001269288</V>
+            <V>0.73159017989292</V>
+            <V>94.03333333</V>
+            <V>Model</V>
+            <V>0.69867403215828</V>
+            <V>0.76450632762757</V>
+            <V>0.73164065444975</V>
+            <V>95.86666667</V>
+            <V>Model</V>
+            <V>0.69881723389499</V>
+            <V>0.7644640750045</V>
+            <V>0.73228277102802</V>
+            <V>96.83333333</V>
+            <V>Model</V>
+            <V>0.69915069994579</V>
+            <V>0.76541484211024</V>
+            <V>0.7348144850625</V>
+            <V>96.9</V>
+            <V>Model</V>
+            <V>0.70181155747054</V>
+            <V>0.76781741265447</V>
+            <V>0.73709844555991</V>
+            <V>97.3</V>
+            <V>Model</V>
+            <V>0.70425151263238</V>
+            <V>0.76994537848744</V>
+            <V>0.73679971275299</V>
+            <V>98.7</V>
+            <V>Model</V>
+            <V>0.70451595778201</V>
+            <V>0.76908346772398</V>
+            <V>0.7388390623114</V>
+            <V>98.76666667</V>
+            <V>Model</V>
+            <V>0.70596059549248</V>
+            <V>0.77171752913032</V>
+            <V>0.74051893005135</V>
+            <V>98.83333333</V>
+            <V>Model</V>
+            <V>0.7076945026234</V>
+            <V>0.77334335747929</V>
+            <V>0.74196839462396</V>
+            <V>99.4</V>
+            <V>Model</V>
+            <V>0.70905597388495</V>
+            <V>0.77488081536297</V>
+            <V>0.74076979261584</V>
+            <V>101.6333333</V>
+            <V>Model</V>
+            <V>0.70733411529363</V>
+            <V>0.77420546993805</V>
+            <V>0.74333871143003</V>
+            <V>102</V>
+            <V>Model</V>
+            <V>0.70945852319304</V>
+            <V>0.77721889966702</V>
+            <V>0.74289513469754</V>
+            <V>102.3</V>
+            <V>Model</V>
+            <V>0.70900763976505</V>
+            <V>0.77678262963002</V>
+            <V>0.74198685469483</V>
+            <V>102.4</V>
+            <V>Model</V>
+            <V>0.70807300938686</V>
+            <V>0.77590070000281</V>
+            <V>0.74315448464504</V>
+            <V>103.4666667</V>
+            <V>Model</V>
+            <V>0.70942775311318</V>
+            <V>0.7768812161769</V>
+            <V>0.742291323136</V>
+            <V>104.7666667</V>
+            <V>Model</V>
+            <V>0.7078119855784</V>
+            <V>0.7767706606936</V>
+            <V>0.74286693440968</V>
+            <V>105.6</V>
+            <V>Model</V>
+            <V>0.7085075702631</V>
+            <V>0.77722629855625</V>
+            <V>0.74303068689292</V>
+            <V>106.5666667</V>
+            <V>Model</V>
+            <V>0.70858639471389</V>
+            <V>0.77747497907194</V>
+            <V>0.7460591738909</V>
+            <V>108.0666667</V>
+            <V>Model</V>
+            <V>0.71180375365156</V>
+            <V>0.78031459413024</V>
+            <V>0.74580548825563</V>
+            <V>109.6</V>
+            <V>Model</V>
+            <V>0.71140425830286</V>
+            <V>0.7802067182084</V>
+            <V>0.74783955591936</V>
+            <V>110.7666667</V>
+            <V>Model</V>
+            <V>0.71358713991164</V>
+            <V>0.78209197192708</V>
+            <V>0.74428968520688</V>
+            <V>110.8333333</V>
+            <V>Model</V>
+            <V>0.70850746429059</V>
+            <V>0.78007190612318</V>
+            <V>0.7440189358595</V>
+            <V>110.9333333</V>
+            <V>Model</V>
+            <V>0.70817649255184</V>
+            <V>0.77986137916715</V>
+            <V>0.74868286832443</V>
+            <V>111.1</V>
+            <V>Model</V>
+            <V>0.71341227936854</V>
+            <V>0.78395345728032</V>
+            <V>0.75062134123553</V>
+            <V>111.5666667</V>
+            <V>Model</V>
+            <V>0.71576759467437</V>
+            <V>0.78547508779668</V>
+            <V>0.75327419777211</V>
+            <V>111.9666667</V>
+            <V>Model</V>
+            <V>0.71876683511458</V>
+            <V>0.78778156042964</V>
+            <V>0.75031666748442</V>
+            <V>114.9</V>
+            <V>Model</V>
+            <V>0.71522927476204</V>
+            <V>0.78540406020681</V>
+            <V>0.75090488111319</V>
+            <V>115.7</V>
+            <V>Model</V>
+            <V>0.71598809109614</V>
+            <V>0.78582167113025</V>
+            <V>0.74954421600899</V>
+            <V>116.4333333</V>
+            <V>Model</V>
+            <V>0.71461195371226</V>
+            <V>0.78447647830571</V>
+            <V>0.75080582904551</V>
+            <V>117.5666667</V>
+            <V>Model</V>
+            <V>0.7162175066001</V>
+            <V>0.78539415149093</V>
+            <V>0.74921736730809</V>
+            <V>118.0333333</V>
+            <V>Model</V>
+            <V>0.71532151548466</V>
+            <V>0.78311321913153</V>
+            <V>0.74857135822956</V>
+            <V>118.1333333</V>
+            <V>Model</V>
+            <V>0.71502728739393</V>
+            <V>0.78211542906519</V>
+            <V>0.74885043515791</V>
+            <V>119</V>
+            <V>Model</V>
+            <V>0.71528088121942</V>
+            <V>0.7824199890964</V>
+            <V>0.74937932019034</V>
+            <V>119.4666667</V>
+            <V>Model</V>
+            <V>0.71629441403786</V>
+            <V>0.78246422634282</V>
+            <V>0.75075449450921</V>
+            <V>119.8666667</V>
+            <V>Model</V>
+            <V>0.71735919769242</V>
+            <V>0.78414979132601</V>
+            <V>0.75294601570506</V>
+            <V>120.1333333</V>
+            <V>Model</V>
+            <V>0.71977060217429</V>
+            <V>0.78612142923583</V>
+            <V>0.75126052780493</V>
+            <V>120.5666667</V>
+            <V>Model</V>
+            <V>0.71785997811589</V>
+            <V>0.78466107749397</V>
+            <V>0.75157701216413</V>
+            <V>121.6666667</V>
+            <V>Model</V>
+            <V>0.71800558616748</V>
+            <V>0.78514843816079</V>
+            <V>0.75507441883165</V>
+            <V>122</V>
+            <V>Model</V>
+            <V>0.72154299092152</V>
+            <V>0.78860584674179</V>
+            <V>0.75550780628198</V>
+            <V>123.3</V>
+            <V>Model</V>
+            <V>0.7219230963818</V>
+            <V>0.78909251618215</V>
+            <V>0.75629290240546</V>
+            <V>124.1333333</V>
+            <V>Model</V>
+            <V>0.72226033799762</V>
+            <V>0.79032546681331</V>
+            <V>0.75785936898845</V>
+            <V>124.2</V>
+            <V>Model</V>
+            <V>0.72276461439542</V>
+            <V>0.79295412358149</V>
+            <V>0.7597652406728</V>
+            <V>124.5666667</V>
+            <V>Model</V>
+            <V>0.72471106777581</V>
+            <V>0.79481941356979</V>
+            <V>0.76149023194661</V>
+            <V>125.2666667</V>
+            <V>Model</V>
+            <V>0.72799851441493</V>
+            <V>0.79498194947829</V>
+            <V>0.75878758737491</V>
+            <V>125.7666667</V>
+            <V>Model</V>
+            <V>0.72415734329429</V>
+            <V>0.79341783145554</V>
+            <V>0.75775889334409</V>
+            <V>126.4666667</V>
+            <V>Model</V>
+            <V>0.7227442118488</V>
+            <V>0.79277357483937</V>
+            <V>0.7616527982754</V>
+            <V>128.3666667</V>
+            <V>Model</V>
+            <V>0.72655313653839</V>
+            <V>0.79675246001242</V>
+            <V>0.76115907478246</V>
+            <V>129.8</V>
+            <V>Model</V>
+            <V>0.72625505576958</V>
+            <V>0.79606309379533</V>
+            <V>0.7643535413119</V>
+            <V>132.0333333</V>
+            <V>Model</V>
+            <V>0.72860475660861</V>
+            <V>0.80010232601518</V>
+            <V>0.76580583928631</V>
+            <V>132.2</V>
+            <V>Model</V>
+            <V>0.72966886442996</V>
+            <V>0.80194281414266</V>
+            <V>0.76894532806805</V>
+            <V>132.5666667</V>
+            <V>Model</V>
+            <V>0.73265597548881</V>
+            <V>0.8052346806473</V>
+            <V>0.76788371703758</V>
+            <V>133.2333333</V>
+            <V>Model</V>
+            <V>0.73166730209811</V>
+            <V>0.80410013197706</V>
+            <V>0.76643410567256</V>
+            <V>134.4666667</V>
+            <V>Model</V>
+            <V>0.73094138905589</V>
+            <V>0.80192682228923</V>
+            <V>0.76701613997955</V>
+            <V>140.7666667</V>
+            <V>Model</V>
+            <V>0.73292926008862</V>
+            <V>0.80110301987049</V>
+            <V>0.76267028729127</V>
+            <V>141.7333333</V>
+            <V>Model</V>
+            <V>0.72781958757223</V>
+            <V>0.7975209870103</V>
+            <V>0.76156148163432</V>
+            <V>142.5666667</V>
+            <V>Model</V>
+            <V>0.72732856269508</V>
+            <V>0.79579440057356</V>
+            <V>0.76279878864149</V>
+            <V>143.1333333</V>
+            <V>Model</V>
+            <V>0.72854126500099</V>
+            <V>0.797056312282</V>
+            <V>0.76088394703411</V>
+            <V>144.6666667</V>
+            <V>Model</V>
+            <V>0.72599585388524</V>
+            <V>0.79577204018297</V>
+            <V>0.76111275924574</V>
+            <V>147.7666667</V>
+            <V>Model</V>
+            <V>0.72586883875305</V>
+            <V>0.79635667973843</V>
+            <V>0.76151458437584</V>
+            <V>148.7666667</V>
+            <V>Model</V>
+            <V>0.7263427088682</V>
+            <V>0.79668645988349</V>
+            <V>0.76423180105389</V>
+            <V>149.4333333</V>
+            <V>Model</V>
+            <V>0.72920245367131</V>
+            <V>0.79926114843648</V>
+            <V>0.76211354629622</V>
+            <V>150.6</V>
+            <V>Model</V>
+            <V>0.72767745558108</V>
+            <V>0.79654963701137</V>
+            <V>0.76685551748901</V>
+            <V>153.8666667</V>
+            <V>Model</V>
+            <V>0.73059603991396</V>
+            <V>0.80311499506405</V>
+            <V>0.76403741351397</V>
+            <V>159</V>
+            <V>Model</V>
+            <V>0.72739666418589</V>
+            <V>0.80067816284205</V>
+            <V>0.7622197794482</V>
+            <V>159.2333333</V>
+            <V>Model</V>
+            <V>0.72599380015396</V>
+            <V>0.79844575874244</V>
+            <V>0.76003944256308</V>
+            <V>162.8333333</V>
+            <V>Model</V>
+            <V>0.72358497208563</V>
+            <V>0.79649391304053</V>
+            <V>0.75790004473608</V>
+            <V>164.5666667</V>
+            <V>Model</V>
+            <V>0.72218529748523</V>
+            <V>0.79361479198692</V>
+            <V>0.75699102774095</V>
+            <V>164.6</V>
+            <V>Model</V>
+            <V>0.72096506192402</V>
+            <V>0.79301699355788</V>
+            <V>0.7575580842248</V>
+            <V>165.1666667</V>
+            <V>Model</V>
+            <V>0.72140770916266</V>
+            <V>0.79370845928694</V>
+            <V>0.7604544448584</V>
+            <V>168.9666667</V>
+            <V>Model</V>
+            <V>0.72289554933748</V>
+            <V>0.79801334037932</V>
+            <V>0.76228200359006</V>
+            <V>170.6333333</V>
+            <V>Model</V>
+            <V>0.72481466268626</V>
+            <V>0.79974934449385</V>
+            <V>0.76369442977875</V>
+            <V>170.6666667</V>
+            <V>Model</V>
+            <V>0.72673667607636</V>
+            <V>0.80065218348113</V>
+            <V>0.76306462829059</V>
+            <V>176.3666667</V>
+            <V>Model</V>
+            <V>0.72528766107675</V>
+            <V>0.80084159550444</V>
+            <V>0.76742076629416</V>
+            <V>178.7333333</V>
+            <V>Model</V>
+            <V>0.73061714038298</V>
+            <V>0.80422439220534</V>
+            <V>0.76827410801176</V>
+            <V>181.2333333</V>
+            <V>Model</V>
+            <V>0.73203183396025</V>
+            <V>0.80451638206327</V>
+            <V>0.77353473910141</V>
+            <V>184.7</V>
+            <V>Model</V>
+            <V>0.73503585432183</V>
+            <V>0.81203362388098</V>
+            <V>0.77091101820391</V>
+            <V>185</V>
+            <V>Model</V>
+            <V>0.73281941473778</V>
+            <V>0.80900262167004</V>
+            <V>0.77713848973588</V>
+            <V>196.5666667</V>
+            <V>Model</V>
+            <V>0.73812524602065</V>
+            <V>0.81615173345111</V>
+            <V>0.77933998670052</V>
+            <V>196.8666667</V>
+            <V>Model</V>
+            <V>0.74127127112405</V>
+            <V>0.81740870227699</V>
+            <V>0.77817492594733</V>
+            <V>198.1</V>
+            <V>Model</V>
+            <V>0.73924049754411</V>
+            <V>0.81710935435055</V>
+            <V>0.78433497723881</V>
+            <V>198.3333333</V>
+            <V>Model</V>
+            <V>0.74550752478276</V>
+            <V>0.82316242969485</V>
+            <V>0.78462549231919</V>
+            <V>201.8333333</V>
+            <V>Model</V>
+            <V>0.74501420443224</V>
+            <V>0.82423678020613</V>
+            <V>0.78040496390594</V>
+            <V>201.9333333</V>
+            <V>Model</V>
+            <V>0.74011464945867</V>
+            <V>0.82069527835321</V>
+            <V>0.77916643712848</V>
+            <V>203.5333333</V>
+            <V>Model</V>
+            <V>0.73744634631446</V>
+            <V>0.82088652794249</V>
+            <V>0.77293769948581</V>
+            <V>204.2</V>
+            <V>Model</V>
+            <V>0.73198113649834</V>
+            <V>0.81389426247328</V>
+            <V>0.76986326655833</V>
+            <V>204.4333333</V>
+            <V>Model</V>
+            <V>0.72825881621855</V>
+            <V>0.81146771689812</V>
+            <V>0.77341115604495</V>
+            <V>208.9666667</V>
+            <V>Model</V>
+            <V>0.73295407390155</V>
+            <V>0.81386823818835</V>
+            <V>0.76832774665248</V>
+            <V>210.9666667</V>
+            <V>Model</V>
+            <V>0.72868936899937</V>
+            <V>0.80796612430559</V>
+            <V>0.76712474228384</V>
+            <V>211.9</V>
+            <V>Model</V>
+            <V>0.72746745689261</V>
+            <V>0.80678202767507</V>
+            <V>0.77121021594664</V>
+            <V>213.2</V>
+            <V>Model</V>
+            <V>0.73141017678701</V>
+            <V>0.81101025510626</V>
+            <V>0.77613176797912</V>
+            <V>216.0333333</V>
+            <V>Model</V>
+            <V>0.73608824702813</V>
+            <V>0.81617528893012</V>
+            <V>0.78008127030276</V>
+            <V>216.8666667</V>
+            <V>Model</V>
+            <V>0.74111253308674</V>
+            <V>0.81905000751879</V>
+            <V>0.7737754962358</V>
+            <V>219.1666667</V>
+            <V>Model</V>
+            <V>0.73430295307464</V>
+            <V>0.81324803939695</V>
+            <V>0.77002416743344</V>
+            <V>219.6666667</V>
+            <V>Model</V>
+            <V>0.72903978739787</V>
+            <V>0.81100854746901</V>
+            <V>0.7737539403622</V>
+            <V>223.8333333</V>
+            <V>Model</V>
+            <V>0.73041113651559</V>
+            <V>0.81709674420881</V>
+            <V>0.77517393174206</V>
+            <V>227.8333333</V>
+            <V>Model</V>
+            <V>0.7306415032253</V>
+            <V>0.81970636025881</V>
+            <V>0.78002135515769</V>
+            <V>228.7666667</V>
+            <V>Model</V>
+            <V>0.7348162219988</V>
+            <V>0.82522648831658</V>
+            <V>0.77783081476849</V>
+            <V>232.7333333</V>
+            <V>Model</V>
+            <V>0.73463226960875</V>
+            <V>0.82102935992823</V>
+            <V>0.79070017218895</V>
+            <V>252.8666667</V>
+            <V>Model</V>
+            <V>0.74344154386551</V>
+            <V>0.83795880051238</V>
+            <V>0.77636160394871</V>
+            <V>256.8666667</V>
+            <V>Model</V>
+            <V>0.72741950316728</V>
+            <V>0.82530370473013</V>
+            <V>0.78843538041313</V>
+            <V>282.5666667</V>
+            <V>Model</V>
+            <V>0.65718030126066</V>
+            <V>0.9196904595656</V>
+            <V>0.77309283952682</V>
+            <V>285.7</V>
+            <V>Model</V>
+            <V>0.62101553910219</V>
+            <V>0.92517013995144</V>
+          </ValuesList>
+        </EmbeddedData>
+      </IQData>
+      <VarStats>
+        <VarStat name="Estimate" modelName="StatGraphData" nobs="358" min="0.65826494724501" max="0.8491778920738" />
+        <VarStat name="Time" modelName="StatGraphData" nobs="358" min="0.1" max="285.7" />
+        <VarStat name="Lower" modelName="StatGraphData" nobs="358" min="0.49099031414504" max="0.74550752478276" />
+        <VarStat name="Upper" modelName="StatGraphData" nobs="358" min="0.73251210171807" max="1" />
+      </VarStats>
+    </DataModel>
+  </Data>
+  <View>
+    <StatGraph height="480" width="640" designHeight="480" designWidth="640" renderer="java" style:style="StatGraphStyle" antiAlias="true" nBinsMax="10000" nXYBinsMax="100000" linePatternOBSMax="10000" totalCellMax="2000" sessionLocale="pl_PL" missingOption="." notesOption="true" suppressClientMsg="true" version="9.4m6a">
+      <EntryTitle>
+        <EntryItem>Time-Dependent Area Under the Curve</EntryItem>
+      </EntryTitle>
+      <EntryTitle textAttrs="ValueText">
+        <EntryItem>95% Confidence Limits</EntryItem>
+      </EntryTitle>
+      <EntryFootnote textAttrs="ValueText">
+        <EntryItem hAlign="left">Based on 50 Perturbed Samples</EntryItem>
+      </EntryFootnote>
+      <LayoutOverlay>
+        <YAxisOpts label="AUC" gridDisplay="auto_on">
+          <LinearOpts viewMin="0" viewMax="1">
+          </LinearOpts>
+        </YAxisOpts>
+        <XAxisOpts>
+        </XAxisOpts>
+        <ReferenceLine y="0.5" y_type="Numeric" _stmt="REFERENCELINE">
+        </ReferenceLine>
+        <SeriesPlot y="StatGraphData#ESTIMATE" x="StatGraphData#TIME" x_type="Variable" y_type="Variable" group="StatGraphData#SOURCE" name="Marker" _stmt="SERIESPLOT">
+        </SeriesPlot>
+        <BandPlot x="StatGraphData#TIME" x_type="Variable" group="StatGraphData#SOURCE" _stmt="BANDPLOT" dataTransparency="0.5" limitUpper="StatGraphData#UPPER" limitLower="StatGraphData#LOWER" displayTail="false" modelName="Source">
+        </BandPlot>
+        <DiscreteLegend location="outside">
+          <GraphNames>
+            <Value>Marker</Value>
+          </GraphNames>
+        </DiscreteLegend>
+      </LayoutOverlay>
+    </StatGraph>
+  </View>
+</SASReport>
+</script>
+</div>
+<div id="IDX10" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Integrated Time-Dependent Area Under the Curve">
+<caption aria-label="Integrated Time-Dependent Area Under the Curve"></caption>
+<colgroup><col/></colgroup><colgroup><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Integrated Time-Dependent Area Under the Curve</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Źródło</th>
+<th class="r b header" scope="col">Ocena</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Model</th>
+<td class="r data">0.7389</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

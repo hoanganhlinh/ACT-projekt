@@ -224,8 +224,7 @@ data Prior;
 input _type_ $ lnep_c0 lnep_c1 age_c1 age_c2 age_c3 radio_therapy0 ts_c1 ts_c3 ts_c4 her_status0 
 lnep_c2 lnep_c3 ts_c2 ts_c5;
 cards;
-var 0.101 0.0994 0.0243 0.0217 0.0221 0.0135 1.5881 0.1112 0.0992 0.0182
-1e6 1e6 1e6 1e6
+var 0.101 0.0994 0.0243 0.0217 0.0221 0.0135 1.5881 0.1112 0.0992 0.0182 1e6 1e6 1e6 1e6
 mean -1.0067 -0.7248 -0.7489 -0.7001 -0.5743 -0.4186 -2.9431 -1.1738 -0.8098 -0.7122 0 0 0 0
 ;
 run;
@@ -330,11 +329,11 @@ run;
 
 /*Krzywa ROC*/
 
-proc phreg data=work.metabric_cleaned plots(overlay=individual)=roc rocoptions(at= 67 135 202 270 337);
-	class lnep_c age_c radio_therapy ts_c her_status;
-	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;
-	bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal (input=prior);
-run;
+/*proc phreg data=work.metabric_cleaned plots(overlay=individual)=roc rocoptions(at= 67 135 202 270 337);*/
+/*	class lnep_c age_c radio_therapy ts_c her_status;*/
+/*	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status;*/
+/*	bayes seed=123 nbi=5000 nmc=50000 thin=5 coeffprior=normal (input=prior);*/
+/*run;*/
 
 
 

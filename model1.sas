@@ -260,8 +260,8 @@ run;
 
 /*Wersja z 5 zmiennymi*/
 proc phreg data=work.metabric_cleaned plots=survival;
-	class lnep_c age_c ts_c hormone_therapy her_status;
-	model t*c(0) = lnep_c age_c ts_c hormone_therapy her_status
+	class lnep_c age_c radio_therapy ts_c her_status;
+	model t*c(0) = lnep_c age_c radio_therapy ts_c her_status
 	/ ties=efron;
 	baseline covariates=work.metabric_cleaned out=work.metabric_pred_sur survival=_all_ / diradj;
 run;

@@ -1,0 +1,3276 @@
+﻿<!DOCTYPE html>
+<html lang="pl" xml:lang="pl" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>Wynik SAS-owy</title>
+<style>
+/*<![CDATA[*/
+.body.c > table, .body.c > pre, .body.c div > table,
+.body.c div > pre, .body.c > table, .body.c > pre,
+.body.j > table, .body.j > pre, .body.j div > table,
+.body.j div > pre, .body.j > table, .body.j > pre,
+.body.c p.note, .body.c p.warning, .body.c p.error, .body.c p.fatal,
+.body.j p.note, .body.j p.warning, .body.j p.error, .body.j p.fatal,
+.body.c > table.layoutcontainer, .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.layoutregion.l table, .layoutregion.l pre, .layoutregion.l p.note,
+.layoutregion.l p.warning, .layoutregion.l p.error, .layoutregion.l p.fatal { margin-left: 0 }
+.layoutregion.c table, .layoutregion.c pre, .layoutregion.c p.note,
+.layoutregion.c p.warning, .layoutregion.c p.error, .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r p.warning, .layoutregion.r p.error, .layoutregion.r p.fatal { margin-right: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
+html{ font-size: 100% }
+.body { margin: 1em; font-size: 13px; line-height: 1.231 }
+sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px }
+dd { margin: 0 0 0 40px }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+img { border: 0; vertical-align: middle }
+svg:not(:root) { overflow: hidden }
+figure { margin: 0 }
+table { border-collapse: collapse; border-spacing: 0 }
+.layoutcontainer { border-collapse: separate; border-spacing: 0 }
+p { margin-top: 0; text-align: left }
+h1.heading1 { text-align: left }
+h2.heading2 { text-align: left }
+h3.heading3 { text-align: left }
+h4.heading4 { text-align: left }
+h5.heading5 { text-align: left }
+h6.heading6 { text-align: left }
+span { text-align: left }
+table { margin-bottom: 1em }
+td, th { text-align: left; padding: 3px 6px; vertical-align: top }
+td[class$="fixed"], th[class$="fixed"] { white-space: pre }
+section, article { padding-top: 1px; padding-bottom: 8px }
+hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.stacked-value { text-align: left; display: block }
+.stacked-cell > .stacked-value, td.data > td.data, th.data > td.data, th.data > th.data, td.data > th.data, th.header > th.header { border: 0 }
+.stacked-cell > div.data { border-width: 0 }
+.systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.systitleandfootercontainer > p { margin: 0 }
+.systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.batch { display: table }
+.toc { display: none }
+.proc_note_group, .proc_title_group { margin-bottom: 1em }
+p.proctitle { margin: 0 }
+p.note, p.warning, p.error, p.fatal { display: table }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner,
+.notecontent, .warncontent, .errorcontent, .fatalcontent { display: table-cell; padding: 0.5em }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner { padding-right: 0 }
+.body > div > ol li { text-align: left }
+.beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.c { text-align: center }
+.r { text-align: right }
+.l { text-align: left }
+.j { text-align: justify }
+.d { text-align: right }
+.b { vertical-align: bottom }
+.m { vertical-align: middle }
+.t { vertical-align: top }
+a:active { color: #800080 }
+.aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.batch > tbody, .batch > thead, .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.batch { border: hidden; }
+.batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.bylinecontainer > col, .bylinecontainer > colgroup > col, .bylinecontainer > colgroup, .bylinecontainer > tr, .bylinecontainer > * > tr, .bylinecontainer > thead, .bylinecontainer > tbody, .bylinecontainer > tfoot { border: none; }
+.bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.cell, .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.contentfolder, .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.contentproclabel, .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.data, .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.graph > tbody, .graph > thead, .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.graph { border: hidden; }
+.graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading1, .heading2, .heading3, .heading4, .heading5, .heading6 { font-family: Arial, Helvetica, sans-serif }
+.index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.indexaction, .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.layoutcontainer, .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+a:link { color: #0000ff }
+.list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.list3, .list4, .list5, .list6, .list7, .list8, .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.listitem3, .listitem4, .listitem5, .listitem6, .listitem7, .listitem8, .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.output > tbody, .output > thead, .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.output { border: hidden; }
+.output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.pagesproclabel, .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.parskip > col, .parskip > colgroup > col, .parskip > colgroup, .parskip > tr, .parskip > * > tr, .parskip > thead, .parskip > tbody, .parskip > tfoot { border: none; }
+.parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systemfooter, .systemfooter10, .systemfooter2, .systemfooter3, .systemfooter4, .systemfooter5, .systemfooter6, .systemfooter7, .systemfooter8, .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.systemtitle, .systemtitle10, .systemtitle2, .systemtitle3, .systemtitle4, .systemtitle5, .systemtitle6, .systemtitle7, .systemtitle8, .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systitleandfootercontainer > col, .systitleandfootercontainer > colgroup > col, .systitleandfootercontainer > colgroup, .systitleandfootercontainer > tr, .systitleandfootercontainer > * > tr, .systitleandfootercontainer > thead, .systitleandfootercontainer > tbody, .systitleandfootercontainer > tfoot { border: none; }
+.systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.table > col, .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.table > tr, .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.table { border: hidden; }
+.table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.titleandnotecontainer > col, .titleandnotecontainer > colgroup > col, .titleandnotecontainer > colgroup, .titleandnotecontainer > tr, .titleandnotecontainer > * > tr, .titleandnotecontainer > thead, .titleandnotecontainer > tbody, .titleandnotecontainer > tfoot { border: none; }
+.titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+a:visited { color: #800080 }
+.warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="c body">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Correlation of her_status_RS with time functions</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">Procedura PHREG</p>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Informacje o modelu">
+<caption aria-label="Informacje o modelu"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Informacje o modelach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Zbiór</th>
+<td class="data">WORK.METABRIC_CLEANED</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Zmienna zależna</th>
+<td class="data">t</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Zmienna cenzurująca</th>
+<td class="data">c</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Wartości cenzurujące</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Rangi wiązane</th>
+<td class="data">EFRON</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX1" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Liczba obserwacji">
+<caption aria-label="Liczba obserwacji"></caption>
+<colgroup><col/><col/></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">
+<div class="stacked-cell">
+<div>Liczba obserwacji wczytanych</div>
+<div>Liczba obserwacji użytych</div>
+</div>
+</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">854</div>
+<div class="r">854</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX2" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Informacje o poziomach klasyfikacji">
+<caption aria-label="Informacje o poziomach klasyfikacji"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="7" scope="colgroup">Informacje o poziomach klasyfikacji</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Klasa</th>
+<th class="b header" scope="col">Wartość</th>
+<th class="c b header" colspan="5" scope="colgroup">Zmienne projektowe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">4</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">4</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">radio_therapy</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">4</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">5</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">6</th>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">her_status</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">0</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+<td class="r data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX3" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Podsumowanie zdarzeń i obserwacji obciętych">
+<caption aria-label="Podsumowanie zdarzeń i obserwacji obciętych"></caption>
+<colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Podsumowanie liczby zdarzeń i wartości ocenzurowanych</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Suma</th>
+<th class="r b header" scope="col">Wystąpienie</th>
+<th class="r b header" scope="col">Ocenzurowane</th>
+<th class="r b header" scope="col">Procent<br/>ocenzurowanych</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">854</td>
+<td class="r data">370</td>
+<td class="r data">484</td>
+<td class="r data">56.67</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX4" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Status zbieżności">
+<caption aria-label="Status zbieżności"></caption>
+<colgroup><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" scope="col">Stan zbieżności</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="c data">Kryterium zbieżności (GCONV=1E-8) spełnione.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX5" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Statystyki dopasowania modelu">
+<caption aria-label="Statystyki dopasowania modelu"></caption>
+<colgroup><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Statystyki dopasowania</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Kryterium</th>
+<th class="r b header" scope="col">Bez<br/>współzmiennych</th>
+<th class="r b header" scope="col">Ze<br/>współzmiennymi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">-2 LOG L</th>
+<td class="r data">4646.293</td>
+<td class="r data">4472.207</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">AIC</th>
+<td class="r data">4646.293</td>
+<td class="r data">4500.207</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">SBC</th>
+<td class="r data">4646.293</td>
+<td class="r data">4554.996</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX6" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Test globalnej hipotezy zerowej">
+<caption aria-label="Test globalnej hipotezy zerowej"></caption>
+<colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Testowanie globalnej hipotezy zerowej: BETA=0</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Testowanie</th>
+<th class="r b header" scope="col">Chi-kwadrat</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Pr.&#160;&gt;&#160;chi-kw.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Iloraz wiaryg.</th>
+<td class="r data">174.0861</td>
+<td class="r data">14</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Ocena</th>
+<td class="r data">212.5734</td>
+<td class="r data">14</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Wald</th>
+<td class="r data">189.7146</td>
+<td class="r data">14</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX7" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Testy typu 3">
+<caption aria-label="Testy typu 3"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Testy typu 3</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Efekt</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Chi-kwadrat Walda</th>
+<th class="r b header" scope="col">Pr.&#160;&gt;&#160;chi-kw.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<td class="r data">4</td>
+<td class="r data">49.6547</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<td class="r data">3</td>
+<td class="r data">33.6045</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">radio_therapy</th>
+<td class="r data">1</td>
+<td class="r data">13.4490</td>
+<td class="r data">0.0002</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<td class="r data">5</td>
+<td class="r data">19.4491</td>
+<td class="r data">0.0016</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">her_status</th>
+<td class="r data">1</td>
+<td class="r data">27.9401</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX8" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Oceny największej wiarygodności parametrów modelu">
+<caption aria-label="Oceny największej wiarygodności parametrów modelu"></caption>
+<colgroup><col/><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="9" scope="colgroup">Analiza ocen maksymalnej wiarygodności</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Parametr</th>
+<th class="b header" scope="col"> &#160;</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Ocena<br/>parametru</th>
+<th class="r b header" scope="col">Błąd<br/>standardowy</th>
+<th class="r b header" scope="col">Chi-kwadrat</th>
+<th class="r b header" scope="col">Pr.&#160;&gt;&#160;chi-kw.</th>
+<th class="r b header" scope="col">Współczynnik<br/>hazardu</th>
+<th class="b header" scope="col">Etykieta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-1.02887</td>
+<td class="r data">0.30452</td>
+<td class="r data">11.4150</td>
+<td class="r data">0.0007</td>
+<td class="r data">0.357</td>
+<td class="data">lnep_c 0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.74687</td>
+<td class="r data">0.30354</td>
+<td class="r data">6.0541</td>
+<td class="r data">0.0139</td>
+<td class="r data">0.474</td>
+<td class="data">lnep_c 1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.28948</td>
+<td class="r data">0.30719</td>
+<td class="r data">0.8880</td>
+<td class="r data">0.3460</td>
+<td class="r data">0.749</td>
+<td class="data">lnep_c 2</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">lnep_c</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">1</td>
+<td class="r data">0.17051</td>
+<td class="r data">0.31475</td>
+<td class="r data">0.2935</td>
+<td class="r data">0.5880</td>
+<td class="r data">1.186</td>
+<td class="data">lnep_c 3</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.74914</td>
+<td class="r data">0.15307</td>
+<td class="r data">23.9536</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">0.473</td>
+<td class="data">age_c 1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.69930</td>
+<td class="r data">0.14507</td>
+<td class="r data">23.2379</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">0.497</td>
+<td class="data">age_c 2</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">age_c</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.57094</td>
+<td class="r data">0.14751</td>
+<td class="r data">14.9811</td>
+<td class="r data">0.0001</td>
+<td class="r data">0.565</td>
+<td class="data">age_c 3</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">radio_therapy</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.41876</td>
+<td class="r data">0.11419</td>
+<td class="r data">13.4490</td>
+<td class="r data">0.0002</td>
+<td class="r data">0.658</td>
+<td class="data">radio_therapy 0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">1</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-2.44436</td>
+<td class="r data">1.05326</td>
+<td class="r data">5.3859</td>
+<td class="r data">0.0203</td>
+<td class="r data">0.087</td>
+<td class="data">ts_c 1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-1.50761</td>
+<td class="r data">1.04650</td>
+<td class="r data">2.0754</td>
+<td class="r data">0.1497</td>
+<td class="r data">0.221</td>
+<td class="data">ts_c 2</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">3</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-1.20650</td>
+<td class="r data">0.32254</td>
+<td class="r data">13.9927</td>
+<td class="r data">0.0002</td>
+<td class="r data">0.299</td>
+<td class="data">ts_c 3</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">4</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.84748</td>
+<td class="r data">0.30340</td>
+<td class="r data">7.8027</td>
+<td class="r data">0.0052</td>
+<td class="r data">0.428</td>
+<td class="data">ts_c 4</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ts_c</th>
+<th class="rowheader" scope="row">5</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.64819</td>
+<td class="r data">0.34536</td>
+<td class="r data">3.5225</td>
+<td class="r data">0.0605</td>
+<td class="r data">0.523</td>
+<td class="data">ts_c 5</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">her_status</th>
+<th class="rowheader" scope="row">0</th>
+<td class="r data">1</td>
+<td class="r data" style="white-space: nowrap">-0.71740</td>
+<td class="r data">0.13572</td>
+<td class="r data">27.9401</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">0.488</td>
+<td class="data">her_status 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX9" style="padding-bottom: 8px; padding-top: 1px">
+<div class="c">
+<script type="text/ecmascript">
+var SVG_IDX9_SVGRoot = null;
+var SVG_IDX9_TrueCoords = null;
+var SVG_IDX9_singleTip = null;
+var SVG_IDX9_singleBox = null;
+var SVG_IDX9_singleText = null;
+var SVG_IDX9_tiptspan = null;
+var SVG_IDX9_attrScale = 1;
+var SVG_IDX9_rightEdge = null;
+var SVG_IDX9_SVGHeight = null;
+var SVG_IDX9_SVGWidth = null;
+function SVG_IDX9_Init(anchor) {
+   SVG_IDX9_SVGRoot = document.getElementById(anchor);
+   SVG_IDX9_TrueCoords = SVG_IDX9_SVGRoot.createSVGPoint();
+   SVG_IDX9_singleTip = document.getElementById(anchor + '_singleTip1');
+   SVG_IDX9_singleBox = document.getElementById(anchor + '_singleBox1');
+   SVG_IDX9_singleText = document.getElementById(anchor + '_singleText1');
+   SVG_IDX9_tiptspan = document.getElementById(anchor + '_tiptspan1');
+   SVG_IDX9_tiptspan.firstChild.nodeValue = null;
+   SVG_IDX9_SVGRoot.addEventListener('mousemove', SVG_IDX9_ShowTooltip, false);
+   SVG_IDX9_SVGRoot.addEventListener('mouseout', SVG_IDX9_HideTooltip, false);
+   SVG_IDX9_SVGHeight = SVG_IDX9_SVGRoot.getAttributeNS(null, "height");
+   SVG_IDX9_SVGWidth = SVG_IDX9_SVGRoot.getAttributeNS(null, "width");
+   if (!isNaN(parseFloat(SVG_IDX9_SVGHeight)) && !isNaN(parseFloat(SVG_IDX9_SVGWidth)))
+      SVG_IDX9_GetHW();
+}
+function SVG_IDX9_GetHW()
+{
+    if (SVG_IDX9_SVGWidth != null && SVG_IDX9_SVGWidth != "") {
+       if (SVG_IDX9_SVGWidth.match(/%/)) {
+          var factor = parseFloat(SVG_IDX9_SVGWidth.replace(/%/,""))/100;
+          SVG_IDX9_SVGWidth = window.innerWidth * factor;
+       }
+       else if (SVG_IDX9_SVGWidth.match(/in/))
+          SVG_IDX9_SVGWidth = parseFloat(SVG_IDX9_SVGWidth.replace(/in/,""))*96;
+       else if (SVG_IDX9_SVGWidth.match(/cm/))
+          SVG_IDX9_SVGWidth = parseFloat(SVG_IDX9_SVGWidth.replace(/in/,""))*96/2.54;
+       else
+           SVG_IDX9_SVGWidth = parseFloat(SVG_IDX9_SVGWidth);
+    }
+    if (SVG_IDX9_SVGHeight != null && SVG_IDX9_SVGHeight != "") {
+       if (SVG_IDX9_SVGHeight.match(/%/)) {
+          var factor = parseFloat(SVG_IDX9_SVGHeight.replace(/%/,""))/100;
+          SVG_IDX9_SVGHeight = window.innerHeight * factor;
+       }
+       else if (SVG_IDX9_SVGHeight.match(/in/))
+          SVG_IDX9_SVGHeight = parseFloat(SVG_IDX9_SVGHeight.replace(/in/,""))*96;
+       else if (SVG_IDX9_SVGHeight.match(/cm/))
+          SVG_IDX9_SVGHeight = parseFloat(SVG_IDX9_SVGHeight.replace(/in/,""))*96/2.54;
+       else
+           SVG_IDX9_SVGHeight = parseFloat(SVG_IDX9_SVGHeight);
+    }
+}
+function SVG_IDX9_GetScaleFactors(evt)
+{
+   var zoomFactor = 1;
+   windowWidth  = (top.innerWidth==undefined)  ? window.innerWidth  : top.innerWidth;
+   windowHeight = (top.innerHeight==undefined) ? window.innerHeight : top.innerHeight;
+   SVG_IDX9_rightEdge = (SVG_IDX9_SVGWidth) ? SVG_IDX9_SVGWidth - window.pageXOffset : windowWidth;
+   if (parseFloat(SVG_IDX9_SVGWidth) > 0 || parseFloat(SVG_IDX9_SVGHeight) > 0)
+      var tipScale = 1.875;
+   else {
+      var tipXScale  = (screen.width/windowWidth) / SVG_IDX9_SVGRoot.currentScale;
+      var tipYScale  = (screen.height/windowHeight) / SVG_IDX9_SVGRoot.currentScale;
+      var tipScale   = (tipXScale + tipYScale)/2.0;
+   }
+   SVG_IDX9_attrScale = tipScale;
+   if (navigator.appName == 'Adobe SVG Viewer') {
+      if (screen.deviceXDPI != null && screen.logicalXDPI != null)
+         zoomFactor = screen.deviceXDPI/screen.logicalXDPI;
+      SVG_IDX9_attrScale = zoomFactor*tipScale;
+   }
+   else if (navigator.userAgent != null && navigator.userAgent != '') {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf("msie") != -1 || ua.indexOf("trident") != -1) {
+         zoomFactor = screen.deviceXDPI/screen.logicalXDPI;
+         SVG_IDX9_attrScale = tipScale/zoomFactor;
+         SVG_IDX9_rightEdge /= zoomFactor;
+      }
+      else if (ua.indexOf("ipad") != -1) {
+         zoomFactor = SVG_IDX9_SVGRoot.clientWidth / window.innerWidth;
+         SVG_IDX9_attrScale = 1.5 / zoomFactor;
+         SVG_IDX9_rightEdge /= zoomFactor;
+      }
+      else if (ua.indexOf("opera") != -1)
+         SVG_IDX9_attrScale = tipScale;
+      else if (ua.indexOf("firefox") != -1)
+         SVG_IDX9_attrScale = tipScale;
+      else {
+         if (SVG_IDX9_SVGWidth > 0 || SVG_IDX9_SVGHeight > 0)
+            zoomFactor = 1;
+         else
+            zoomFactor = parseInt(document.defaultView.getComputedStyle(SVG_IDX9_SVGRoot, null).width,10)/
+                                  SVG_IDX9_SVGRoot.clientWidth;
+         SVG_IDX9_attrScale = tipScale/zoomFactor;
+         SVG_IDX9_rightEdge *= zoomFactor;
+      }
+   }
+}
+function SVG_IDX9_GetTrueCoords(evt)
+{
+   var trans = SVG_IDX9_SVGRoot.currentTranslate;
+   var scale = SVG_IDX9_SVGRoot.currentScale;
+   SVG_IDX9_GetScaleFactors();
+   var p1    = SVG_IDX9_SVGRoot.createSVGPoint();
+   var p2;
+      var m = SVG_IDX9_SVGRoot.getScreenCTM();
+      if (navigator.userAgent.toLowerCase().indexOf("ipad") != -1) {
+         p1.x = evt.clientX + window.pageXOffset;
+         p1.y = evt.clientY + window.pageYOffset;
+      }
+      else {
+      p1.x = evt.clientX;
+      p1.y = evt.clientY;
+      }
+      p2 = p1.matrixTransform(m.inverse());
+   SVG_IDX9_TrueCoords.x = Math.round(p2.x*100) / 100;
+   SVG_IDX9_TrueCoords.y = Math.round(p2.y*100) / 100;
+}
+function SVG_IDX9_HideTooltip( evt )
+{
+   SVG_IDX9_tiptspan.firstChild.nodeValue = null;
+   SVG_IDX9_singleTip.setAttributeNS(null, 'visibility', 'hidden');
+}
+function SVG_IDX9_ShowTooltip( evt )
+{
+   SVG_IDX9_GetTrueCoords( evt );
+   var targetElement = evt.target;
+   var tspanCount = targetElement.getElementsByTagName('desc').length;
+   if (tspanCount == 1) {
+      var targetTspan = targetElement.getElementsByTagName('desc').item(0);
+      if ( targetTspan) {
+         if (targetTspan.firstChild != null)
+            SVG_IDX9_tiptspan.firstChild.nodeValue = targetTspan.firstChild.nodeValue; }
+   }
+   if ( null != SVG_IDX9_tiptspan.firstChild.nodeValue &&  '' != SVG_IDX9_tiptspan.firstChild.nodeValue.trim() )
+   {
+      var outline = SVG_IDX9_singleText.getBBox();
+      SVG_IDX9_singleBox.setAttributeNS(null, 'transform', 'scale(' + SVG_IDX9_attrScale + ',' + SVG_IDX9_attrScale + ')' );
+      SVG_IDX9_singleText.setAttributeNS(null, 'transform', 'scale(' + SVG_IDX9_attrScale + ',' + SVG_IDX9_attrScale + ')' );
+      SVG_IDX9_singleTip.setAttributeNS(null, 'visibility', 'visible');
+      if (evt.clientX + ((outline.width + 8)/0.8) * SVG_IDX9_attrScale > SVG_IDX9_rightEdge) {
+         var xPos = SVG_IDX9_TrueCoords.x - parseInt((outline.width + 8)*SVG_IDX9_attrScale);
+         if (xPos < 0)
+            xPos = 0;
+      }
+      else
+         var xPos = SVG_IDX9_TrueCoords.x;
+      if (SVG_IDX9_TrueCoords.y < 16) {
+         var yPos = SVG_IDX9_TrueCoords.y + ((outline.height + 16)/0.8)*SVG_IDX9_attrScale;
+         if (yPos > windowHeight)
+            yPos = SVG_IDX9_TrueCoords.y - parseInt((outline.height + 8)*SVG_IDX9_attrScale);
+      }
+      else
+         var yPos = SVG_IDX9_TrueCoords.y - parseInt((outline.height + 8)*SVG_IDX9_attrScale);
+      if (Number(outline.width == 0))
+         SVG_IDX9_singleBox.setAttributeNS(null, 'width', outline.width);
+      else
+         SVG_IDX9_singleBox.setAttributeNS(null, 'width', outline.width + 8);
+      SVG_IDX9_singleBox.setAttributeNS(null, 'height', outline.height + 8);
+      SVG_IDX9_singleTip.setAttributeNS(null, 'transform', 'translate(' + xPos + ',' + yPos + ')');
+   }
+}
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" baseProfile="full" version="1.1" id="SVG_IDX9" onload='SVG_IDX9_Init("SVG_IDX9")' viewBox="-1 -1 641 481" height="480" width="640">
+<title>Correlation of her_status_RS with time functions;</title>
+<desc id="desc_SVG_IDX9">Przewidywane funkcje przeżycia</desc>
+<defs>
+<clipPath id="SVG_IDX9_clipPage1">
+<rect x="-1" y="-1" width="641" height="481"></rect>
+</clipPath>
+</defs>
+<g id="SVG_IDX9_Page1" clip-path="url(#SVG_IDX9_clipPage1)">
+<g transform=" scale(1, 1)">
+<rect x="0" y="0" width="639" height="479" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="639" height="479" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="639" height="479" style="stroke: #D1D1D1; stroke-width: 1; fill: none; "></rect>
+<g transform="matrix(1, 0, 0, 1, 11, 11)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath0">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath0)">
+<g transform="matrix(1, 0, 0, 1, 0, 23)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath1">
+<rect x="-1" y="-1" width="619" height="436" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath1)">
+<rect x="56.40872" y="1.94553" width="555.10177" height="385.15904" style="fill: #FFFFFF; "></rect>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath2">
+<rect x="55" y="1" width="558" height="387" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath2)">
+<path d="M58.90468 6.93464L59.08739 6.93464L59.08739 7.37582L59.08739 7.37582L67.00457 7.37582L67.00457 7.82099L
+67.00457 7.82099L68.95342 7.82099L68.95342 8.26909L68.95342 8.26909L70.35415 8.26909L70.35415 8.71718L70.35415 
+8.71718L73.15562 8.71718L73.15562 9.16459L73.15562 9.16459L73.27742 9.16459L73.27742 9.61147L73.27742 9.61147L
+73.64283 9.61147L73.64283 10.05891L73.64283 10.05891L75.46987 10.05891L75.46987 10.50584L75.46987 10.50584L76.4443 
+10.50584L76.4443 10.95226L76.4443 10.95226L78.69765 10.95226L78.69765 11.39925L78.69765 11.39925L78.75856 11.39925L
+78.75856 11.84578L78.75856 11.84578L79.12396 11.84578L79.12396 12.29156L79.12396 12.29156L80.09838 12.29156L80.09838 
+12.73999L80.09838 12.73999L81.31642 12.73999L81.31642 13.18849L81.31642 13.18849L82.53444 13.18849L82.53444 13.63648L
+82.53444 13.63648L84.11788 13.63648L84.11788 14.08483L84.11788 14.08483L84.7878 14.08483L84.7878 14.53422L84.7878 
+14.53422L85.21411 14.53422L85.21411 14.98281L85.21411 14.98281L85.27501 14.98281L85.27501 15.43115L85.27501 15.43115L
+85.94493 15.43115L85.94493 15.88003L85.94493 15.88003L86.98025 15.88003L86.98025 16.32821L86.98025 16.32821L87.22386 
+16.32821L87.22386 16.77637L87.22386 16.77637L87.46746 16.77637L87.46746 17.22456L87.46746 17.22456L87.58927 17.22456L
+87.58927 17.67251L87.58927 17.67251L87.89377 17.67251L87.89377 18.12004L87.89377 18.12004L88.68549 18.12004L88.68549 
+18.56675L88.68549 18.56675L89.23361 18.56675L89.23361 19.01319L89.23361 19.01319L89.41631 19.01319L89.41631 19.45892L
+89.41631 19.45892L91.18245 19.45892L91.18245 19.90414L91.18245 19.90414L93.2531 19.90414L93.2531 20.34901L93.2531 
+20.34901L93.49671 20.34901L93.49671 20.79337L93.49671 20.79337L93.67941 20.79337L93.67941 21.23832L93.67941 21.23832L
+93.80121 21.23832L93.80121 21.68339L93.80121 21.68339L94.34933 21.68339L94.34933 22.12816L94.34933 22.12816L94.95834 
+22.12816L94.95834 23.01585L94.95834 23.01585L95.26285 23.01585L95.26285 23.4589L95.26285 23.4589L95.81096 23.4589L
+95.81096 23.90161L95.81096 23.90161L96.23727 23.90161L96.23727 24.34657L96.23727 24.34657L96.96809 24.34657L96.96809 
+24.79161L96.96809 24.79161L97.27259 24.79161L97.27259 25.23735L97.27259 25.23735L97.3944 25.23735L97.3944 25.68242L
+97.3944 25.68242L98.55152 25.68242L98.55152 26.12667L98.55152 26.12667L99.34325 26.12667L99.34325 26.57021L99.34325 
+26.57021L99.95226 26.57021L99.95226 27.45681L99.95226 27.45681L100.31767 27.45681L100.31767 27.90044L100.31767 
+27.90044L100.98758 27.90044L100.98758 28.3443L100.98758 28.3443L102.26651 28.3443L102.26651 28.78817L102.26651 
+28.78817L103.30184 28.78817L103.30184 29.23196L103.30184 29.23196L103.36274 29.23196L103.36274 29.67511L103.36274 
+29.67511L104.21536 29.67511L104.21536 30.11821L104.21536 30.11821L104.33716 30.11821L104.33716 31.00279L104.33716 
+31.00279L104.39807 31.00279L104.39807 31.44444L104.39807 31.44444L105.00708 31.44444L105.00708 31.88701L105.00708 
+31.88701L105.37249 31.88701L105.37249 32.32897L105.37249 32.32897L105.7379 32.32897L105.7379 32.77127L105.7379 
+32.77127L106.40782 32.77127L106.40782 33.2142L106.40782 33.2142L106.89502 33.2142L106.89502 33.65683L106.89502 
+33.65683L107.80855 33.65683L107.80855 34.09872L107.80855 34.09872L108.23486 34.09872L108.23486 34.54011L108.23486 
+34.54011L109.08748 34.54011L109.08748 34.98131L109.08748 34.98131L109.69649 34.98131L109.69649 35.42212L109.69649 
+35.42212L111.09722 35.42212L111.09722 35.86261L111.09722 35.86261L111.15813 35.86261L111.15813 36.30262L111.15813 
+36.30262L111.40174 36.30262L111.40174 36.74378L111.40174 36.74378L111.58444 36.74378L111.58444 37.18431L111.58444 
+37.18431L111.88894 37.18431L111.88894 37.62517L111.88894 37.62517L112.01075 37.62517L112.01075 38.06678L112.01075 
+38.06678L112.43706 38.06678L112.43706 38.5088L112.43706 38.5088L113.10697 38.5088L113.10697 38.95043L113.10697 
+38.95043L113.9596 38.95043L113.9596 39.39189L113.9596 39.39189L114.2641 39.39189L114.2641 39.83253L114.2641 39.83253L
+115.29943 39.83253L115.29943 40.2727L115.29943 40.2727L115.42123 40.2727L115.42123 40.71258L115.42123 40.71258L
+115.54303 40.71258L115.54303 41.15205L115.54303 41.15205L116.33475 41.15205L116.33475 41.59162L116.33475 41.59162L
+116.39566 41.59162L116.39566 42.03045L116.39566 42.03045L117.24827 42.03045L117.24827 42.47245L117.24827 42.47245L
+117.43098 42.47245L117.43098 42.9138L117.43098 42.9138L118.5272 42.9138L118.5272 43.35449L118.5272 43.35449L118.89261 
+43.35449L118.89261 43.79438L118.89261 43.79438L119.07532 43.79438L119.07532 44.23397L119.07532 44.23397L120.84146 
+44.23397L120.84146 44.67381L120.84146 44.67381L120.96326 44.67381L120.96326 45.11304L120.96326 45.11304L121.63318 
+45.11304L121.63318 45.55232L121.63318 45.55232L122.18129 45.55232L122.18129 45.99184L122.18129 45.99184L122.24219 
+45.99184L122.24219 46.43219L122.24219 46.43219L122.3031 46.43219L122.3031 46.87643L122.3031 46.87643L122.85121 
+46.87643L122.85121 47.3202L122.85121 47.3202L122.9121 47.3202L122.9121 47.76467L122.9121 47.76467L123.27751 47.76467L
+123.27751 48.20916L123.27751 48.20916L123.58203 48.20916L123.58203 48.65326L123.58203 48.65326L123.70383 48.65326L
+123.70383 49.09723L123.70383 49.09723L124.00833 49.09723L124.00833 49.54144L124.00833 49.54144L125.16546 49.54144L
+125.16546 49.98535L125.16546 49.98535L125.34817 49.98535L125.34817 50.4291L125.34817 50.4291L125.40907 50.4291L
+125.40907 50.87241L125.40907 50.87241L125.46997 50.87241L125.46997 51.31491L125.46997 51.31491L125.83538 51.31491L
+125.83538 52.19895L125.83538 52.19895L126.07898 52.19895L126.07898 52.64283L126.07898 52.64283L127.84513 52.64283L
+127.84513 53.08698L127.84513 53.08698L127.96693 53.08698L127.96693 53.53126L127.96693 53.53126L128.14964 53.53126L
+128.14964 53.97471L128.14964 53.97471L128.27143 53.97471L128.27143 54.41941L128.27143 54.41941L128.39324 54.41941L
+128.39324 55.30689L128.39324 55.30689L128.57594 55.30689L128.57594 55.75117L128.57594 55.75117L128.63685 55.75117L
+128.63685 56.19501L128.63685 56.19501L129.79397 56.19501L129.79397 57.08204L129.79397 57.08204L130.46389 57.08204L
+130.46389 57.52539L130.46389 57.52539L130.52479 57.52539L130.52479 57.97224L130.52479 57.97224L130.7075 57.97224L
+130.7075 58.86525L130.7075 58.86525L131.1338 58.86525L131.1338 59.31188L131.1338 59.31188L131.62101 59.31188L131.62101 
+59.75941L131.62101 59.75941L131.68191 59.75941L131.68191 60.20775L131.68191 60.20775L131.98643 60.20775L131.98643 
+60.65594L131.98643 60.65594L133.14355 60.65594L133.14355 61.10455L133.14355 61.10455L133.26536 61.10455L133.26536 
+61.5525L133.26536 61.5525L134.48338 61.5525L134.48338 62.00141L134.48338 62.00141L134.66609 62.00141L134.66609 
+62.45129L134.66609 62.45129L134.7879 62.45129L134.7879 62.90144L134.7879 62.90144L136.31044 62.90144L136.31044 
+63.35096L136.31044 63.35096L136.43223 63.35096L136.43223 63.80036L136.43223 63.80036L136.55403 63.80036L136.55403 
+64.24995L136.55403 64.24995L136.85855 64.24995L136.85855 64.70039L136.85855 64.70039L137.28485 64.70039L137.28485 
+65.15059L137.28485 65.15059L137.40666 65.15059L137.40666 65.60018L137.40666 65.60018L137.52845 65.60018L137.52845 
+66.04953L137.52845 66.04953L137.65026 66.04953L137.65026 66.50198L137.65026 66.50198L137.71116 66.50198L137.71116 
+66.95419L137.71116 66.95419L137.83296 66.95419L137.83296 67.85887L137.83296 67.85887L137.95477 67.85887L137.95477 
+68.31084L137.95477 68.31084L138.19838 68.31084L138.19838 68.76236L138.19838 68.76236L139.5382 68.76236L139.5382 
+69.21569L139.5382 69.21569L140.39082 69.21569L140.39082 69.66964L140.39082 69.66964L141.42616 69.66964L141.42616 
+70.57592L141.42616 70.57592L141.73066 70.57592L141.73066 71.02968L141.73066 71.02968L142.03517 71.02968L142.03517 
+71.48332L142.03517 71.48332L142.46148 71.48332L142.46148 71.93859L142.46148 71.93859L142.58328 71.93859L142.58328 
+72.39426L142.58328 72.39426L143.07049 72.39426L143.07049 72.84931L143.07049 72.84931L143.2532 72.84931L143.2532 
+73.30374L143.2532 73.30374L143.6186 73.30374L143.6186 73.75792L143.6186 73.75792L144.83663 73.75792L144.83663 
+74.21144L144.83663 74.21144L145.01934 74.21144L145.01934 74.66416L145.01934 74.66416L145.56745 74.66416L145.56745 
+75.11711L145.56745 75.11711L145.93286 75.11711L145.93286 75.56986L145.93286 75.56986L146.42007 75.56986L146.42007 
+76.02382L146.42007 76.02382L146.84639 76.02382L146.84639 76.47956L146.84639 76.47956L146.90728 76.47956L146.90728 
+76.93469L146.90728 76.93469L147.3945 76.93469L147.3945 77.39002L147.3945 77.39002L147.5772 77.39002L147.5772 77.84494L
+147.5772 77.84494L147.699 77.84494L147.699 78.30069L147.699 78.30069L148.85612 78.30069L148.85612 78.75648L148.85612 
+78.75648L148.97793 78.75648L148.97793 79.21214L148.97793 79.21214L149.28244 79.21214L149.28244 79.668L149.28244 
+79.668L149.64785 79.668L149.64785 80.12399L149.64785 80.12399L150.25686 80.12399L150.25686 80.57955L150.25686 
+80.57955L150.31776 80.57955L150.31776 81.03543L150.31776 81.03543L150.68318 81.03543L150.68318 81.4913L150.68318 
+81.4913L151.47489 81.4913L151.47489 81.94673L151.47489 81.94673L152.44932 81.94673L152.44932 82.8557L152.44932 
+82.8557L152.81472 82.8557L152.81472 83.30942L152.81472 83.30942L153.30194 83.30942L153.30194 83.76312L153.30194 
+83.76312L153.48464 83.76312L153.48464 84.21622L153.48464 84.21622L153.85005 84.21622L153.85005 84.67053L153.85005 
+84.67053L154.45906 84.67053L154.45906 85.12432L154.45906 85.12432L154.76357 85.12432L154.76357 85.57748L154.76357 
+85.57748L155.25077 85.57748L155.25077 86.03062L155.25077 86.03062L156.89512 86.03062L156.89512 86.93435L156.89512 
+86.93435L157.74774 86.93435L157.74774 87.38573L157.74774 87.38573L159.75749 87.38573L159.75749 87.83747L159.75749 
+87.83747L160.12289 87.83747L160.12289 88.28836L160.12289 88.28836L160.5492 88.28836L160.5492 88.74253L160.5492 
+88.74253L160.91462 88.74253L160.91462 89.19737L160.91462 89.19737L161.82814 89.19737L161.82814 89.65335L161.82814 
+89.65335L162.13264 89.65335L162.13264 90.10854L162.13264 90.10854L163.59428 90.10854L163.59428 90.56395L163.59428 
+90.56395L164.2642 90.56395L164.2642 91.0194L164.2642 91.0194L166.03034 91.0194L166.03034 91.47637L166.03034 91.47637L
+167.61378 91.47637L167.61378 91.93256L167.61378 91.93256L167.97918 91.93256L167.97918 92.39006L167.97918 92.39006L
+168.4055 92.39006L168.4055 92.84851L168.4055 92.84851L170.11073 92.84851L170.11073 93.30847L170.11073 93.30847L
+170.53704 93.30847L170.53704 93.76792L170.53704 93.76792L171.99868 93.76792L171.99868 94.23049L171.99868 94.23049L
+172.42498 94.23049L172.42498 94.6947L172.42498 94.6947L173.58212 94.6947L173.58212 95.16062L173.58212 95.16062L
+173.82572 95.16062L173.82572 95.62599L173.82572 95.62599L174.92195 95.62599L174.92195 96.09211L174.92195 96.09211L
+175.47006 96.09211L175.47006 96.55913L175.47006 96.55913L175.83548 96.55913L175.83548 97.02839L175.83548 97.02839L
+177.41891 97.02839L177.41891 97.49877L177.41891 97.49877L177.5407 97.49877L177.5407 97.96911L177.5407 97.96911L
+178.69784 97.96911L178.69784 98.43985L178.69784 98.43985L179.18505 98.43985L179.18505 98.91195L179.18505 98.91195L
+180.64669 98.91195L180.64669 99.38473L180.64669 99.38473L180.82939 99.38473L180.82939 99.85708L180.82939 99.85708L
+182.77824 99.85708L182.77824 100.32897L182.77824 100.32897L183.50906 100.32897L183.50906 100.80032L183.50906 100.80032L
+183.63085 100.80032L183.63085 101.27101L183.63085 101.27101L185.51881 101.27101L185.51881 101.74247L185.51881 101.74247L
+186.43232 101.74247L186.43232 102.21566L186.43232 102.21566L187.52854 102.21566L187.52854 102.69084L187.52854 102.69084L
+187.65036 102.69084L187.65036 103.16567L187.65036 103.16567L187.89396 103.16567L187.89396 103.63983L187.89396 103.63983L
+188.74658 103.63983L188.74658 104.11383L188.74658 104.11383L190.02551 104.11383L190.02551 104.58753L190.02551 104.58753L
+190.08641 104.58753L190.08641 105.06195L190.08641 105.06195L193.13148 105.06195L193.13148 105.53951L193.13148 105.53951L
+193.5578 105.53951L193.5578 106.01655L193.5578 106.01655L194.95852 106.01655L194.95852 106.49348L194.95852 106.49348L
+195.44574 106.49348L195.44574 106.9697L195.44574 106.9697L196.35926 106.9697L196.35926 107.44742L196.35926 107.44742L
+196.54197 107.44742L196.54197 107.92492L196.54197 107.92492L196.60287 107.92492L196.60287 108.40142L196.60287 108.40142L
+198.0036 108.40142L198.0036 108.87749L198.0036 108.87749L200.01335 108.87749L200.01335 109.35388L200.01335 109.35388L
+200.43966 109.35388L200.43966 109.83017L200.43966 109.83017L203.42382 109.83017L203.42382 110.30737L203.42382 110.30737L
+203.91104 110.30737L203.91104 110.78655L203.91104 110.78655L204.70275 110.78655L204.70275 111.26499L204.70275 111.26499L
+204.82456 111.26499L204.82456 111.74264L204.82456 111.74264L206.408 111.74264L206.408 112.22233L206.408 112.22233L
+207.01701 112.22233L207.01701 112.70746L207.01701 112.70746L207.07792 112.70746L207.07792 113.19423L207.07792 113.19423L
+207.13882 113.19423L207.13882 113.6809L207.13882 113.6809L207.50422 113.6809L207.50422 114.16696L207.50422 114.16696L
+208.35685 114.16696L208.35685 114.65322L208.35685 114.65322L208.60046 114.65322L208.60046 115.14003L208.60046 115.14003L
+209.87939 115.14003L209.87939 115.62621L209.87939 115.62621L211.52372 115.62621L211.52372 116.11553L211.52372 116.11553L
+212.74175 116.11553L212.74175 116.60406L212.74175 116.60406L213.89888 116.60406L213.89888 117.09356L213.89888 117.09356L
+214.02069 117.09356L214.02069 117.58249L214.02069 117.58249L214.75151 117.58249L214.75151 118.07247L214.75151 118.07247L
+215.23872 118.07247L215.23872 118.56914L215.23872 118.56914L215.54322 118.56914L215.54322 119.06539L215.54322 119.06539L
+215.78683 119.06539L215.78683 119.56081L215.78683 119.56081L216.15223 119.56081L216.15223 120.05655L216.15223 120.05655L
+216.70034 120.05655L216.70034 120.55247L216.70034 120.55247L217.85748 120.55247L217.85748 121.04864L217.85748 121.04864L
+218.04019 121.04864L218.04019 121.54454L218.04019 121.54454L218.28378 121.54454L218.28378 122.04039L218.28378 122.04039L
+219.19731 122.04039L219.19731 122.53627L219.19731 122.53627L221.38977 122.53627L221.38977 123.03285L221.38977 123.03285L
+221.69427 123.03285L221.69427 123.5294L221.69427 123.5294L222.18148 123.5294L222.18148 124.0249L222.18148 124.0249L
+223.15589 124.0249L223.15589 124.52243L223.15589 124.52243L223.58221 124.52243L223.58221 125.02562L223.58221 125.02562L
+223.76492 125.02562L223.76492 125.5284L223.76492 125.5284L223.82582 125.5284L223.82582 126.03096L223.82582 126.03096L
+223.88671 126.03096L223.88671 126.53422L223.88671 126.53422L224.43483 126.53422L224.43483 127.04036L224.43483 127.04036L
+224.80024 127.04036L224.80024 127.54731L224.80024 127.54731L226.32278 127.54731L226.32278 128.05732L226.32278 128.05732L
+226.50549 128.05732L226.50549 128.567L226.50549 128.567L228.33253 128.567L228.33253 129.07568L228.33253 129.07568L
+230.03776 129.07568L230.03776 129.58607L230.03776 129.58607L230.70768 129.58607L230.70768 130.0968L230.70768 130.0968L
+234.05726 130.0968L234.05726 130.60844L234.05726 130.60844L235.82341 130.60844L235.82341 131.12007L235.82341 131.12007L
+235.9452 131.12007L235.9452 131.63145L235.9452 131.63145L236.67602 131.63145L236.67602 132.15388L236.67602 132.15388L
+239.23388 132.15388L239.23388 132.67958L239.23388 132.67958L239.35569 132.67958L239.35569 133.20446L239.35569 133.20446L
+239.47749 133.20446L239.47749 133.7306L239.47749 133.7306L240.51281 133.7306L240.51281 134.26194L240.51281 134.26194L
+244.59321 134.26194L244.59321 134.79844L244.59321 134.79844L245.26313 134.79844L245.26313 135.33988L245.26313 135.33988L
+245.81124 135.33988L245.81124 135.88427L245.81124 135.88427L245.99395 135.88427L245.99395 136.42787L245.99395 136.42787L
+247.94279 136.42787L247.94279 136.97064L247.94279 136.97064L250.31794 136.97064L250.31794 137.51696L250.31794 137.51696L
+251.84048 137.51696L251.84048 138.06224L251.84048 138.06224L253.60662 138.06224L253.60662 138.60717L253.60662 138.60717L
+256.34719 138.60717L256.34719 139.15611L256.34719 139.15611L259.14865 139.15611L259.14865 139.71356L259.14865 139.71356L
+261.28021 139.71356L261.28021 140.27587L261.28021 140.27587L261.402 140.27587L261.402 140.83773L261.402 140.83773L
+261.58471 140.83773L261.58471 141.39811L261.58471 141.39811L261.88922 141.39811L261.88922 141.96572L261.88922 141.96572L
+262.74185 141.96572L262.74185 142.53796L262.74185 142.53796L263.47265 142.53796L263.47265 143.11091L263.47265 143.11091L
+268.832 143.11091L268.832 143.70112L268.832 143.70112L270.29363 143.70112L270.29363 144.29054L270.29363 144.29054L
+271.63345 144.29054L271.63345 144.88565L271.63345 144.88565L273.7041 144.88565L273.7041 145.48272L273.7041 145.48272L
+274.55673 145.48272L274.55673 146.08126L274.55673 146.08126L274.73944 146.08126L274.73944 146.67846L274.73944 146.67846L
+276.32287 146.67846L276.32287 147.27734L276.32287 147.27734L277.1755 147.27734L277.1755 147.87689L277.1755 147.87689L
+277.90631 147.87689L277.90631 148.48115L277.90631 148.48115L278.39352 148.48115L278.39352 149.08467L278.39352 149.08467L
+279.18524 149.08467L279.18524 149.68974L279.18524 149.68974L281.19497 149.68974L281.19497 150.29353L281.19497 150.29353L
+281.80401 150.29353L281.80401 150.90054L281.80401 150.90054L284.17916 150.90054L284.17916 151.51702L284.17916 151.51702L
+285.70169 151.51702L285.70169 152.13624L285.70169 152.13624L285.82351 152.13624L285.82351 152.75602L285.82351 152.75602L
+286.4934 152.75602L286.4934 153.37632L286.4934 153.37632L287.77233 153.37632L287.77233 153.99998L287.77233 153.99998L
+288.68588 153.99998L288.68588 154.62596L288.68588 154.62596L289.96481 154.62596L289.96481 155.25767L289.96481 155.25767L
+293.43618 155.25767L293.43618 155.89785L293.43618 155.89785L296.05493 155.89785L296.05493 156.54481L296.05493 156.54481L
+300.13534 156.54481L300.13534 157.2153L300.13534 157.2153L300.43984 157.2153L300.43984 157.88523L300.43984 157.88523L
+301.10977 157.88523L301.10977 158.56193L301.10977 158.56193L302.32778 158.56193L302.32778 159.24392L302.32778 159.24392L
+304.58114 159.24392L304.58114 159.92826L304.58114 159.92826L316.09152 159.92826L316.09152 160.63613L316.09152 160.63613L
+317.85766 160.63613L317.85766 161.34753L317.85766 161.34753L319.38021 161.34753L319.38021 162.05648L319.38021 162.05648L
+320.41552 162.05648L320.41552 162.76393L320.41552 162.76393L323.21697 162.76393L323.21697 163.47866L323.21697 163.47866L
+328.88082 163.47866L328.88082 164.21679L328.88082 164.21679L330.70788 164.21679L330.70788 164.95896L330.70788 164.95896L
+331.9259 164.95896L331.9259 165.70625L331.9259 165.70625L334.05746 165.70625L334.05746 167.22038L334.05746 167.22038L
+340.02578 167.22038L340.02578 168.00404L340.02578 168.00404L349.40463 168.00404L349.40463 168.79972L349.40463 168.79972L
+349.83093 168.79972L349.83093 169.5924L349.83093 169.5924L356.40829 169.5924L356.40829 170.38873L356.40829 170.38873L
+359.57516 170.38873L359.57516 171.19378L359.57516 171.19378L359.63607 171.19378L359.63607 171.99641L359.63607 171.99641L
+360.67138 171.99641L360.67138 172.8027L360.67138 172.8027L367.61416 172.8027L367.61416 173.63822L367.61416 173.63822L
+370.65924 173.63822L370.65924 174.47424L370.65924 174.47424L370.72012 174.47424L370.72012 175.31089L370.72012 175.31089L
+381.13427 175.31089L381.13427 176.1723L381.13427 176.1723L385.45828 176.1723L385.45828 177.05792L385.45828 177.05792L
+390.02587 177.05792L390.02587 177.95205L390.02587 177.95205L396.35965 177.95205L396.35965 178.90803L396.35965 178.90803L
+396.90774 178.90803L396.90774 179.87394L396.90774 179.87394L418.04055 179.87394L418.04055 181.05149L418.04055 181.05149L
+418.58868 181.05149L418.58868 182.23371L418.58868 182.23371L420.84204 182.23371L420.84204 183.41975L420.84204 183.41975L
+421.26834 183.41975L421.26834 184.63056L421.26834 184.63056L427.66299 184.63056L427.66299 185.89709L427.66299 185.89709L
+427.8457 185.89709L427.8457 187.16815L427.8457 187.16815L430.76895 187.16815L430.76895 188.44143L430.76895 188.44143L
+431.98699 188.44143L431.98699 189.71202L431.98699 189.71202L432.41329 189.71202L432.41329 190.98696L432.41329 190.98696L
+440.69589 190.98696L440.69589 192.31121L440.69589 192.31121L444.34997 192.31121L444.34997 193.64012L444.34997 193.64012L
+446.05523 193.64012L446.05523 194.9699L446.05523 194.9699L448.43038 194.9699L448.43038 196.34254L448.43038 196.34254L
+453.60699 196.34254L453.60699 197.74391L453.60699 197.74391L455.12954 197.74391L455.12954 199.15919L455.12954 199.15919L
+459.33175 199.15919L459.33175 200.59693L459.33175 200.59693L460.24527 200.59693L460.24527 202.03202L460.24527 202.03202L
+467.85794 202.03202L467.85794 203.54719L467.85794 203.54719L475.16613 203.54719L475.16613 205.24063L475.16613 205.24063L
+476.87136 205.24063L476.87136 206.93444L476.87136 206.93444L484.11862 206.93444L484.11862 208.82217L484.11862 208.82217L
+520.90313 208.82217L520.90313 211.86932L520.90313 211.86932L528.2113 211.86932L528.2113 215.31034L528.2113 215.31034L
+575.16632 215.31034L575.16632 235.4387L575.16632 235.4387L580.89105 235.4387L580.89105 255.26728" style="stroke: #003399; stroke-width: 1; fill: none; "></path>
+</g>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath3">
+<rect x="-1" y="-1" width="619" height="436" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath3)">
+<path d="M55.90953 387.10457L612.00969 387.10457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M612.00969 387.10457L612.00969 1.94553" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 1.94553L612.00969 1.94553" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 387.10457L55.90953 1.94553" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 387.10457L612.00969 387.10457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M58.90468 387.10457L58.90468 392.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 55.40468, 407.20457)">
+<text textLength="7" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;</text>
+</g>
+<path d="M150.25686 387.10457L150.25686 392.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 143.25686, 407.20457)">
+<text textLength="14" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000035;&#x000030;</text>
+</g>
+<path d="M241.60904 387.10457L241.60904 392.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 231.10904, 407.20457)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000030;&#x000030;</text>
+</g>
+<path d="M332.96122 387.10457L332.96122 392.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 322.46122, 407.20457)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000035;&#x000030;</text>
+</g>
+<path d="M424.3134 387.10457L424.3134 392.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 413.8134, 407.20457)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000032;&#x000030;&#x000030;</text>
+</g>
+<path d="M515.66558 387.10457L515.66558 392.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 505.16558, 407.20457)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000032;&#x000035;&#x000030;</text>
+</g>
+<path d="M607.01777 387.10457L607.01777 392.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 596.51777, 407.20457)">
+<text textLength="21" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000033;&#x000030;&#x000030;</text>
+</g>
+<g transform="matrix(1, 0, 0, 1, 334.45557, 429.20457)">
+<text textLength="4" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 13px; white-space: pre; ">&#x000074;</text>
+</g>
+<path d="M55.90953 387.10457L55.90953 1.94553" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M55.90953 384.11111L50.30637 384.11111" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 388.11111)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000030;</text>
+</g>
+<path d="M55.90953 308.67581L50.30637 308.67581" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 312.67581)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000032;</text>
+</g>
+<path d="M55.90953 233.24052L50.30637 233.24052" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 237.24052)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000034;</text>
+</g>
+<path d="M55.90953 157.80522L50.30637 157.80522" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 161.80522)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000036;</text>
+</g>
+<path d="M55.90953 82.36993L50.30637 82.36993" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 86.36993)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;&#x00002E;&#x000038;</text>
+</g>
+<path d="M55.90953 6.93464L50.30637 6.93464" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.80439, 10.93464)">
+<text textLength="17" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x00002E;&#x000030;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 12.79649, 285.52505)">
+<text textLength="182" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font3', 'Arial', sans-serif; font-size: 13px; white-space: pre; ">&#x000050;&#x000072;&#x000061;&#x000077;&#x000064;&#x00006F;&#x000070;&#x00006F;&#x000064;&#x00006F;&#x000062;&#x000069;&#x000065;&#x000144;&#x000073;&#x000074;&#x000077;&#x00006F;&#x000020;&#x000070;&#x000072;&#x00007A;&#x000065;&#x00017C;&#x000079;&#x000063;&#x000069;&#x000061;</text>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath4">
+<rect x="-1" y="-1" width="619" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath4)">
+<g transform="matrix(1, 0, 0, 1, 170, 0)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath5">
+<rect x="-1" y="-1" width="330" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath5)">
+<text textLength="322" lengthAdjust="spacingAndGlyphs" x="3.5" y="13.5791" style="fill: #000000; font-family: 'SVG_IDX9_Arial Font6', 'Arial', sans-serif; font-size: 15px; font-weight: bold; white-space: pre; ">&#x000042;&#x000065;&#x00007A;&#x000070;&#x00006F;&#x00015B;&#x000072;&#x000065;&#x000064;&#x00006E;&#x000069;&#x00006F;&#x000020;&#x000073;&#x00006B;&#x00006F;&#x000072;&#x000079;&#x000067;&#x00006F;&#x000077;&#x000061;&#x00006E;&#x000061;&#x000020;&#x000066;&#x000075;&#x00006E;&#x00006B;&#x000063;&#x00006A;&#x000061;&#x000020;&#x000070;&#x000072;&#x00007A;&#x000065;&#x00017C;&#x000079;&#x000063;&#x000069;&#x000061;</text>
+</g>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 0, 18)">
+<defs>
+<clipPath id="SVG_IDX9_ClipPath6">
+<rect x="-1" y="-1" width="619" height="6" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath6)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 0, 23)">
+</g>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath7">
+<rect x="55" y="1" width="558" height="387" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath7)">
+</g>
+<defs>
+<clipPath id="SVG_IDX9_ClipPath8">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX9_ClipPath8)">
+</g>
+</g>
+</g>
+</g>
+<rect x="0" y="0" width="640" height="480" fill="#FFFFFF" fill-opacity="0" aria-hidden="true">
+<desc>Przewidywane funkcje przeżycia</desc>
+</rect>
+</g>
+<g id="SVG_IDX9_singleTip1" visibility="hidden" pointer-events="none">
+   <rect id="SVG_IDX9_singleBox1" x="0" y="0" width="88" height="20" rx="2" ry="2" fill="white" stroke="black" stroke-width="0.8" opacity="0.8"></rect>
+   <text id="SVG_IDX9_singleText1" x="5" y="8" font-family="'Albany AMT', sans-serif" font-size="6"><tspan id="SVG_IDX9_tiptspan1" x="4" class="tiptext"><![CDATA[ ]]></tspan></text>
+</g>
+<defs>
+<style type="text/css"><![CDATA[
+    tspan.tiptext { white-space: pre }
+]]></style>
+</defs>
+<defs>
+<style type="text/css"><![CDATA[
+  @font-face {
+      font-family: "SVG_IDX9_Arial Font3";
+      src: url("#SVG_IDX9_Font3") format("svg")
+      }
+]]></style>
+<font id="SVG_IDX9_Font3" horiz-adv-x="6144" >
+   <font-face      font-family="SVG_IDX9_Arial Font3"
+    units-per-em="2048" ascent="1854" descent="-434" >
+      <font-face-src>
+         <font-face-name name="SVG_IDX9_Arial Font3"></font-face-name>
+      </font-face-src>
+   </font-face>
+<missing-glyph><path d="M0 0v4992h3456v-4992h-3456" fill="none"></path>
+</missing-glyph>
+<glyph unicode="&#40;" horiz-adv-x="680" 
+d="M469 -426Q326 -238 227 12 T128 534Q128 772 202 990 Q288 1242 469 1493 L597 
+1493Q476 1285 437 1196 Q376 1058 341 908 Q298 722 298 533 Q298 52 597 -426 Z" ></glyph>
+<glyph unicode="&#47;" horiz-adv-x="552" 
+d="M0 0L426 1493L602 1493L175 0L0 0Z" ></glyph>
+<glyph unicode="&#104;" horiz-adv-x="1147" 
+d="M128 0L128 1493L298 1493L298 991Q432 1152 635 1152 Q760 1152 852 1102 T984 
+966T1024 714L1024 0L853 0L853 709Q853 852 789 916 T607 981Q519 981 
+441 937 T331 819T298 612L298 0L128 0Z" ></glyph>
+<glyph unicode="&#65;" horiz-adv-x="1360" 
+d="M-8 0L590 1493L732 1493L1331 0L1152 0L978 469L344 469L170 0L-8 
+0ZM408 640L914 640L776 1012Q708 1198 661 1322 Q608 1180 556 1041 Z" ></glyph>
+<glyph unicode="&#103;" horiz-adv-x="1147" 
+d="M128 -85L298 -128Q310 -190 361 -218 Q429 -256 548 -256 Q676 -256 745 -210 T
+840 -82Q854 -32 853 128 Q732 0 553 0 Q330 0 207 167 T85 569Q85 730 
+140 867 T299 1077T544 1152Q731 1152 853 981 L853 1109L1024 1109L1024 164Q1024 
+-90 973 -196 T814 -365T546 -426Q356 -426 240 -341 T128 -85ZM256 583Q256 368 
+341 269 T554 170Q681 170 767 269 T853 577Q853 777 764 879 T551 981Q428 
+981 342 881 T256 583Z" ></glyph>
+<glyph unicode="&#48;" horiz-adv-x="1147" 
+d="M85 746Q85 1005 140 1174 T303 1418T576 1493Q697 1493 799 1446 T950 1309T1032 
+1091T1066 746Q1066 488 1012 320 T849 75T576 0Q358 0 234 130 Q85 334 
+85 746ZM256 746Q256 378 348 274 T576 170Q711 170 803 275 T896 746Q896 
+1094 809 1208 T574 1322Q438 1322 346 1222 Q256 1093 256 746Z" ></glyph>
+<glyph unicode="&#53;" horiz-adv-x="1147" 
+d="M85 426L256 426Q278 299 350 235 T560 170Q733 170 814 267 T896 524Q896 
+677 823 765 T573 853Q462 853 401 806 T298 682L128 725L298 1493L981 1493L
+981 1322L434 1322L338 925Q469 1024 613 1024 Q804 1024 935 887 T1066 536Q1066 
+332 949 182 Q807 0 560 0 Q358 0 230 117 T85 426Z" ></glyph>
+<glyph unicode="&#49;" horiz-adv-x="1147" 
+d="M768 0L597 0L597 1163Q528 1100 415 1037 T213 943L213 1120Q372 1192 490 
+1294 T658 1493L768 1493L768 0Z" ></glyph>
+<glyph unicode="&#50;" horiz-adv-x="1147" 
+d="M1024 170L1024 0L42 0Q40 64 66 124 Q106 222 196 313 T435 517Q667 
+722 760 838 T853 1066Q853 1174 772 1248 T560 1322Q422 1322 340 1243 T256 1024L
+85 1066Q104 1274 229 1384 T564 1493Q776 1493 900 1373 T1024 1075Q1024 984 987 
+897 T865 714T594 452Q430 316 380 268 T299 170Z" ></glyph>
+<glyph unicode="&#51;" horiz-adv-x="1147" 
+d="M85 426L256 469Q290 310 360 240 T568 170Q727 170 811 256 T896 468Q896 
+588 808 667 T584 745Q528 745 446 725 L468 896Q487 894 498 894 Q618 894 
+714 948 T810 1115Q810 1205 737 1264 T547 1322Q432 1322 355 1258 T256 1066L85 
+1109Q119 1292 239 1392 T539 1493Q663 1493 767 1443 T926 1306T981 1122Q981 1030 
+930 954 T779 833Q909 802 987 706 T1066 466Q1066 271 923 135 T562 0Q364 
+0 234 118 T85 426Z" ></glyph>
+<glyph unicode="&#116;" horiz-adv-x="552" 
+d="M512 175L554 16Q479 0 419 0 Q322 0 268 31 T192 112T170 326L170 938L
+42 938L42 1109L170 1109L170 1372L341 1480L341 1109L512 1109L512 938L341 
+938L341 318Q341 240 350 218 T379 183T437 170Q466 170 512 175Z" ></glyph>
+<glyph unicode="&#46;" horiz-adv-x="552" 
+d="M170 0L170 170L341 170L341 0L170 0Z" ></glyph>
+<glyph unicode="&#52;" horiz-adv-x="1147" 
+d="M725 0L725 341L42 341L42 512L768 1493L896 1493L896 512L1066 512L1066 
+341L896 341L896 0L725 0ZM725 512L725 1163L244 512L725 512Z" ></glyph>
+<glyph unicode="&#54;" horiz-adv-x="1147" 
+d="M1024 1109L853 1109Q827 1207 778 1251 Q698 1322 581 1322 Q487 1322 394 1278 Q
+322 1222 269 1113 T213 786Q283 885 385 933 T598 981Q793 981 929 848 T1066 
+504Q1066 364 1003 245 T830 63T581 0Q343 0 193 165 T42 709Q42 1133 206 
+1326 Q348 1493 590 1493 Q770 1493 886 1391 T1024 1109ZM213 507Q213 418 260 337 T
+380 213T567 170Q723 170 809 258 T896 498Q896 643 811 727 T558 810Q414 
+810 314 727 T213 507Z" ></glyph>
+<glyph unicode="&#56;" horiz-adv-x="1147" 
+d="M340 816Q232 857 180 933 T128 1115Q128 1275 249 1384 T573 1493Q776 1493 900 
+1381 T1024 1110Q1024 1008 972 932 T817 816Q939 772 1002 674 T1066 442Q1066 254 
+931 127 T576 0Q355 0 220 128 T85 446Q85 589 151 685 T340 816ZM298 1114Q
+298 1018 365 957 T578 896Q720 896 787 956 T853 1105Q853 1197 784 1260 T576 
+1322Q435 1322 367 1261 T298 1114ZM256 450Q256 378 284 311 T400 207T577 170Q
+737 170 816 248 T896 445Q896 566 814 646 T571 725Q414 725 335 647 T256 
+450Z" ></glyph>
+<glyph unicode="&#80;" horiz-adv-x="1360" 
+d="M170 0L170 1493L718 1493Q863 1493 940 1478 Q1047 1460 1119 1408 T1236 1262T
+1280 1056Q1280 864 1159 730 T722 597L341 597L341 0L170 0ZM341 768L742 
+768Q942 768 1025 842 T1109 1050Q1109 1148 1060 1217 T930 1308Q878 1322 738 1322 L
+341 1322L341 768Z" ></glyph>
+<glyph unicode="&#114;" horiz-adv-x="680" 
+d="M128 0L128 1109L256 1109L256 982Q326 1086 385 1119 T516 1152Q619 1152 725 
+1082 L658 911Q586 981 515 981 Q452 981 401 942 T330 835Q298 730 298 606 L
+298 0L128 0Z" ></glyph>
+<glyph unicode="&#97;" horiz-adv-x="1147" 
+d="M853 128Q759 58 664 29 T459 0Q279 0 182 89 T85 316Q85 396 122 463 T
+218 571T352 632Q408 647 518 660 Q745 688 852 725 Q853 761 853 771 Q853 
+878 800 922 Q728 981 586 981 Q454 981 391 934 T298 768L128 810Q152 928 
+207 1001 T367 1113T610 1152Q747 1152 832 1118 T958 1032T1014 903Q1024 854 1024 
+734 L1024 495Q1024 245 1032 161 T1066 0L896 0Q862 54 853 128ZM853 554Q
+746 518 532 492 Q411 477 361 458 T283 404T256 326Q256 259 315 215 T489 
+170Q602 170 691 214 T820 330Q852 386 852 494 Z" ></glyph>
+<glyph unicode="&#119;" horiz-adv-x="1402" 
+d="M324 0L-21 1109L154 1109L350 446L402 230Q405 247 450 446 L615 1109L796 
+1109L962 440L1002 254L1058 460L1254 1109L1429 1109L1077 0L910 0L752 630L
+704 853L498 0L324 0Z" ></glyph>
+<glyph unicode="&#100;" horiz-adv-x="1147" 
+d="M853 0L853 182Q750 0 550 0 Q421 0 313 72 T145 275T85 574Q85 740 
+140 874 T305 1080T550 1152Q649 1152 727 1105 T853 984L853 1493L1024 1493L1024 
+0L853 0ZM256 575Q256 372 345 271 T558 170Q681 170 767 267 T853 560Q
+853 778 765 879 T549 981Q424 981 340 883 T256 575Z" ></glyph>
+<glyph unicode="&#111;" horiz-adv-x="1147" 
+d="M85 576Q85 882 247 1029 Q382 1152 576 1152 Q792 1152 929 1003 T1066 591Q1066 
+378 1005 256 T829 67T576 0Q356 0 220 148 T85 576ZM256 576Q256 373 347 
+272 T576 170Q714 170 805 272 T896 582Q896 778 804 880 T576 981Q438 981 
+347 880 T256 576Z" ></glyph>
+<glyph unicode="&#112;" horiz-adv-x="1147" 
+d="M128 -426L128 1109L298 1109L298 960Q357 1056 431 1104 T610 1152Q748 1152 854 
+1079 T1012 874T1066 584Q1066 415 1005 279 T830 72T587 0Q494 0 420 44 T
+298 154L298 -426L128 -426ZM298 566Q298 364 385 267 T594 170Q718 170 807 
+271 T896 581Q896 782 809 881 T602 981Q482 981 390 875 T298 566Z" ></glyph>
+<glyph unicode="&#98;" horiz-adv-x="1147" 
+d="M298 0L128 0L128 1493L298 1493L298 987Q416 1152 600 1152 Q702 1152 792 
+1111 T942 995T1033 816T1066 592Q1066 309 928 154 T599 0Q407 0 298 181 ZM
+298 584Q298 394 352 309 Q442 170 593 170 Q716 170 806 272 T896 576Q896 
+784 810 882 T601 981Q478 981 388 879 T298 584Z" ></glyph>
+<glyph unicode="&#105;" horiz-adv-x="425" 
+d="M128 1322L128 1493L298 1493L298 1322L128 1322ZM128 0L128 1109L298 1109L298 
+0L128 0Z" ></glyph>
+<glyph unicode="&#101;" horiz-adv-x="1147" 
+d="M894 384L1061 341Q1017 179 898 89 T592 0Q359 0 222 149 T85 566Q85 
+844 223 998 T582 1152Q796 1152 931 997 T1066 563Q1066 546 1066 512 L256 512Q
+266 346 361 258 T596 170Q702 170 776 221 T894 384ZM256 682L896 682Q883 
+814 822 879 Q730 981 582 981 Q448 981 357 900 T256 682Z" ></glyph>
+<glyph unicode="&#324;" horiz-adv-x="1147" 
+d="M128 0L128 1109L298 1109L298 958Q420 1152 648 1152 Q748 1152 831 1115 T955 
+1019T1013 878Q1024 825 1024 692 L1024 0L853 0L853 681Q853 798 830 855 T
+748 947T609 981Q482 981 390 904 T298 612L298 0L128 0ZM469 1237L554 
+1536L810 1536L597 1237L469 1237Z" ></glyph>
+<glyph unicode="&#115;" horiz-adv-x="1020" 
+d="M85 341L256 384Q270 280 338 225 T527 170Q649 170 708 219 T768 332Q768 
+391 710 424 Q670 448 534 483 Q352 536 278 574 T166 680T128 830Q128 904 
+158 968 T242 1074Q282 1106 350 1129 T498 1152Q616 1152 705 1116 T837 1018T896 
+853L725 810Q714 891 661 936 T511 981Q396 981 347 942 T298 850Q298 817 
+318 790 Q339 763 382 745 Q407 735 529 701 Q706 648 780 613 T896 514T938 
+352Q938 258 888 174 T741 45T524 0Q324 0 219 86 T85 341Z" ></glyph>
+<glyph unicode="&#32;" horiz-adv-x="552" 
+></glyph>
+<glyph unicode="&#122;" horiz-adv-x="1020" 
+d="M42 0L42 160L708 938Q596 938 510 938 L85 938L85 1109L938 1109L938 
+964L356 284L259 170Q381 170 487 170 L981 170L981 0L42 0Z" ></glyph>
+<glyph unicode="&#380;" horiz-adv-x="1020" 
+d="M42 0L42 160L708 938Q596 938 510 938 L85 938L85 1109L938 1109L938 
+964L356 284L259 170Q381 170 487 170 L981 170L981 0L42 0ZM426 1237L426 
+1408L597 1408L597 1237L426 1237Z" ></glyph>
+<glyph unicode="&#121;" horiz-adv-x="977" 
+d="M128 -405L85 -240Q146 -256 192 -256 Q254 -256 292 -235 T353 -177Q370 -149 410 
+-38 Q415 -22 426 7 L42 1109L220 1109L436 510Q477 396 532 270 Q551 333 
+566 453 L768 1109L944 1109L594 -30Q530 -198 494 -261 Q448 -346 387 -386 T242 
+-426Q190 -426 128 -405Z" ></glyph>
+<glyph unicode="&#99;" horiz-adv-x="1020" 
+d="M853 426L1024 384Q994 204 873 102 T575 0Q354 0 219 148 T85 572Q85 
+750 141 884 T313 1085T562 1152Q733 1152 842 1063 T981 810L810 768Q785 874 
+721 927 T566 981Q428 981 342 884 T256 576Q256 364 343 267 T570 170Q682 
+170 758 233 T853 426Z" ></glyph>
+</font>
+<style type="text/css"><![CDATA[
+  @font-face {
+      font-family: "SVG_IDX9_Arial Font6";
+      font-weight: bold;
+      src: url("#SVG_IDX9_Font6") format("svg")
+      }
+]]></style>
+<font id="SVG_IDX9_Font6" horiz-adv-x="6144" >
+   <font-face      font-family="SVG_IDX9_Arial Font6"
+    font-weight="bold"    units-per-em="2048" ascent="1854" descent="-434" >
+      <font-face-src>
+         <font-face-name name="SVG_IDX9_Arial Font6"></font-face-name>
+      </font-face-src>
+   </font-face>
+<missing-glyph><path d="M0 0v4992h3456v-4992h-3456" fill="none"></path>
+</missing-glyph>
+<glyph unicode="&#40;" horiz-adv-x="680" 
+d="M597 -426L384 -426Q238 -196 161 52 T85 534Q85 823 178 1080 Q259 1304 384 
+1493 L597 1493Q475 1190 429 978 T384 528Q384 364 411 192 T486 -134Q518 -236 
+597 -426Z" ></glyph>
+<glyph unicode="&#47;" horiz-adv-x="552" 
+d="M-4 0L337 1493L554 1493L213 0L-4 0Z" ></glyph>
+<glyph unicode="&#104;" horiz-adv-x="1232" 
+d="M426 1493L426 993Q562 1152 750 1152 Q846 1152 924 1113 T1041 1016T1095 884T
+1109 660L1109 0L810 0L810 604Q810 784 795 833 T741 910T646 938Q579 
+938 527 902 T451 791T426 573L426 0L128 0L128 1493L426 1493Z" ></glyph>
+<glyph unicode="&#65;" horiz-adv-x="1402" 
+d="M1408 0L1094 0L987 341L423 341L316 0L0 0L510 1493L894 1493L1408 
+0ZM906 597L704 1237L503 597L906 597Z" ></glyph>
+<glyph unicode="&#103;" horiz-adv-x="1232" 
+d="M128 -85L426 -128Q434 -172 462 -189 Q501 -213 584 -213 Q690 -213 744 -184 Q
+780 -164 798 -122 Q810 -91 810 -8 L810 128Q714 0 522 0 Q308 0 183 192 Q
+85 344 85 569 Q85 852 213 1002 T532 1152Q729 1152 853 980 L853 1109L1109 
+1109L1109 128Q1109 -64 1079 -160 T993 -310T846 -395T614 -426Q349 -426 238 -339 T
+126 -117Q126 -104 128 -85ZM384 580Q384 390 443 301 T589 213Q682 213 746 
+304 T810 572Q810 758 749 848 T594 938Q502 938 443 850 T384 580Z" ></glyph>
+<glyph unicode="&#66;" horiz-adv-x="1487" 
+d="M170 1493L776 1493Q956 1493 1044 1478 T1202 1416T1318 1290T1365 1114Q1365 1008 
+1304 919 T1140 786Q1269 747 1338 652 T1408 429Q1408 328 1361 232 T1233 80T1033 
+10Q958 2 673 0 L170 0L170 1493ZM469 1237L469 896L672 896Q852 896 896 
+901 Q976 910 1021 954 T1066 1069Q1066 1137 1027 1180 T911 1232Q865 1237 646 1237 ZM
+469 640L469 256L749 256Q913 256 956 264 Q1024 276 1067 322 T1109 444Q1109 
+508 1076 553 T982 619T714 640Z" ></glyph>
+<glyph unicode="&#101;" horiz-adv-x="1147" 
+d="M768 341L1066 298Q1012 152 895 76 T602 0Q324 0 190 188 Q85 338 85 
+568 Q85 842 221 997 T567 1152Q801 1152 936 994 T1066 512L384 512Q386 370 
+447 292 T600 213Q662 213 704 243 T768 341ZM768 682Q765 808 711 873 T579 
+938Q496 938 442 870 Q388 800 388 682 Z" ></glyph>
+<glyph unicode="&#122;" horiz-adv-x="1020" 
+d="M42 0L42 213L449 720Q549 844 597 896 Q547 896 466 896 L85 896L85 
+1109L938 1109L938 896L528 383L384 213Q504 213 533 213 L981 213L981 
+0L42 0Z" ></glyph>
+<glyph unicode="&#112;" horiz-adv-x="1232" 
+d="M128 1109L384 1109L384 953Q434 1033 521 1092 T712 1152Q896 1152 1024 1001 T
+1152 582Q1152 306 1027 153 T724 0Q640 0 571 35 T426 155L426 -426L128 
+-426L128 1109ZM426 595Q426 400 490 306 T647 213Q736 213 794 299 T853 580Q
+853 762 792 850 T642 938Q549 938 487 852 T426 595Z" ></glyph>
+<glyph unicode="&#111;" horiz-adv-x="1232" 
+d="M85 591Q85 736 152 872 T342 1080T618 1152Q852 1152 1002 989 T1152 579Q1152 
+328 1000 164 T619 0Q477 0 348 68 T152 269T85 401ZM384 576Q384 400 451 
+306 T619 213Q718 213 786 306 T853 578Q853 752 786 845 T619 938Q519 938 
+451 845 T384 576Z" ></glyph>
+<glyph unicode="&#347;" horiz-adv-x="1147" 
+d="M42 341L341 384Q359 300 414 256 T567 213Q676 213 731 254 Q768 283 768 
+331 Q768 364 747 386 Q726 406 652 424 Q306 501 213 566 Q85 654 85 814 Q
+85 956 196 1054 T542 1152Q766 1152 874 1076 T1024 853L725 810Q710 872 669 
+905 T550 938Q454 938 412 906 Q384 884 384 848 Q384 817 411 795 Q449 766 
+670 714 T980 585Q1066 507 1066 368 Q1066 217 940 108 T568 0Q344 0 213 
+92 T42 341ZM426 1194L554 1493L853 1493L597 1194L426 1194Z" ></glyph>
+<glyph unicode="&#114;" horiz-adv-x="807" 
+d="M426 0L128 0L128 1109L384 1109L384 958Q457 1065 516 1108 T650 1152Q755 
+1152 853 1089 L789 840Q708 853 640 853 Q572 853 526 820 T453 699T426 335Z" ></glyph>
+<glyph unicode="&#100;" horiz-adv-x="1232" 
+d="M1109 0L853 0L853 156Q789 65 701 32 T524 0Q343 0 214 153 T85 580Q
+85 860 207 1006 T515 1152Q686 1152 810 1004 L810 1493L1109 1493L1109 0ZM384 
+597Q384 414 426 332 Q488 213 599 213 Q687 213 749 302 T810 568Q810 765 
+750 852 T597 938Q506 938 445 853 T384 597Z" ></glyph>
+<glyph unicode="&#110;" horiz-adv-x="1232" 
+d="M1109 0L810 0L810 584Q810 769 793 823 T738 908T646 938Q577 938 522 
+895 T447 781T426 518L426 0L128 0L128 1109L384 1109L384 953Q526 1152 
+743 1152 Q838 1152 917 1116 T1037 1025T1093 900T1109 700Z" ></glyph>
+<glyph unicode="&#105;" horiz-adv-x="552" 
+d="M128 1237L128 1493L426 1493L426 1237L128 1237ZM128 0L128 1109L426 1109L426 
+0L128 0Z" ></glyph>
+<glyph unicode="&#32;" horiz-adv-x="552" 
+></glyph>
+<glyph unicode="&#115;" horiz-adv-x="1147" 
+d="M42 341L341 384Q359 300 414 256 T567 213Q676 213 731 254 Q768 283 768 
+331 Q768 364 747 386 Q726 406 652 424 Q306 501 213 566 Q85 654 85 814 Q
+85 956 196 1054 T542 1152Q766 1152 874 1076 T1024 853L725 810Q710 872 669 
+905 T550 938Q454 938 412 906 Q384 884 384 848 Q384 817 411 795 Q449 766 
+670 714 T980 585Q1066 507 1066 368 Q1066 217 940 108 T568 0Q344 0 213 
+92 T42 341Z" ></glyph>
+<glyph unicode="&#107;" horiz-adv-x="1147" 
+d="M128 0L128 1493L426 1493L426 718L789 1109L1130 1109L738 689L1130 0L832 
+0L553 490L426 355L426 0L128 0Z" ></glyph>
+<glyph unicode="&#121;" horiz-adv-x="1147" 
+d="M32 1109L330 1109L576 281L821 1109L1120 1109L737 38L672 -148Q636 -239 603 
+-286 T528 -363T423 -410T283 -426Q204 -426 128 -410 L128 -200Q188 -213 236 -213 Q
+324 -213 367 -153 T432 0Z" ></glyph>
+<glyph unicode="&#119;" horiz-adv-x="1657" 
+d="M349 0L0 1109L284 1109L490 382L688 1109L980 1109L1173 382L1380 1109L1664 
+1109L1315 0L1030 0L832 713L638 0L349 0Z" ></glyph>
+<glyph unicode="&#97;" horiz-adv-x="1147" 
+d="M384 810L128 853Q168 1005 267 1078 T560 1152Q737 1152 824 1104 T946 984T981 
+718L981 370Q981 222 999 151 T1066 0L768 0Q757 34 742 101 Q736 132 732 
+142 Q664 70 586 35 T420 0Q264 0 174 95 T85 336Q85 432 124 508 T233 
+624T435 694Q614 734 682 768 L682 794Q682 872 651 905 T530 938Q471 938 
+438 910 T384 810ZM682 554Q640 536 548 511 T427 461Q384 421 384 360 Q384 
+300 418 257 T506 213Q566 213 621 264 Q661 302 674 358 Q682 395 682 498 Z" ></glyph>
+<glyph unicode="&#102;" horiz-adv-x="680" 
+d="M0 1109L128 1109L128 1180Q128 1300 158 1360 T270 1456T475 1493Q603 1493 725 
+1458 L704 1264Q627 1280 556 1280 Q487 1280 457 1257 T426 1169L426 1109L640 1109L
+640 896L426 896L426 0L128 0L128 896L0 896L0 1109Z" ></glyph>
+<glyph unicode="&#117;" horiz-adv-x="1232" 
+d="M853 0L853 159Q793 74 696 37 T491 0Q381 0 293 48 T167 183T128 422L
+128 1109L426 1109L426 608Q426 378 441 326 T495 243T594 213Q662 213 716 
+253 T790 354T810 649L810 1109L1109 1109L1109 0L853 0Z" ></glyph>
+<glyph unicode="&#99;" horiz-adv-x="1147" 
+d="M1066 810L768 768Q755 852 710 895 T593 938Q498 938 441 859 T384 592Q384 
+384 439 299 T589 213Q660 213 704 261 T768 426L1066 384Q1024 194 904 97 T
+584 0Q356 0 220 152 T85 574Q85 848 223 1000 T596 1152Q789 1152 903 
+1067 T1066 810Z" ></glyph>
+<glyph unicode="&#106;" horiz-adv-x="552" 
+d="M128 1237L128 1493L426 1493L426 1237L128 1237ZM426 1109L426 50Q426 -158 400 
+-244 T299 -378T108 -426Q66 -426 18 -419 T-85 -397L-64 -162Q-43 -166 -25 -168 T
+8 -170Q52 -170 81 -151 T118 -105T128 56L128 1109L426 1109Z" ></glyph>
+<glyph unicode="&#380;" horiz-adv-x="1020" 
+d="M42 0L42 213L449 720Q549 844 597 896 Q547 896 466 896 L85 896L85 
+1109L938 1109L938 896L528 383L384 213Q504 213 533 213 L981 213L981 
+0L42 0ZM384 1194L384 1450L682 1450L682 1194L384 1194Z" ></glyph>
+</font>
+</defs>
+</svg>
+</div>
+<script type="application/xml" class="ODSGraphics" id="odsgraphics_GJ72GBVS">
+<?xml version="1.0" encoding="utf-8" ?>
+<SASReport version="1.2" xmlns:style="http://www.sas.com/sasreportmodel/styles">
+  <Data version="9.4m6a">
+    <DataModel name="StatGraphDataModel">
+      <IQData type="2DEmbedded" name="StatGraphData">
+        <EmbeddedData>
+          <Variables>
+            <Variable name="Time" label="t" type="Numeric" valuesCount="359" encoding="Text"/>
+            <Variable name="Survival" label="Survival" type="Numeric" valuesCount="359" encoding="Text"/>
+          </Variables>
+          <ValuesList valuesCount="359">
+            <V>0</V>
+            <V>1</V>
+            <V>0.1</V>
+            <V>0.998830306299</V>
+            <V>4.433333333</V>
+            <V>0.99765003499772</V>
+            <V>5.5</V>
+            <V>0.996461986957</V>
+            <V>6.266666667</V>
+            <V>0.99527398343529</V>
+            <V>7.8</V>
+            <V>0.99408778289604</V>
+            <V>7.866666667</V>
+            <V>0.99290296137473</V>
+            <V>8.066666667</V>
+            <V>0.99171666647237</V>
+            <V>9.066666667</V>
+            <V>0.99053174804059</V>
+            <V>9.6</V>
+            <V>0.98934815113074</V>
+            <V>10.83333333</V>
+            <V>0.98816306084703</V>
+            <V>10.86666667</V>
+            <V>0.98697918500131</V>
+            <V>11.06666667</V>
+            <V>0.98579729651192</V>
+            <V>11.6</V>
+            <V>0.98460837467123</V>
+            <V>12.26666667</V>
+            <V>0.98341929144694</V>
+            <V>12.93333333</V>
+            <V>0.98223152986598</V>
+            <V>13.8</V>
+            <V>0.98104285423817</V>
+            <V>14.16666667</V>
+            <V>0.97985138146843</V>
+            <V>14.4</V>
+            <V>0.97866205122919</V>
+            <V>14.43333333</V>
+            <V>0.97747336719764</V>
+            <V>14.8</V>
+            <V>0.97628326875124</V>
+            <V>15.36666667</V>
+            <V>0.97509501275469</V>
+            <V>15.5</V>
+            <V>0.97390682250257</V>
+            <V>15.63333333</V>
+            <V>0.97271854305147</V>
+            <V>15.7</V>
+            <V>0.97153089325167</V>
+            <V>15.86666667</V>
+            <V>0.97034436339864</V>
+            <V>16.3</V>
+            <V>0.96916002112283</V>
+            <V>16.6</V>
+            <V>0.9679763762455</V>
+            <V>16.7</V>
+            <V>0.96679463009953</V>
+            <V>17.66666667</V>
+            <V>0.96561421785856</V>
+            <V>18.8</V>
+            <V>0.96443475714311</V>
+            <V>18.93333333</V>
+            <V>0.96325662408418</V>
+            <V>19.03333333</V>
+            <V>0.96207693190296</V>
+            <V>19.1</V>
+            <V>0.96089693982996</V>
+            <V>19.4</V>
+            <V>0.95971773352502</V>
+            <V>19.73333333</V>
+            <V>0.95736421266769</V>
+            <V>19.9</V>
+            <V>0.95618956827736</V>
+            <V>20.2</V>
+            <V>0.95501581365347</V>
+            <V>20.43333333</V>
+            <V>0.9538360970592</V>
+            <V>20.83333333</V>
+            <V>0.95265618437073</V>
+            <V>21</V>
+            <V>0.95147441152788</V>
+            <V>21.06666667</V>
+            <V>0.950294404246</V>
+            <V>21.7</V>
+            <V>0.94911656680204</V>
+            <V>22.13333333</V>
+            <V>0.9479406053658</V>
+            <V>22.46666667</V>
+            <V>0.94558999457557</V>
+            <V>22.66666667</V>
+            <V>0.94441380281924</V>
+            <V>23.03333333</V>
+            <V>0.94323701730067</V>
+            <V>23.73333333</V>
+            <V>0.94206017697278</V>
+            <V>24.3</V>
+            <V>0.94088357553123</V>
+            <V>24.33333333</V>
+            <V>0.93970866665117</V>
+            <V>24.8</V>
+            <V>0.93853387704865</V>
+            <V>24.86666667</V>
+            <V>0.93618860937872</V>
+            <V>24.9</V>
+            <V>0.93501768558316</V>
+            <V>25.23333333</V>
+            <V>0.93384428295529</V>
+            <V>25.43333333</V>
+            <V>0.93267253239977</V>
+            <V>25.63333333</V>
+            <V>0.93149988511089</V>
+            <V>26</V>
+            <V>0.93032555643879</V>
+            <V>26.26666667</V>
+            <V>0.92915200672407</V>
+            <V>26.76666667</V>
+            <V>0.92798043955261</V>
+            <V>27</V>
+            <V>0.92681017696435</V>
+            <V>27.46666667</V>
+            <V>0.92564044738867</V>
+            <V>27.8</V>
+            <V>0.92447172551494</V>
+            <V>28.56666667</V>
+            <V>0.9233038690461</V>
+            <V>28.6</V>
+            <V>0.92213727364161</V>
+            <V>28.73333333</V>
+            <V>0.92096765665311</V>
+            <V>28.83333333</V>
+            <V>0.91979968315596</V>
+            <V>29</V>
+            <V>0.91863082079585</V>
+            <V>29.06666667</V>
+            <V>0.91746001514962</V>
+            <V>29.3</V>
+            <V>0.91628808167183</V>
+            <V>29.66666667</V>
+            <V>0.91511720286316</V>
+            <V>30.13333333</V>
+            <V>0.91394677798244</V>
+            <V>30.3</V>
+            <V>0.91277852274669</V>
+            <V>30.86666667</V>
+            <V>0.91161150158385</V>
+            <V>30.93333333</V>
+            <V>0.91044525831491</V>
+            <V>31</V>
+            <V>0.90928010901102</V>
+            <V>31.43333333</V>
+            <V>0.90811466041403</V>
+            <V>31.46666667</V>
+            <V>0.90695121571625</V>
+            <V>31.93333333</V>
+            <V>0.90577933263256</V>
+            <V>32.03333333</V>
+            <V>0.90460920877944</V>
+            <V>32.63333333</V>
+            <V>0.90344079316681</V>
+            <V>32.83333333</V>
+            <V>0.90227454375123</V>
+            <V>32.93333333</V>
+            <V>0.90110906115881</V>
+            <V>33.9</V>
+            <V>0.89994292974202</V>
+            <V>33.96666667</V>
+            <V>0.89877840790944</V>
+            <V>34.33333333</V>
+            <V>0.89761374283571</V>
+            <V>34.63333333</V>
+            <V>0.89644845194874</V>
+            <V>34.66666667</V>
+            <V>0.89528096913054</V>
+            <V>34.7</V>
+            <V>0.8941031726467</V>
+            <V>35</V>
+            <V>0.89292660313382</V>
+            <V>35.03333333</V>
+            <V>0.89174820209358</V>
+            <V>35.23333333</V>
+            <V>0.8905697392176</V>
+            <V>35.4</V>
+            <V>0.88939229519867</V>
+            <V>35.46666667</V>
+            <V>0.88821521170228</V>
+            <V>35.63333333</V>
+            <V>0.8870374788803</V>
+            <V>36.26666667</V>
+            <V>0.88586054094996</V>
+            <V>36.36666667</V>
+            <V>0.88468404428813</V>
+            <V>36.4</V>
+            <V>0.8835086969849</V>
+            <V>36.43333333</V>
+            <V>0.88233552470619</V>
+            <V>36.63333333</V>
+            <V>0.87999166516074</V>
+            <V>36.76666667</V>
+            <V>0.87881483012792</V>
+            <V>37.73333333</V>
+            <V>0.87763725791206</V>
+            <V>37.8</V>
+            <V>0.87645935399547</V>
+            <V>37.9</V>
+            <V>0.875283637258</V>
+            <V>37.96666667</V>
+            <V>0.87410463100244</V>
+            <V>38.03333333</V>
+            <V>0.87175167650947</V>
+            <V>38.13333333</V>
+            <V>0.87057374514662</V>
+            <V>38.16666667</V>
+            <V>0.86939700284144</V>
+            <V>38.8</V>
+            <V>0.86704525618414</V>
+            <V>39.16666667</V>
+            <V>0.86586980946366</V>
+            <V>39.2</V>
+            <V>0.8646850782465</V>
+            <V>39.3</V>
+            <V>0.86231747110453</V>
+            <V>39.53333333</V>
+            <V>0.86113331168206</V>
+            <V>39.8</V>
+            <V>0.85994680284396</V>
+            <V>39.83333333</V>
+            <V>0.85875812339066</V>
+            <V>40</V>
+            <V>0.85756983152875</V>
+            <V>40.63333333</V>
+            <V>0.85638044992914</V>
+            <V>40.7</V>
+            <V>0.85519280710641</V>
+            <V>41.36666667</V>
+            <V>0.85400262191136</V>
+            <V>41.46666667</V>
+            <V>0.85280987259981</V>
+            <V>41.53333333</V>
+            <V>0.85161640305862</V>
+            <V>42.36666667</V>
+            <V>0.85042458414077</V>
+            <V>42.43333333</V>
+            <V>0.84923310355195</V>
+            <V>42.5</V>
+            <V>0.84804112386489</V>
+            <V>42.66666667</V>
+            <V>0.84684688661244</V>
+            <V>42.9</V>
+            <V>0.84565325769106</V>
+            <V>42.96666667</V>
+            <V>0.84446127536312</V>
+            <V>43.03333333</V>
+            <V>0.84326993233688</V>
+            <V>43.1</V>
+            <V>0.84207035618713</V>
+            <V>43.13333333</V>
+            <V>0.84087142083517</V>
+            <V>43.2</V>
+            <V>0.83847285431225</V>
+            <V>43.26666667</V>
+            <V>0.83727457342626</V>
+            <V>43.4</V>
+            <V>0.83607746986788</V>
+            <V>44.13333333</V>
+            <V>0.83487554065125</V>
+            <V>44.6</V>
+            <V>0.83367203182818</V>
+            <V>45.16666667</V>
+            <V>0.8312691935366</V>
+            <V>45.33333333</V>
+            <V>0.83006617146299</V>
+            <V>45.5</V>
+            <V>0.82886342315806</V>
+            <V>45.73333333</V>
+            <V>0.82765639725355</V>
+            <V>45.8</V>
+            <V>0.8264482907147</V>
+            <V>46.06666667</V>
+            <V>0.82524180267796</V>
+            <V>46.16666667</V>
+            <V>0.82403698113271</V>
+            <V>46.36666667</V>
+            <V>0.82283282697287</V>
+            <V>47.03333333</V>
+            <V>0.82163043612396</V>
+            <V>47.13333333</V>
+            <V>0.8204301516311</V>
+            <V>47.43333333</V>
+            <V>0.81922923365224</V>
+            <V>47.63333333</V>
+            <V>0.81802889235562</V>
+            <V>47.9</V>
+            <V>0.81682531128008</V>
+            <V>48.13333333</V>
+            <V>0.81561699828807</V>
+            <V>48.16666667</V>
+            <V>0.81441034934181</V>
+            <V>48.43333333</V>
+            <V>0.81320314059989</V>
+            <V>48.53333333</V>
+            <V>0.81199701034986</V>
+            <V>48.6</V>
+            <V>0.81078868273131</V>
+            <V>49.23333333</V>
+            <V>0.8095802700466</V>
+            <V>49.3</V>
+            <V>0.80837219609004</V>
+            <V>49.46666667</V>
+            <V>0.80716356738145</V>
+            <V>49.66666667</V>
+            <V>0.80595461950595</V>
+            <V>50</V>
+            <V>0.80474681396625</V>
+            <V>50.03333333</V>
+            <V>0.80353813369221</V>
+            <V>50.23333333</V>
+            <V>0.80232950244005</V>
+            <V>50.66666667</V>
+            <V>0.80112200355576</V>
+            <V>51.2</V>
+            <V>0.79871208935831</V>
+            <V>51.4</V>
+            <V>0.79750914895929</V>
+            <V>51.66666667</V>
+            <V>0.79630627225452</V>
+            <V>51.76666667</V>
+            <V>0.79510497346456</V>
+            <V>51.96666667</V>
+            <V>0.79390047400497</V>
+            <V>52.3</V>
+            <V>0.79269734978888</V>
+            <V>52.46666667</V>
+            <V>0.79149589550749</V>
+            <V>52.73333333</V>
+            <V>0.79029448059564</V>
+            <V>53.63333333</V>
+            <V>0.78789843674706</V>
+            <V>54.1</V>
+            <V>0.78670172106996</V>
+            <V>55.2</V>
+            <V>0.78550403886594</V>
+            <V>55.4</V>
+            <V>0.78430857625468</V>
+            <V>55.63333333</V>
+            <V>0.7831044417986</V>
+            <V>55.83333333</V>
+            <V>0.78189855052245</V>
+            <V>56.33333333</V>
+            <V>0.78068964116762</V>
+            <V>56.5</V>
+            <V>0.77948278863293</V>
+            <V>57.3</V>
+            <V>0.77827539059997</V>
+            <V>57.66666667</V>
+            <V>0.77706782137512</V>
+            <V>58.63333333</V>
+            <V>0.77585627246638</V>
+            <V>59.5</V>
+            <V>0.7746467994985</V>
+            <V>59.7</V>
+            <V>0.77343385346874</V>
+            <V>59.93333333</V>
+            <V>0.77221837014247</V>
+            <V>60.86666667</V>
+            <V>0.77099887884152</V>
+            <V>61.1</V>
+            <V>0.76978076601959</V>
+            <V>61.9</V>
+            <V>0.76855434963396</V>
+            <V>62.13333333</V>
+            <V>0.76732361054967</V>
+            <V>62.76666667</V>
+            <V>0.76608830971314</V>
+            <V>62.9</V>
+            <V>0.76485448232111</V>
+            <V>63.5</V>
+            <V>0.76361867402971</V>
+            <V>63.8</V>
+            <V>0.7623804727255</V>
+            <V>64</V>
+            <V>0.7611363277236</V>
+            <V>64.86666667</V>
+            <V>0.75988922463199</V>
+            <V>64.93333333</V>
+            <V>0.7586422280114</V>
+            <V>65.56666667</V>
+            <V>0.75739416750556</V>
+            <V>65.83333333</V>
+            <V>0.75614248486932</V>
+            <V>66.63333333</V>
+            <V>0.75488902184812</V>
+            <V>66.73333333</V>
+            <V>0.75363668199691</V>
+            <V>67.8</V>
+            <V>0.75238558012705</V>
+            <V>68.2</V>
+            <V>0.75113590181311</V>
+            <V>68.26666667</V>
+            <V>0.74988796627227</V>
+            <V>69.3</V>
+            <V>0.74863799505302</V>
+            <V>69.8</V>
+            <V>0.74738345222294</V>
+            <V>70.4</V>
+            <V>0.74612358591989</V>
+            <V>70.46666667</V>
+            <V>0.74486469628941</V>
+            <V>70.6</V>
+            <V>0.74360755316838</V>
+            <V>71.06666667</V>
+            <V>0.74235086972626</V>
+            <V>71.76666667</V>
+            <V>0.74109494843365</V>
+            <V>71.8</V>
+            <V>0.73983713157906</V>
+            <V>73.46666667</V>
+            <V>0.73857097787431</V>
+            <V>73.7</V>
+            <V>0.73730621867911</V>
+            <V>74.46666667</V>
+            <V>0.73604173905461</V>
+            <V>74.73333333</V>
+            <V>0.73477915286127</V>
+            <V>75.23333333</V>
+            <V>0.73351256927802</V>
+            <V>75.33333333</V>
+            <V>0.73224659575165</V>
+            <V>75.36666667</V>
+            <V>0.73098324868045</V>
+            <V>76.13333333</V>
+            <V>0.7297210628655</V>
+            <V>77.23333333</V>
+            <V>0.72845801657736</V>
+            <V>77.46666667</V>
+            <V>0.72719523769904</V>
+            <V>79.1</V>
+            <V>0.7259300689403</V>
+            <V>79.36666667</V>
+            <V>0.72465961344418</V>
+            <V>79.8</V>
+            <V>0.72339114002406</V>
+            <V>79.86666667</V>
+            <V>0.72212476139626</V>
+            <V>80.73333333</V>
+            <V>0.72085295914254</V>
+            <V>81.06666667</V>
+            <V>0.71956674838381</V>
+            <V>81.1</V>
+            <V>0.71827617549586</V>
+            <V>81.13333333</V>
+            <V>0.71698588797057</V>
+            <V>81.33333333</V>
+            <V>0.71569721804427</V>
+            <V>81.8</V>
+            <V>0.71440800565667</V>
+            <V>81.93333333</V>
+            <V>0.7131173122497</V>
+            <V>82.63333333</V>
+            <V>0.71182833358641</V>
+            <V>83.53333333</V>
+            <V>0.71053098809687</V>
+            <V>84.2</V>
+            <V>0.70923577389163</V>
+            <V>84.83333333</V>
+            <V>0.70793795926284</V>
+            <V>84.9</V>
+            <V>0.70664168789142</V>
+            <V>85.3</V>
+            <V>0.70534259652684</V>
+            <V>85.56666667</V>
+            <V>0.70402579397732</V>
+            <V>85.73333333</V>
+            <V>0.70271010564152</V>
+            <V>85.86666667</V>
+            <V>0.70139660765124</V>
+            <V>86.06666667</V>
+            <V>0.7000822614753</V>
+            <V>86.36666667</V>
+            <V>0.69876744424425</V>
+            <V>87</V>
+            <V>0.6974519621106</V>
+            <V>87.1</V>
+            <V>0.69613719566939</V>
+            <V>87.23333333</V>
+            <V>0.69482255984268</V>
+            <V>87.73333333</V>
+            <V>0.69350782542638</V>
+            <V>88.93333333</V>
+            <V>0.69219124221327</V>
+            <V>89.1</V>
+            <V>0.69087477110216</V>
+            <V>89.36666667</V>
+            <V>0.68956105999267</V>
+            <V>89.9</V>
+            <V>0.6882419534126</V>
+            <V>90.13333333</V>
+            <V>0.68690786118579</V>
+            <V>90.23333333</V>
+            <V>0.6855748665227</V>
+            <V>90.26666667</V>
+            <V>0.68424243466243</V>
+            <V>90.3</V>
+            <V>0.68290814972056</V>
+            <V>90.6</V>
+            <V>0.68156623307035</V>
+            <V>90.8</V>
+            <V>0.68022217613985</V>
+            <V>91.63333333</V>
+            <V>0.67886997206557</V>
+            <V>91.73333333</V>
+            <V>0.67751868725899</V>
+            <V>92.73333333</V>
+            <V>0.67617001818913</V>
+            <V>93.66666667</V>
+            <V>0.67481683898453</V>
+            <V>94.03333333</V>
+            <V>0.67346277598458</V>
+            <V>95.86666667</V>
+            <V>0.67210624791324</V>
+            <V>96.83333333</V>
+            <V>0.67074980829978</V>
+            <V>96.9</V>
+            <V>0.66939396953017</V>
+            <V>97.3</V>
+            <V>0.66800888200531</V>
+            <V>98.7</V>
+            <V>0.66661511308144</V>
+            <V>98.76666667</V>
+            <V>0.66522346860622</V>
+            <V>98.83333333</V>
+            <V>0.66382855052824</V>
+            <V>99.4</V>
+            <V>0.66241980023149</V>
+            <V>101.6333333</V>
+            <V>0.66099739534818</V>
+            <V>102</V>
+            <V>0.65956186343753</V>
+            <V>102.3</V>
+            <V>0.6581185455676</V>
+            <V>102.4</V>
+            <V>0.65667731933548</V>
+            <V>103.4666667</V>
+            <V>0.6552382860795</V>
+            <V>104.7666667</V>
+            <V>0.6537898414343</V>
+            <V>105.6</V>
+            <V>0.65234417000615</V>
+            <V>106.5666667</V>
+            <V>0.65089937553212</V>
+            <V>108.0666667</V>
+            <V>0.64944401190891</V>
+            <V>109.6</V>
+            <V>0.64796603648205</V>
+            <V>110.7666667</V>
+            <V>0.64647517547498</V>
+            <V>110.8333333</V>
+            <V>0.64498553442181</V>
+            <V>110.9333333</V>
+            <V>0.6434998414414</V>
+            <V>111.1</V>
+            <V>0.64199493706271</V>
+            <V>111.5666667</V>
+            <V>0.6404777572644</V>
+            <V>111.9666667</V>
+            <V>0.63895870873983</V>
+            <V>114.9</V>
+            <V>0.63739392329807</V>
+            <V>115.7</V>
+            <V>0.63583119513589</V>
+            <V>116.4333333</V>
+            <V>0.63425341030373</V>
+            <V>117.5666667</V>
+            <V>0.63267037732661</V>
+            <V>118.0333333</V>
+            <V>0.63108349110115</V>
+            <V>118.1333333</V>
+            <V>0.6295001329832</V>
+            <V>119</V>
+            <V>0.62791235572415</V>
+            <V>119.4666667</V>
+            <V>0.62632277194543</V>
+            <V>119.8666667</V>
+            <V>0.62472070457447</V>
+            <V>120.1333333</V>
+            <V>0.62312063181896</V>
+            <V>120.5666667</V>
+            <V>0.62151640935456</V>
+            <V>121.6666667</V>
+            <V>0.61991559813434</V>
+            <V>122</V>
+            <V>0.61830626273153</V>
+            <V>123.3</V>
+            <V>0.61667179077012</V>
+            <V>124.1333333</V>
+            <V>0.61503006720357</V>
+            <V>124.2</V>
+            <V>0.6133868525136</V>
+            <V>124.5666667</V>
+            <V>0.61174226887253</V>
+            <V>125.2666667</V>
+            <V>0.61008877089563</V>
+            <V>125.7666667</V>
+            <V>0.60842912171556</V>
+            <V>126.4666667</V>
+            <V>0.60675427293844</V>
+            <V>128.3666667</V>
+            <V>0.60505697494029</V>
+            <V>129.8</V>
+            <V>0.60334170408772</V>
+            <V>132.0333333</V>
+            <V>0.60156404918735</V>
+            <V>132.2</V>
+            <V>0.59978788124696</V>
+            <V>132.5666667</V>
+            <V>0.59799375220549</V>
+            <V>133.2333333</V>
+            <V>0.5961856173892</V>
+            <V>134.4666667</V>
+            <V>0.59437124613217</V>
+            <V>140.7666667</V>
+            <V>0.59249445879674</V>
+            <V>141.7333333</V>
+            <V>0.59060837515539</V>
+            <V>142.5666667</V>
+            <V>0.5887287122914</V>
+            <V>143.1333333</V>
+            <V>0.58685307736157</V>
+            <V>144.6666667</V>
+            <V>0.58495814930629</V>
+            <V>147.7666667</V>
+            <V>0.58300115232808</V>
+            <V>148.7666667</V>
+            <V>0.58103342972473</V>
+            <V>149.4333333</V>
+            <V>0.57905217173277</V>
+            <V>150.6</V>
+            <V>0.57503779886405</V>
+            <V>153.8666667</V>
+            <V>0.57296010634411</V>
+            <V>159</V>
+            <V>0.57085051382017</V>
+            <V>159.2333333</V>
+            <V>0.56874891756798</V>
+            <V>162.8333333</V>
+            <V>0.56663762404221</V>
+            <V>164.5666667</V>
+            <V>0.56450319680318</V>
+            <V>164.6</V>
+            <V>0.56237522286977</V>
+            <V>165.1666667</V>
+            <V>0.56023749231796</V>
+            <V>168.9666667</V>
+            <V>0.55802229300395</V>
+            <V>170.6333333</V>
+            <V>0.55580579514398</V>
+            <V>170.6666667</V>
+            <V>0.55358758724732</V>
+            <V>176.3666667</V>
+            <V>0.55130375957294</V>
+            <V>178.7333333</V>
+            <V>0.54895574599815</V>
+            <V>181.2333333</V>
+            <V>0.54658516048954</V>
+            <V>184.7</V>
+            <V>0.54405057497467</V>
+            <V>185</V>
+            <V>0.5414896857353</V>
+            <V>196.5666667</V>
+            <V>0.53836767192645</V>
+            <V>196.8666667</V>
+            <V>0.53523325878444</V>
+            <V>198.1</V>
+            <V>0.53208874940277</V>
+            <V>198.3333333</V>
+            <V>0.52887854040932</V>
+            <V>201.8333333</V>
+            <V>0.52552064383283</V>
+            <V>201.9333333</V>
+            <V>0.52215071902188</V>
+            <V>203.5333333</V>
+            <V>0.51877485832746</V>
+            <V>204.2</V>
+            <V>0.51540617707573</V>
+            <V>204.4333333</V>
+            <V>0.51202596956446</V>
+            <V>208.9666667</V>
+            <V>0.50851498430972</V>
+            <V>210.9666667</V>
+            <V>0.5049916894362</V>
+            <V>211.9</V>
+            <V>0.50146606234165</V>
+            <V>213.2</V>
+            <V>0.49782683351112</V>
+            <V>216.0333333</V>
+            <V>0.49411140552956</V>
+            <V>216.8666667</V>
+            <V>0.4903591194006</V>
+            <V>219.1666667</V>
+            <V>0.48654725048995</V>
+            <V>219.6666667</V>
+            <V>0.48274241755567</V>
+            <V>223.8333333</V>
+            <V>0.47872530060639</V>
+            <V>227.8333333</V>
+            <V>0.47423551851596</V>
+            <V>228.7666667</V>
+            <V>0.46974472236003</V>
+            <V>232.7333333</V>
+            <V>0.46473986067261</V>
+            <V>252.8666667</V>
+            <V>0.4566610272382</V>
+            <V>256.8666667</V>
+            <V>0.44753790374918</V>
+            <V>282.5666667</V>
+            <V>0.39417199344473</V>
+            <V>285.7</V>
+            <V>0.34160091188688</V>
+          </ValuesList>
+        </EmbeddedData>
+      </IQData>
+      <VarStats>
+        <VarStat name="Time" modelName="StatGraphData" nobs="359" min="0" max="285.7" />
+        <VarStat name="Survival" modelName="StatGraphData" nobs="359" min="0.34160091188688" max="1" />
+      </VarStats>
+    </DataModel>
+  </Data>
+  <View>
+    <StatGraph height="480" width="640" designHeight="480" designWidth="640" renderer="java" style:style="StatGraphStyle" antiAlias="true" nBinsMax="10000" nXYBinsMax="100000" linePatternOBSMax="10000" totalCellMax="2000" sessionLocale="pl_PL" missingOption="." notesOption="true" suppressClientMsg="true" version="9.4m6a">
+      <EntryTitle>
+        <EntryItem>Bezpośrednio skorygowana funkcja przeżycia</EntryItem>
+        <EntryItem></EntryItem>
+      </EntryTitle>
+      <EntryTitle textAttrs="ValueText">
+        <EntryItem></EntryItem>
+        <EntryItem></EntryItem>
+      </EntryTitle>
+      <LayoutOverlay>
+        <XAxisOpts>
+          <LinearOpts>
+          </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts label="Prawdopodobieństwo przeżycia" shortLabel="Przeżycie">
+          <LinearOpts viewMin="0" viewMax="1">
+            <TickValues>
+              <Value>0</Value>
+              <Value>.2</Value>
+              <Value>.4</Value>
+              <Value>.6</Value>
+              <Value>.8</Value>
+              <Value>1.0</Value>
+            </TickValues>
+          </LinearOpts>
+        </YAxisOpts>
+        <StepPlot y="StatGraphData#SURVIVAL" x="StatGraphData#TIME" x_type="Variable" y_type="Variable" name="Survival" _stmt="STEPPLOT">
+        </StepPlot>
+      </LayoutOverlay>
+    </StatGraph>
+  </View>
+</SASReport>
+</script>
+</div>
+</div>
+</body>
+</html>
